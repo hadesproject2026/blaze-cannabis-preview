@@ -10,12 +10,20 @@
 }
 
 .card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
-.card[data-out-of-stock='true'] { opacity: 0.55; }
+.card[data-out-of-stock='true'] .media { opacity: 0.4; }
+.card[data-out-of-stock='true'] .name { color: var(--text-muted); }
 
 .media {
   position: relative;
   aspect-ratio: 1 / 1;
   background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  display: grid;
+  place-items: center;
+}
+
+.mediaLink {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
 }
