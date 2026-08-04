@@ -1,0 +1,40 @@
+{
+  "store": {
+    "id": "brampton",
+    "name": "Blaze Cannabis — Brampton",
+    "address": "1 Main Street North",
+    "city": "Brampton",
+    "province": "ON",
+    "postalCode": "L6X 1M1",
+    "phone": "(905) 000-0000",
+    "hours": [
+      { "day": "Mon-Sat", "open": "9:00 AM", "close": "11:00 PM" },
+      { "day": "Sun", "open": "10:00 AM", "close": "10:00 PM" }
+    ]
+  },
+  "categories": [
+    { "slug": "pre-rolls", "name": "Pre-rolls", "blurb": "Ready to go, rolled and packed." }
+  ],
+  "products": [
+    {
+      "id": "p-0001",
+      "slug": "orange-tingz-pre-roll-3x0-5g",
+      "name": "Orange Tingz Pre-Roll 3x0.5g",
+      "brand": "Pistol and Paris",
+      "category": "pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": { "min": 230, "max": 300, "unit": "mg/g" },
+      "cbd": null,
+      "size": "1.5 g",
+      "priceCents": 2400,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [],
+      "description": "A three-pack of half-gram pre-rolls.",
+      "terpenes": ["Limonene", "Myrcene"],
+      "effects": ["Relaxed"],
+      "badges": ["staff-pick"],
+      "addedAt": "2026-07-01"
+    }
+  ]
+}
