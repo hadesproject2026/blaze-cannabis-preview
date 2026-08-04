@@ -58,6 +58,19 @@ describe('cartReducer', () => {
     expect(state[0].qty).toBe(3);
   });
 
+  it('ignores an add with zero quantity', () => {
+    expect(cartReducer([], { type: 'add', product, qty: 0 })).toEqual([]);
+  });
+
+  it('ignores an add with negative quantity', () => {
+    expect(cartReducer([], { type: 'add', product, qty: -3 })).toEqual([]);
+  });
+
+  it('leaves an existing line untouched when adding a non-positive quantity', () => {
+    const state = [line({ qty: 3 })];
+    expect(cartReducer(state, { type: 'add', product, qty: -5 })).toEqual(state);
+  });
+
   it('removes a line', () => {
     expect(cartReducer([line()], { type: 'remove', productId: 'p-1' })).toEqual([]);
   });

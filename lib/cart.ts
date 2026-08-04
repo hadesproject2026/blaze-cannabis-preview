@@ -36,6 +36,9 @@ export function cartReducer(state: CartLine[], action: CartAction): CartLine[] {
   switch (action.type) {
     case 'add': {
       const qty = action.qty ?? 1;
+      // A non-positive add is meaningless, and must never leave a zero- or
+      // negative-quantity line behind. Removal is setQty's job, not add's.
+      if (qty <= 0) return state;
       const existing = state.find((l) => l.productId === action.product.id);
       if (existing) {
         return state.map((l) =>
