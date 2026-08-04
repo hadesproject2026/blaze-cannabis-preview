@@ -420,8 +420,8 @@
         "unit": "mg/g"
       },
       "size": "1 gram",
-      "priceCents": 3955,
-      "salePriceCents": 3361,
+      "priceCents": 3361,
+      "salePriceCents": null,
       "inStock": true,
       "images": [
         "/products/potluck-tangerine-sunrise-cbg-disposable-vape-1g-disposable-pens-2927452.jpg"
@@ -429,9 +429,7 @@
       "description": "Tangerine Sunrise with CBG and a burst of citrus flavour. This all-in-one rechargeable vape combines the tangy taste of tangerines with the benefits of CBG (cannabigerol), a non-psychoactive compound found in specific cannabis cultivars. Tangerine Sunrise is a flavourful way to enjoy the benefits of CBG.",
       "terpenes": [],
       "effects": [],
-      "badges": [
-        "on-sale"
-      ],
+      "badges": [],
       "addedAt": "2026-07-18"
     },
     {
@@ -608,8 +606,8 @@
       },
       "cbd": null,
       "size": "1 gram",
-      "priceCents": 1950,
-      "salePriceCents": 1659,
+      "priceCents": 1659,
+      "salePriceCents": null,
       "inStock": true,
       "images": [
         "/products/general-admission-peach-ringz-distillate-infused-pre-roll-1x1g-distillates-2928701.jpg"
@@ -617,9 +615,7 @@
       "description": "We brought vapes to the masses. We made pre-roll multi-packs even more accessible. So why not combine the best of both? We followed our imagination and let fun be our inspiration in developing our first infused pre-roll line. Sourced from quality whole-flower cultivars, infused with our signature distillate and dusted in premium kief, this is not just any squish in a stick. General Admission Peach Ringz Distillate Infused pre-rolls give you a sticky sweet and all-around sour burst of that classic slice of peach. Floral notes round out the sugary profile of this favourite strain, known for being exceptionally smooth and potent.",
       "terpenes": [],
       "effects": [],
-      "badges": [
-        "on-sale"
-      ],
+      "badges": [],
       "addedAt": "2026-08-02"
     },
     {
@@ -664,8 +660,8 @@
       },
       "cbd": null,
       "size": "1 gram",
-      "priceCents": 1560,
-      "salePriceCents": 1327,
+      "priceCents": 1327,
+      "salePriceCents": null,
       "inStock": true,
       "images": [
         "/products/shufflez-indica-multi-pack-diamond-infused-pre-roll-2x05g-isolates-5944516.jpg"
@@ -673,9 +669,7 @@
       "description": "Vox Shufflez never keeps it on repeat — two rotating bangers in every pack! These Indica Diamond Infused Pre-Rolls jack up the THC to 40% and drop fresh hits every time. Get ready, tastebuds — Vox Diamond-Infused Pre-Rolls know how to crank it all the way up! With dialled-in terpene blends and a whopping 40% THC, these pre-rolls hit extra loud. Press play and turn up the volume with Vox!",
       "terpenes": [],
       "effects": [],
-      "badges": [
-        "on-sale"
-      ],
+      "badges": [],
       "addedAt": "2026-08-04"
     },
     {
