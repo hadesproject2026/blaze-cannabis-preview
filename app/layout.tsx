@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { CartProvider } from '@/components/cart/CartProvider';
+import { AgeGate } from '@/components/shell/AgeGate';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -11,7 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <AgeGate />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
