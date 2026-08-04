@@ -1,9 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import type { CatalogSource } from '@/lib/catalog/source';
 
+export interface CatalogSourceContractOptions {
+  /** A store id the implementation under test is expected to resolve. */
+  knownStoreId: string;
+}
+
 export function runCatalogSourceContract(
   name: string,
   createSource: () => CatalogSource | Promise<CatalogSource>,
+  options: CatalogSourceContractOptions,
 ) {
   describe(`CatalogSource contract: ${name}`, () => {
     it('lists at least one product', async () => {
@@ -59,9 +65,9 @@ export function runCatalogSourceContract(
 
     it('resolves a known store id', async () => {
       const source = await createSource();
-      const store = await source.getStore('brampton');
+      const store = await source.getStore(options.knownStoreId);
       expect(store).not.toBeNull();
-      expect(store?.id).toBe('brampton');
+      expect(store?.id).toBe(options.knownStoreId);
     });
 
     it('resolves an unknown store id to null rather than throwing', async () => {
