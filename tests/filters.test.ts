@@ -108,6 +108,22 @@ describe('applyFilters', () => {
     expect(result).toEqual([]);
   });
 
+  // Potency is sold as a range because of batch variance, so a 22–30% product can
+  // legitimately arrive at 22%. Overlap is deliberate: strict containment would hide
+  // most of the shelf. These two tests exist because every other fixture uses a
+  // degenerate min === max range, which cannot tell the two semantics apart.
+  it('matches a product whose THC range overlaps the requested window', () => {
+    const wide = make({ slug: 'wide', thc: { min: 22, max: 30, unit: '%' } });
+    expect(applyFilters([wide], filters({ thcMaxMgPerG: 250 }))).toHaveLength(1);
+    expect(applyFilters([wide], filters({ thcMinMgPerG: 250 }))).toHaveLength(1);
+  });
+
+  it('excludes a product whose THC range sits entirely outside the window', () => {
+    const wide = make({ slug: 'wide', thc: { min: 22, max: 30, unit: '%' } });
+    expect(applyFilters([wide], filters({ thcMaxMgPerG: 200 }))).toEqual([]);
+    expect(applyFilters([wide], filters({ thcMinMgPerG: 320 }))).toEqual([]);
+  });
+
   it('hides out-of-stock products when inStockOnly is set', () => {
     const result = applyFilters(products, filters({ inStockOnly: true }));
     expect(result.map((p) => p.slug)).toEqual(['a', 'b']);
