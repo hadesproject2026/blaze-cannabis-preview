@@ -1,40 +1,1460 @@
 {
   "store": {
     "id": "brampton",
-    "name": "Blaze Cannabis — Brampton",
-    "address": "1 Main Street North",
+    "name": "Blaze Cannabis - Brampton",
+    "address": "227 Vodden St E, Unit 15",
     "city": "Brampton",
     "province": "ON",
-    "postalCode": "L6X 1M1",
-    "phone": "(905) 000-0000",
+    "postalCode": "L6V 1N3",
+    "phone": "(905) 453-9901",
     "hours": [
-      { "day": "Mon-Sat", "open": "9:00 AM", "close": "11:00 PM" },
-      { "day": "Sun", "open": "10:00 AM", "close": "10:00 PM" }
+      {
+        "day": "Mon-Sun",
+        "open": "9:00 AM",
+        "close": "10:50 PM"
+      }
     ]
   },
   "categories": [
-    { "slug": "pre-rolls", "name": "Pre-rolls", "blurb": "Ready to go, rolled and packed." }
+    {
+      "slug": "dried-flower",
+      "name": "Dried flower",
+      "blurb": "Dried cannabis flowers, or bud, remain popular for rich aromas, diverse terpene profiles, and varied effects across strains. Seek properly cured buds at our Brampton dispensary to enjoy alone or by adding shatter or resin for a stronger hit."
+    },
+    {
+      "slug": "pre-rolls",
+      "name": "Pre-rolls",
+      "blurb": "Pre-rolls simplify cannabis use by skipping the rolling step. Choose from various strains, THC levels, or CBD options. Perfect for new users or anyone craving convenience, they’re ready to spark and enjoy right away."
+    },
+    {
+      "slug": "vape",
+      "name": "Vape",
+      "blurb": "CBD and THC vaping is discreet and fast-acting. Pens and carts come in diverse strains and potencies to match any preference. They’re ideal for minimal odor, quick hits, and both medical or recreational use."
+    },
+    {
+      "slug": "infused-pre-rolls",
+      "name": "Infused Pre-Rolls",
+      "blurb": "Infused pre-rolls blend cannabis flowers with shatter or resin for a stronger, more flavorful hit. Added terpenes or fruit notes create a distinctive twist on standard joints, making each session unforgettable for enthusiasts."
+    },
+    {
+      "slug": "concentrates",
+      "name": "Concentrates",
+      "blurb": "For strong effects, concentrates like shatter, resin, wax, and rosin deliver intense hits in small doses. They’re often found at specialized cannabis shops, perfect for dabbing or boosting a joint. Explore classic THC varieties."
+    },
+    {
+      "slug": "edibles",
+      "name": "Edibles",
+      "blurb": "Edibles now range from brownies to gummies and fruit treats, offering a smoke-free cannabis option. They have a slower onset, so start low and wait. Whether in Brampton or elsewhere, a wide selection is readily available."
+    },
+    {
+      "slug": "accessories",
+      "name": "Accessories",
+      "blurb": "Quality accessories enhance cannabis sessions. Modern cannabis dispensaries offer portable rolling papers, water bongs, weed grinders and many smoking accessories for a cleaner experience. Whether you prefer shatter flower power or a sleek vape pen, the right gear elevates every puff."
+    },
+    {
+      "slug": "capsules",
+      "name": "Capsules",
+      "blurb": ""
+    },
+    {
+      "slug": "beverages",
+      "name": "Beverages",
+      "blurb": "Cannabis drinks are cannabis-infused beverages merging the cannabis plant’s benefits with flavors like fruit juices, lemonade, soda, and cola. Infused with THC, THCv, delta-9 THC, or hemp-derived THC products, each cannabis drink offers a consistent dose and refreshing flavor. Drinking THC this way provides an alternative to alcoholic drinks, beer, or other intoxicants."
+    },
+    {
+      "slug": "oil",
+      "name": "Oil",
+      "blurb": "Cannabis oil is versatile and convenient for precise dosing. Use it sublingually, in cooking, or in compatible vaporizers. Both medical and recreational formulas often feature different CBD-to-THC ratios. Always store oils properly to preserve potency."
+    },
+    {
+      "slug": "topicals",
+      "name": "Topicals",
+      "blurb": "Weed topicals let you benefit from cannabis minus psychoactive effects. Cannabis topicals often combine THC, CBD, or CBG to target specific areas. Ideal for gentle relief, topicals are available at our dispensary or by delivery throughout Brampton."
+    },
+    {
+      "slug": "seeds",
+      "name": "Seeds",
+      "blurb": "Grow your own bud for a personal harvest. Cannabis seeds range from high-THC to CBD-rich. Check local rules first, then enjoy cultivating and sampling fresh flowers. Find seeds in our specialized Ontario cannabis shop!"
+    }
   ],
   "products": [
     {
-      "id": "p-0001",
-      "slug": "orange-tingz-pre-roll-3x0-5g",
-      "name": "Orange Tingz Pre-Roll 3x0.5g",
+      "id": "blaze-2927963",
+      "slug": "color-cannabis-mango-haze-35g-dried-flower-2927963",
+      "name": "Color Cannabis - Mango Haze 3.5g Dried Flower",
+      "brand": "WEEDMD RX INC.",
+      "category": "dried-flower",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 4,
+        "max": 10,
+        "unit": "%"
+      },
+      "cbd": {
+        "min": 6,
+        "max": 12,
+        "unit": "%"
+      },
+      "size": "3.5 grams",
+      "priceCents": 2499,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/color-cannabis-mango-haze-35g-dried-flower-2927963.jpg"
+      ],
+      "description": "Mango Haze is a Sativa strain, crossed with Northern Lights #5, Skunk, and Haze to create this fruity variety. This specific strain has also been cross-bred with an unknown CBD strain. Mango Haze exhibits a distinctive mango aroma coupled with spicy, sour undertones. The flowers are dark green, resinous and dense with bright orange pistils. Our product is grown locally in Strathroy, Ontario just West of the city of London. Grown in state of the art hybridized, greenhouses, our flowers and tops are dried naturally to preserve the integrity of our plants and hand finished to exact standards.\n\nIf you're seeking a vibrant, flavorful, and energizing cannabis strain, the Mango Haze strain is an excellent choice. This sativa-dominant hybrid offers a balanced experience that combines mood-enhancing euphoria with gentle body relief, making it perfect for both recreational users and medical cannabis enthusiasts. Available now at Blaze Cannabis in Brampton, Mango Haze cannabis is beloved for its uplifting effects, rich profile, and tropical, mouth-watering taste.\n\nThe Mango Haze cannabis strain is a three-way cross of parent strains Northern Lights #5, Skunk, and Haze. This heritage creates a potent blend of effects that stimulate the mind while relaxing the body, offering balanced effects ideal for daytime use. Whether you're starting a creative project, heading to social gatherings, or simply hoping to improve your mood, Mango Haze delivers a clear, functional high that keeps you uplifted and motivated.\n\nVisually, Mango Haze flowers are stunning, showcasing a green color with vibrant orange hairs and a shimmering coat of trichomes. The tropical aroma bursts with the scent of ripe mangoes, complemented by subtle hints of citrus flavors, spice, and earthy haze. This fruity flavor profile translates into a delicious smoke or vape experience, where the sweet mango notes are layered with a hint of skunk and hints of earthiness.\n\nThe psychoactive effects of Mango Haze are known for improving focus, uplifting spirits, and offering relief from stress, mild pain, and mental fatigue. It's a great option for users seeking an energetic but grounded high—especially those looking to avoid the intensity of heavier indicas. Among sativa-dominant strains, Mango Haze stands out for its ability to promote mental clarity while still providing a relaxed body experience.\n\nFor cannabis growers, Mango Haze is as rewarding as it is popular. With a moderate flowering time of around 9 to 11 weeks, these plants produce a generous yield of aromatic buds. Known for their terpene-rich composition and well-rounded effects, growers appreciate Mango Haze for its resilience and consistency. It's often ranked among popular strains thanks to this harmony of traits.\n\nWhether you're a seasoned consumer or new to sativa-dominant hybrid strains, Mango Haze offers a standout cannabis experience. With its dynamic lineage, vivid flavor, and feel-good effects, it's no surprise this strain continues to gain popularity among all types of cannabis strains. Visit Blaze Cannabis in Brampton to experience the energizing and flavorful magic of Mango Haze cannabis today.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-06-01"
+    },
+    {
+      "id": "blaze-2928460",
+      "slug": "fraser-valley-d-burger-28g-dried-flower-2928460",
+      "name": "Fraser Valley - D. Burger 28g Dried Flower",
+      "brand": "The Original Fraser Valley Weed Co.",
+      "category": "dried-flower",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 21,
+        "max": 27,
+        "unit": "%"
+      },
+      "cbd": null,
+      "size": "28 grams",
+      "priceCents": 9500,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/fraser-valley-d-burger-28g-dried-flower-2928460.jpg"
+      ],
+      "description": "Donny Burger is deliciously savoury, pungent and gassy — think grilled cheese and dark garlic in a bulk bag. This high-THC indica is a cross of GMO and Han Solo Burger. Dense green buds and tufts of orange hairs, our Donny Burger's unmistakable bud is greenhouse grown in BC's Fraser Valley.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927502",
+      "slug": "strawberry-amnesia-28g-dried-flower-2927502",
+      "name": "Strawberry Amnesia 28g Dried Flower",
+      "brand": "The Original Fraser Valley Weed Co.",
+      "category": "dried-flower",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 200,
+        "max": 260,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "28 grams",
+      "priceCents": 9500,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/strawberry-amnesia-28g-dried-flower-2927502.jpg"
+      ],
+      "description": "Strawberry Amnesia is smooth and sweet with the smell of wild berries, a squeeze of citrus and earthy cocoa. This potent sativa is a legacy cross of Strawberry Cough and Amnesia. Bulk bags of dense buds with pink and purple hues under a thick layer of trichomes. Greenhouse-grown in abundance in BC’s finest growing region, the Fraser Valley.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927525",
+      "slug": "pop-n-pour-strawnana-35g-dried-flower-2927525",
+      "name": "Pop n' Pour Strawnana 3.5g Dried Flower",
+      "brand": "Super Toast",
+      "category": "dried-flower",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 240,
+        "max": 300,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "3.5 grams",
+      "priceCents": 1770,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/pop-n-pour-strawnana-35g-dried-flower-2927525.jpg"
+      ],
+      "description": "Freshly ground, potent sativa, bursting with sweet and fruity strawberry banana. Fluffy, sticky goodness packed in a pop top tube with a humidity pack to keep things extra fresh and super easy. Always ready. Just shake, pop n’ pour.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927770",
+      "slug": "funk-master-14g-dried-flower-2927770",
+      "name": "Funk Master 14g Dried Flower",
+      "brand": "SHRED",
+      "category": "dried-flower",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 200,
+        "max": 280,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "14 grams",
+      "priceCents": 5427,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/funk-master-14g-dried-flower-2927770.jpg"
+      ],
+      "description": "Now you've got even more chances to discover the medley to Funky town. We've captured the essence of real dank buds with skunky, gas and earthy aromas that truly bring the funk. Get down and get dank with Funk Master at 20%+ THC and a humidity pack included in every pouch.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-01"
+    },
+    {
+      "id": "blaze-2927769",
+      "slug": "animal-rntz-1g-dried-flower-redecan-2927769",
+      "name": "Animal Rntz 1g Dried Flower redecan",
+      "brand": "Redecan",
+      "category": "dried-flower",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 290,
+        "max": 350,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 885,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/animal-rntz-1g-dried-flower-redecan-2927769.jpg"
+      ],
+      "description": "Animal RNTZ is an indica-dominant strain that’s the result of crossing Animal CKS x Rntz. Indulge in the fruity tartness and sweet and sour aroma from the dominant caryophyllene, limonene, ocimene and bisabolol terpenes. Sporting dense tight buds, this potent strain achieves remarkably high THC potency. This expression of Animal Rntz is improved through conscientious care and attention given to each plant through every stage of growth process. Harvested at its peak, expertly cured and hand trimmed to ensure the highest level of quality.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927163",
+      "slug": "the-loud-plug-benny-blunto-pre-rolls-3x05g-pre-rolls-2927163",
+      "name": "The Loud Plug - Benny Blunto Pre-Rolls 3x0.5g Pre-Rolls",
+      "brand": "Canadian Clinical Cannabinoids Inc.",
+      "category": "pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 220,
+        "max": 280,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1.5 grams",
+      "priceCents": 2495,
+      "salePriceCents": 2120,
+      "inStock": true,
+      "images": [
+        "/products/the-loud-plug-benny-blunto-pre-rolls-3x05g-pre-rolls-2927163.jpg"
+      ],
+      "description": "Gas lovers!! This is a unique product that has it. All the right markings. This blunt rap has a great smooth taste. We have chosen La Kush to go into this pre-roll. Hung dry for 21 days for great terpenes.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "on-sale"
+      ],
+      "addedAt": "2026-06-27"
+    },
+    {
+      "id": "blaze-2927251",
+      "slug": "blk-mkt-jealousy-pre-rolls-1x1g-pre-rolls-2927251",
+      "name": "Blk Mkt - Jealousy Pre-Rolls 1x1g Pre-Rolls",
+      "brand": "BLK MKT",
+      "category": "pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 200,
+        "max": 260,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 1275,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/blk-mkt-jealousy-pre-rolls-1x1g-pre-rolls-2927251.jpg"
+      ],
+      "description": "This unique cross has gas! Dark hued buds with hints of olive green, caked sugar leaves, contrasting orange pistils, and frosted with a healthy coat of trichomes. Imagine sweet apple, with a subtle hints of mint and pine.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927426",
+      "slug": "orange-tingz-pre-roll-3x05g-pre-rolls-2927426",
+      "name": "Orange Tingz Pre-Roll 3x0.5g Pre-Rolls",
       "brand": "Pistol and Paris",
       "category": "pre-rolls",
       "strainType": "indica-dominant",
-      "thc": { "min": 230, "max": 300, "unit": "mg/g" },
+      "thc": {
+        "min": 230,
+        "max": 300,
+        "unit": "mg/g"
+      },
       "cbd": null,
-      "size": "1.5 g",
-      "priceCents": 2400,
+      "size": "1.5 grams",
+      "priceCents": 1894,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/orange-tingz-pre-roll-3x05g-pre-rolls-2927426.jpg"
+      ],
+      "description": "This Indica-leaning hybrid is a cross between Slurricane and TMAC, bred by Mother Labs and grown by JBuds in Summerland. Expect the buds to be heavily frosted and dense to the touch while the flavour leans sweet with subtle grape and berry undertones. The dominant terpenes in this cultivar are Trans-Caryophyllene, Linalool, and Limonene. Grown in soil, hand-watered, hand-trimmed, hang dried with a 10-day cure.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2928745",
+      "slug": "hawaiian-fanta-pre-roll-3x05g-pre-rolls-2928745",
+      "name": "Hawaiian Fanta Pre-Roll 3x0.5g Pre-Rolls",
+      "brand": "Pistol and Paris",
+      "category": "pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 240,
+        "max": 300,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1.5 grams",
+      "priceCents": 1894,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/hawaiian-fanta-pre-roll-3x05g-pre-rolls-2928745.jpg"
+      ],
+      "description": "Pistol and Paris is a brand that originated from the legacy era of British Columbia with quality, high-end, craft cannabis. Craft whole flower, 14 day hang dry and hand trimmed input only for pre-rolls with a screw top lid.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927222",
+      "slug": "maui-wowie-pre-roll-2x1g-pre-rolls-2927222",
+      "name": "Maui Wowie Pre-Roll 2x1g Pre-Rolls",
+      "brand": "Piff",
+      "category": "pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 295,
+        "max": 365,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 1061,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/maui-wowie-pre-roll-2x1g-pre-rolls-2927222.jpg"
+      ],
+      "description": "Just the mention of Maui Wowie to some brings back memories, to others we only know it as the parent to some of the most potent sativas on the market today. Hints of spice and fruit poke through a herbaceous back note, giving this high energy sativa a profile you can't help but recognize.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927316",
+      "slug": "double-j-cherry-boat-pre-roll-2x1g-pre-rolls-2927316",
+      "name": "Double J - Cherry Boat Pre-Roll 2x1g Pre-Rolls",
+      "brand": "Double J's",
+      "category": "pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 200,
+        "max": 270,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 943,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/double-j-cherry-boat-pre-roll-2x1g-pre-rolls-2927316.jpg"
+      ],
+      "description": "Cherry Boat is a sativa-dominant strain selected from our Cherry Boat worked line that blends the strong THC potency of an 11 week Pink Kush that was found in bag seed many years ago crossed with the delicious flavour of Top Dawg Cherry Chem. Our Cherry Boat was grown in sunny South Western Ontario in living soil, whole plant hung and offering high THC and terpenes. Cared by a talented team of legacy craft growers. Featuring strong THC potency potential with 3.5%+ terpenes the combination yields a sweet fruit with earthy chocolate undertones and a bit of funk. Bred by, selected by, and grown by 7 Farms Down.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927452",
+      "slug": "potluck-tangerine-sunrise-cbg-disposable-vape-1g-disposable-pens-2927452",
+      "name": "Potluck - Tangerine Sunrise CBG Disposable Vape 1g Disposable Pens",
+      "brand": "Potluck",
+      "category": "vape",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 850,
+        "max": 910,
+        "unit": "mg/g"
+      },
+      "cbd": {
+        "min": 100,
+        "max": 100,
+        "unit": "mg/g"
+      },
+      "size": "1 gram",
+      "priceCents": 3955,
+      "salePriceCents": 3361,
+      "inStock": true,
+      "images": [
+        "/products/potluck-tangerine-sunrise-cbg-disposable-vape-1g-disposable-pens-2927452.jpg"
+      ],
+      "description": "Tangerine Sunrise with CBG and a burst of citrus flavour. This all-in-one rechargeable vape combines the tangy taste of tangerines with the benefits of CBG (cannabigerol), a non-psychoactive compound found in specific cannabis cultivars. Tangerine Sunrise is a flavourful way to enjoy the benefits of CBG.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "on-sale"
+      ],
+      "addedAt": "2026-07-18"
+    },
+    {
+      "id": "blaze-6279661",
+      "slug": "blueberry-dynamite-liquid-diamonds-vape-1g-510-thread-cartridges-6279661",
+      "name": "Blueberry Dynamite Liquid Diamonds Vape 1g 510 Thread Cartridges",
+      "brand": "Spinach",
+      "category": "vape",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 930,
+        "max": 990,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 3362,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/blueberry-dynamite-liquid-diamonds-vape-1g-510-thread-cartridges-6279661.jpg"
+      ],
+      "description": "Hold on tight, friends! This vape is dynamite. Blueberry Dynamite draws inspiration from our legendary Blueberry and cultivar lineage of Thai and Purple Thai. Linalool and caryophyllene bring out the seriously sweet and fruity flavours. Our Spinach™ exclusive made with a proprietary cold-filtered extract distilled 4x at sub-zero temperatures brings out consistency and bursts of flavour.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927412",
+      "slug": "tribal-galactic-rntz-510-thread-cartridge-1g-510-thread-cartridges-2927412",
+      "name": "Tribal - Galactic Rntz 510 Thread Cartridge 1g 510 Thread Cartridges",
+      "brand": "Tribal",
+      "category": "vape",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 800,
+        "max": 860,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 4540,
+      "salePriceCents": null,
+      "inStock": false,
+      "images": [
+        "/products/tribal-galactic-rntz-510-thread-cartridge-1g-510-thread-cartridges-2927412.jpg"
+      ],
+      "description": "Tribal's Galactic Rntz live resin vape cart has one ingredient: our fresh frozen Galactic Rntz flower. The strong fuel flavour and fruity undertones are noticeably intense from this powerful indica dominant strain. Galactic Rntz is Falcon 9 (Sunset sherbe",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-05-23"
+    },
+    {
+      "id": "blaze-2927617",
+      "slug": "endgame-mosa-x-blood-orange-510-thread-cartridge-1g-510-thread-cartridges-2927617",
+      "name": "Endgame - Mosa x Blood Orange  510 Thread Cartridge 1g 510 Thread Cartridges",
+      "brand": "Endgame",
+      "category": "vape",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 800,
+        "max": 900,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 3000,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/endgame-mosa-x-blood-orange-510-thread-cartridge-1g-510-thread-cartridges-2927617.jpg"
+      ],
+      "description": "Two fan favourite power houses, Mimosa and Blood Orange, come together to offer a delicious sweet orange flavour in a sativa dominant hybrid cart. This one delivers due to the d-limonene, alpha-pinene and linalool.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-01"
+    },
+    {
+      "id": "blaze-2927855",
+      "slug": "watermelon-ice-disposable-pen-095g-disposable-pens-2927855",
+      "name": "Watermelon Ice Disposable Pen 0.95g Disposable Pens",
+      "brand": "Back Forty",
+      "category": "vape",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 830,
+        "max": 890,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "0.95 grams",
+      "priceCents": 3539,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/watermelon-ice-disposable-pen-095g-disposable-pens-2927855.jpg"
+      ],
+      "description": "Our new all-in-one vape hardware is designed to put the Back Forty in the palm of your hand. With a 0.95g fill, compact design, and rechargeable battery, it's the perfect balance between function and format. Now available in Watermelon Ice, a unique indica formulation that combines the taste of juicy watermelon with icy menthol on the exhale.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927919",
+      "slug": "boxhot-peach-og-infused-blunt-1x1g-distillates-2927919",
+      "name": "BoxHot - Peach OG Infused Blunt 1x1g Distillates",
+      "brand": "BOXHOT Fatties",
+      "category": "infused-pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 300,
+        "max": 360,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 1500,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/boxhot-peach-og-infused-blunt-1x1g-distillates-2927919.jpg"
+      ],
+      "description": "BOXHOT PRESENTS Peach OG Fatties, blunts infused with some of the purest cannabis distillate on the market with the same strain-specific flavours you've come to expect from BOXHOT. Each of our Peach OG Fatties boast a sweet flavour with a fruity aroma, complemented by complex earthy undertones. All BOXHOT fatties are produced with premium infused flower in chamomile based wraps. Whoever said size doesn't matter clearly wasn't smoking one of these.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-07-31"
+    },
+    {
+      "id": "blaze-2928569",
+      "slug": "general-admission-tiger-blood-distillate-infused-pre-roll-3x05g-distillates-2928569",
+      "name": "General Admission - Tiger Blood Distillate Infused Pre-Roll 3x0.5g Distillates",
+      "brand": "General Admission",
+      "category": "infused-pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 30,
+        "max": 38,
+        "unit": "%"
+      },
+      "cbd": null,
+      "size": "1.5 grams",
+      "priceCents": 2212,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/general-admission-tiger-blood-distillate-infused-pre-roll-3x05g-distillates-2928569.jpg"
+      ],
+      "description": "Sourced from quality whole-flower cultivars, infused with our signature distillate and dusted in premium kief. General Admission Tiger's Blood distillate infused pre-roll is bursting with aromatic watermelon, sweet strawberry and a smooth hit of coconut. Calling it mouthwatering just doesn't do it justice.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2928701",
+      "slug": "general-admission-peach-ringz-distillate-infused-pre-roll-1x1g-distillates-2928701",
+      "name": "General Admission - Peach Ringz Distillate Infused Pre-Roll 1x1g Distillates",
+      "brand": "General Admission",
+      "category": "infused-pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 32,
+        "max": 40,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 1950,
+      "salePriceCents": 1659,
+      "inStock": true,
+      "images": [
+        "/products/general-admission-peach-ringz-distillate-infused-pre-roll-1x1g-distillates-2928701.jpg"
+      ],
+      "description": "We brought vapes to the masses. We made pre-roll multi-packs even more accessible. So why not combine the best of both? We followed our imagination and let fun be our inspiration in developing our first infused pre-roll line. Sourced from quality whole-flower cultivars, infused with our signature distillate and dusted in premium kief, this is not just any squish in a stick. General Admission Peach Ringz Distillate Infused pre-rolls give you a sticky sweet and all-around sour burst of that classic slice of peach. Floral notes round out the sugary profile of this favourite strain, known for being exceptionally smooth and potent.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "on-sale"
+      ],
+      "addedAt": "2026-08-02"
+    },
+    {
+      "id": "blaze-4703469",
+      "slug": "flyers-frosted-infused-blue-dream-pre-rolls-3x05g-resin-4703469",
+      "name": "Flyers Frosted Infused Blue Dream Pre-Rolls 3x0.5g Resin",
+      "brand": "Claybourne",
+      "category": "infused-pre-rolls",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 420,
+        "max": 480,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1.5 grams",
+      "priceCents": 2648,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/flyers-frosted-infused-blue-dream-pre-rolls-3x05g-resin-4703469.jpg"
+      ],
+      "description": "Claybourne Frosted Flyers Infused Blue Dream pre-rolls are THCa diamond frosted, terpene enhanced and infused with liquid diamonds. These pre-rolls are sativa dominant. Looking for bold flavour and potency? Look no further than Claybourne Frosted Flyers.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "staff-pick"
+      ],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-5944516",
+      "slug": "shufflez-indica-multi-pack-diamond-infused-pre-roll-2x05g-isolates-5944516",
+      "name": "Shufflez Indica Multi-Pack Diamond Infused Pre-Roll 2x0.5g Isolates",
+      "brand": "Vox",
+      "category": "infused-pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 380,
+        "max": 440,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 1560,
+      "salePriceCents": 1327,
+      "inStock": true,
+      "images": [
+        "/products/shufflez-indica-multi-pack-diamond-infused-pre-roll-2x05g-isolates-5944516.jpg"
+      ],
+      "description": "Vox Shufflez never keeps it on repeat — two rotating bangers in every pack! These Indica Diamond Infused Pre-Rolls jack up the THC to 40% and drop fresh hits every time. Get ready, tastebuds — Vox Diamond-Infused Pre-Rolls know how to crank it all the way up! With dialled-in terpene blends and a whopping 40% THC, these pre-rolls hit extra loud. Press play and turn up the volume with Vox!",
+      "terpenes": [],
+      "effects": [],
+      "badges": [
+        "on-sale"
+      ],
+      "addedAt": "2026-08-04"
+    },
+    {
+      "id": "blaze-2928112",
+      "slug": "shatterizer-rockstar-shatter-diamonds-kief-triple-infused-pre-roll-1x1g-shatter-2928112",
+      "name": "Shatterizer - Rockstar Shatter Diamonds & Kief Triple Infused Pre-Roll 1x1g Shatter",
+      "brand": "Shatterizer",
+      "category": "infused-pre-rolls",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 400,
+        "max": 480,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 1600,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/shatterizer-rockstar-shatter-diamonds-kief-triple-infused-pre-roll-1x1g-shatter-2928112.jpg"
+      ],
+      "description": "Rockstar Shatterizer Family … we're Infusing 3 loved Shatterizer Extracts into a concentrated, powerful and perfected Rockstar triple infused pre-roll. It's a triple hit, tripling the #PerfectClouds with Shatter, Diamonds and Kief.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-04"
+    },
+    {
+      "id": "blaze-2927923",
+      "slug": "nugz-old-school-hash-2g-hash-and-kief-2927923",
+      "name": "Nugz - Old School Hash 2g Hash and Kief",
+      "brand": "Nugz",
+      "category": "concentrates",
+      "strainType": "hybrid",
+      "thc": {
+        "min": 35,
+        "max": 50,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 2592,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/nugz-old-school-hash-2g-hash-and-kief-2927923.jpg"
+      ],
+      "description": "Produced using age-old sieving methods, Old School Hash is dry-sifted, gently heated, and pressed into a consistent, sticky, malleable resin to deliver an authentic hash with rich flavours. Old School Hash is offered in rotating genetics including; Gelato Mint, Cuban Linx, Terple, Power Sherb, Early Lemon Berry and Slapz.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-18"
+    },
+    {
+      "id": "blaze-2928194",
+      "slug": "wes-coast-kush-hash-2g-hash-and-kief-2928194",
+      "name": "Wes Coast Kush Hash 2g Hash and Kief",
+      "brand": "MTL Cannabis",
+      "category": "concentrates",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 420,
+        "max": 500,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 3162,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/wes-coast-kush-hash-2g-hash-and-kief-2928194.jpg"
+      ],
+      "description": "Wes’ Coast Kush Hash boasts a sweet, baked-goods-like flavour with a spicy and gassy twist that gives way to traditional hashish flavours. Its colour resembles coffee beans with a medium roast exterior giving way to light roast inside. This product, a layered twist on hashish, is made from Wes’ Coast Kush kief and hash rosin. It is easily malleable and ideal for all methods of consumption.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-30"
+    },
+    {
+      "id": "blaze-2928572",
+      "slug": "vortex-afghan-black-hash-2g-hash-and-kief-2928572",
+      "name": "Vortex - Afghan Black Hash 2g Hash and Kief",
+      "brand": "Vortex Cannabis Inc",
+      "category": "concentrates",
+      "strainType": "hybrid",
+      "thc": {
+        "min": 400,
+        "max": 480,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 2700,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/vortex-afghan-black-hash-2g-hash-and-kief-2928572.jpg"
+      ],
+      "description": "Dry flowers are sifted and screened before being pressed in the traditional Afghan method.  Soft and pliable texture. Black on the outside and dark green/brown on the inside, the smoke is spicy and very potent. Full spectrum. Totally old school.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2928707",
+      "slug": "shred-blueberry-blaster-rip-strip-hash-2g-hash-and-kief-2928707",
+      "name": "Shred - Blueberry Blaster Rip-Strip Hash 2g Hash and Kief",
+      "brand": "SHRED X",
+      "category": "concentrates",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 390,
+        "max": 470,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 2513,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/shred-blueberry-blaster-rip-strip-hash-2g-hash-and-kief-2928707.jpg"
+      ],
+      "description": "SHRED has reinvented the hash wheel with the introduction of Rip-Strip Hash! We’ve pressed an insanely impressive blueberry and Kush-flavoured blend into dark and rich hash and then shaped that into 10 rip strips, which can then easily be added to you pre-roll, bowl or pipe for some added potency and flavour.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2927668",
+      "slug": "sour-apple-thc-5-pack-soft-chews-2927668",
+      "name": "Sour Apple THC 5 Pack Soft Chews",
+      "brand": "Pearls by grön",
+      "category": "edibles",
+      "strainType": "hybrid",
+      "thc": {
+        "min": 2,
+        "max": 2,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "5 grams",
+      "priceCents": 470,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/sour-apple-thc-5-pack-soft-chews-2927668.jpg"
+      ],
+      "description": "Pucker up with Sour Apple Pearls, sugar-coated soft chews with a juicy, sour apple flavour that explodes on your tongue. Each soft chew contains 2 mg of THC. Pearls contain natural flavour and are coated in sugar for a sweet treat no matter where you are. Five soft chews per pack.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-01"
+    },
+    {
+      "id": "blaze-2927982",
+      "slug": "gemstone-diamond-11-2-pack-hard-edibles-2927982",
+      "name": "GEMSTONE - Diamond 1:1 2 Pack Hard Edibles",
+      "brand": "GEMSTONEZ",
+      "category": "edibles",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "2 grams",
+      "priceCents": 659,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/gemstone-diamond-11-2-pack-hard-edibles-2927982.jpg"
+      ],
+      "description": "These scrumptious 1:1 cannabis-infused confections are sure to satisfy your sweet tooth. Just like your favourite popsicle, these cream soda style hard candies provide that delicious combination of citrus and creamy vanilla in a convenient new way to enjoy.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2927966",
+      "slug": "phat420-infused-white-sugar-872g-pantry-2927966",
+      "name": "PHAT420 - Infused White Sugar 8.72g Pantry",
+      "brand": "CHOKLAT INC. O/A PHAT420",
+      "category": "edibles",
+      "strainType": null,
+      "thc": {
+        "min": 1.15,
+        "max": 1.15,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "8.72 grams",
+      "priceCents": 336,
       "salePriceCents": null,
       "inStock": true,
       "images": [],
-      "description": "A three-pack of half-gram pre-rolls.",
-      "terpenes": ["Limonene", "Myrcene"],
-      "effects": ["Relaxed"],
-      "badges": ["staff-pick"],
-      "addedAt": "2026-07-01"
+      "description": "Crafted with sugar that does not use animal products  and is produced right here in Alberta. Can be used in hot beverages such as tea or coffee and mixes well with cold beverages such as juice or pop. Make your own infused brownies, cookies, etc.! Our unique processes and high purity distillates deliver a safe and evenly infused experience. Each package equals 1 tsp of sugar.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2928390",
+      "slug": "the-green-one-indica-thc-gummy-1-pack-soft-chews-2928390",
+      "name": "The Green One Indica THC Gummy 1 Pack Soft Chews",
+      "brand": "No Future",
+      "category": "edibles",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 8.5,
+        "max": 10,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 265,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/the-green-one-indica-thc-gummy-1-pack-soft-chews-2928390.jpg"
+      ],
+      "description": "Isn't it crazy that when you need something to taste better, limes & lemons always seem to do the trick? A little sour, a little tangy, a little mysterious, and a lot delicious.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-02"
+    },
+    {
+      "id": "blaze-2928661",
+      "slug": "sweet-dreams-goji-berry-cbn-cbd-thc-gummies-5-pack-soft-chews-2928661",
+      "name": "Sweet Dreams Goji Berry CBN + CBD + THC Gummies 5 Pack Soft Chews",
+      "brand": "Wildflower",
+      "category": "edibles",
+      "strainType": "indica-dominant",
+      "thc": {
+        "min": 2,
+        "max": 2,
+        "unit": "mg/g"
+      },
+      "cbd": {
+        "min": 10,
+        "max": 10,
+        "unit": "mg/g"
+      },
+      "size": "5 grams",
+      "priceCents": 1068,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/sweet-dreams-goji-berry-cbn-cbd-thc-gummies-5-pack-soft-chews-2928661.jpg"
+      ],
+      "description": "Our Goji Berry Wildflower Sweet Dreams soft chews are naturally sweetened with fruit puree, made without animal products or gluten, with no added sugar or colours. Each of the soft chews has 2 mg of full spectrum live rosin, as well as 10 mg of CBD and 10mg of CBN.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-31"
+    },
+    {
+      "id": "blaze-2927701",
+      "slug": "raw-black-rolling-papers-2927701",
+      "name": "Raw - Black Rolling Papers",
+      "brand": "HBI CANADA",
+      "category": "accessories",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "Each",
+      "priceCents": 200,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/raw-black-rolling-papers-2927701.jpg"
+      ],
+      "description": "This product is final sale. RAW’s Black rolling papers are double-pressed so they’re extra thin. Made from a hybrid blend of unbleached (not chlorine-whitened) fibres such as flax and hemp, the paper is a translucent natural off-white colour. The acacia gum line is non-toxic, and  each paper features RAW’s patented crisscross watermark, which helps prevent runs and maintains the even-burning characteristics. All RAW papers are vegan-friendly with no additives. Available in three sizes: 1 1/4\" (50 per pack), king-size slim (32 per pack) or 1 1/4\" double window (100 per pack).",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-30"
+    },
+    {
+      "id": "blaze-2927823",
+      "slug": "raw-classic-papers-2927823",
+      "name": "RAW Classic Papers",
+      "brand": "HBI CANADA",
+      "category": "accessories",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "Each",
+      "priceCents": 200,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/raw-classic-papers-2927823.jpg"
+      ],
+      "description": "This product is final sale. RAW’s Classic rolling papers are made from a flax and hemp hybrid blend of unbleached (not chlorine-whitened) fibres. The acacia gum line is non-toxic, and the paper is a translucent natural light brown colour. Each paper features RAW’s patented criss-cross watermark, which helps prevent runs and maintains the even-burning characteristics. All RAW papers are vegan-friendly with no additives. Available in three sizes: 1 1/4\" (50 per pack), king-size slim (32 per pack) or 1 1/4\" double window (100 per pack).",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-04"
+    },
+    {
+      "id": "blaze-2928150",
+      "slug": "ocb-premium-black-rolling-papers-king-size-2928150",
+      "name": "OCB - Premium Black Rolling Papers King Size",
+      "brand": "DAA Brands Company Inc.",
+      "category": "accessories",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "King size",
+      "priceCents": 125,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/ocb-premium-black-rolling-papers-king-size-2928150.jpg"
+      ],
+      "description": "The gold standard in rolling papers, OCB Premium Black rolliing papers are made with top-quality flax fibres to produce a legendary combination of thinness (14 g/m2) and strength that has made it a favourite in over 100 countries around the world. OCB's trademark watermark design ensures a slow, even burn, and the natural Arabic gum used on all OCB papers creates a neutral taste profile that lets the flavour of your favourite flower shine through as brilliantly as the iconic OCB hologram logo on every pack. OCB Premium Black King Size rolling papers measure 54x98mm and are packaged in booklets of 32 leaves.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2928403",
+      "slug": "raw-black-hemp-king-size-rolling-papers-2928403",
+      "name": "RAW - Black Hemp King Size Rolling Papers",
+      "brand": "HBI CANADA",
+      "category": "accessories",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "King size",
+      "priceCents": 250,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/raw-black-hemp-king-size-rolling-papers-2928403.jpg"
+      ],
+      "description": "This product is final sale. RAW's Black rolling papers are double-pressed so they're extra thin. Made from a hybrid blend of unbleached (not chlorine-whitened) fibres such as flax and hemp, the paper is a translucent natural off-white colour. The acacia gum line is non-toxic, and each paper features RAW's patented crisscross watermark, which helps prevent runs and maintains the even-burning characteristics. All RAW papers are vegan-friendly with no additives. Available in three sizes: 1 1/4\" (50 per pack), king-size slim (32 per pack) or 1 1/4\" double window (100 per pack).",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-4641473",
+      "slug": "thc-capsules-90-pack-90-caps-capsules-4641473",
+      "name": "THC Capsules (90 Pack) 90 caps Capsules",
+      "brand": ".decimal",
+      "category": "capsules",
+      "strainType": "hybrid",
+      "thc": null,
+      "cbd": null,
+      "size": "90 grams",
+      "priceCents": 5869,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/thc-capsules-90-pack-90-caps-capsules-4641473.jpg"
+      ],
+      "description": "Each package contains 90 capsules with 10 mg of THC per capsule. Made without animal products.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-18"
+    },
+    {
+      "id": "blaze-6383316",
+      "slug": "live-rosin-softgels-30-caps-capsules-6383316",
+      "name": "Live Rosin Softgels 30 caps Capsules",
+      "brand": "Simply Bare",
+      "category": "capsules",
+      "strainType": "hybrid",
+      "thc": null,
+      "cbd": null,
+      "size": "30 grams",
+      "priceCents": 4206,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/live-rosin-softgels-30-caps-capsules-6383316.jpg"
+      ],
+      "description": "Get the full spectrum experience with our Live Rosin Softgels. These organic 10mg softgels come in a pack of 30, and will contain input from one of our many organic certified cultivars. Each softgel starts with our flower, hand trimmed and grown in living soil, then expertly pressed into Live Rosin and packed into softgels.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-06-25"
+    },
+    {
+      "id": "blaze-6512767",
+      "slug": "cbd-caps-50-30-caps-capsules-6512767",
+      "name": "CBD Caps 50 30 caps Capsules",
+      "brand": "frank CBD",
+      "category": "capsules",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "30 grams",
+      "priceCents": 2443,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/cbd-caps-50-30-caps-capsules-6512767.jpg"
+      ],
+      "description": "CBD extract in MCT oil packed into easy-to-swallow softgel capsules. Very high strength at 50 mg of CBD per capsule. Clear, pure and THC-free. Quality control tested to ensure safety, quality and consistency. We strive to make CBD products accessible to consumers from all walks of life because CBD products shouldn’t break the bank. No games, no gimmicks -- just quality CBD.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-06-28"
+    },
+    {
+      "id": "blaze-2927375",
+      "slug": "velada-golden-milk-latte-mix-3-pack-beverages-2927375",
+      "name": "Velada - Golden Milk Latte Mix 3 Pack Beverages",
+      "brand": "Teonan Biomedical Inc.-SEUL CBD",
+      "category": "beverages",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "3 grams",
+      "priceCents": 1000,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/velada-golden-milk-latte-mix-3-pack-beverages-2927375.jpg"
+      ],
+      "description": "Instant functional golden milk latte beverage with adaptogens and cannabinoids. Adaptogens include functional mushrooms designed for immune support, increased mental focus and reduction in stress and fatigue.  All products are plant-based, and made without the use of animal products, GMOs, or sugar.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-08"
+    },
+    {
+      "id": "blaze-2927771",
+      "slug": "mollo-orchard-chillr-10mg-thc-10mg-cbg-355ml-beverages-2927771",
+      "name": "Mollo - Orchard Chillr 10mg THC + 10mg CBG 355ml Beverages",
+      "brand": "Mollo",
+      "category": "beverages",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "355 grams",
+      "priceCents": 564,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/mollo-orchard-chillr-10mg-thc-10mg-cbg-355ml-beverages-2927771.jpg"
+      ],
+      "description": "Crisp & refreshing apple cider with 10mg THC + 10mg CBG. Best served in a chilled glass over ice.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-30"
+    },
+    {
+      "id": "blaze-2927768",
+      "slug": "over-it-coffee-thc-1-pack-beverages-2927768",
+      "name": "Over It Coffee THC 1 Pack Beverages",
+      "brand": "Emprise in Paradise",
+      "category": "beverages",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "1 gram",
+      "priceCents": 600,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/over-it-coffee-thc-1-pack-beverages-2927768.jpg"
+      ],
+      "description": "Emprise in Paradise Over It Organic Coffee is an all-in-one solution for a discreet cup of gold, delivering  10 mg THC coffee in an easy pour-over filter. \n\nJust pour hot water in the top of your favourite mug for a perfect cup every time - no machines needed!\n\nFresh, locally roasted in Calgary,Alberta at our Certified Organic roastery. Emprise in Paradise Coffee is shade-grown, harvested and sorted by hand at the farm. \n\nA vibrant, lively bodied organic coffee with bold, earthy aromas and hints of chocolate with a slightly dry finish. Delicious and easy, you'll never want for a regular cup.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-06-22"
+    },
+    {
+      "id": "blaze-2928169",
+      "slug": "rays-strawberry-lemonade-355ml-beverages-2928169",
+      "name": "Ray's Strawberry Lemonade 355ml Beverages",
+      "brand": "Ray's Lemonade",
+      "category": "beverages",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "355 grams",
+      "priceCents": 750,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/rays-strawberry-lemonade-355ml-beverages-2928169.jpg"
+      ],
+      "description": "Fruity and sweet with a touch of cannabis. What’s not to like about our Strawberry flavour? Ray’s Strawberry Lemonade is a THC infused, ready-to-drink beverage which is packaged in 355mL cans. The lemonade is carbonated to bring out freshness. The beverage is formulated with real lemon juice and natural flavours. Ray’s Strawberry Lemonade has a shelf life of 12 months. It is shelf-stable under room temperature. Refrigeration is not required, even cold lemonade tastes better. Flavour is the king. The formulation is developed to incorporate cannabis tastes and flavours. Instead of masking cannabis flavours, we embrace the bitterness and tartness, and balance them in lemonade.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-08-03"
+    },
+    {
+      "id": "blaze-2928678",
+      "slug": "rays-original-lemonade-355ml-beverages-2928678",
+      "name": "Ray's Original Lemonade 355ml Beverages",
+      "brand": "Ray's Lemonade",
+      "category": "beverages",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "355 grams",
+      "priceCents": 754,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/rays-original-lemonade-355ml-beverages-2928678.jpg"
+      ],
+      "description": "The flavour and bottle that started it all. Ray’s Original Lemonade is a THC-infused, ready-to-drink beverage which is packaged in 355mL cans. The lemonade is carbonated to bring out freshness. The beverage is formulated with real lemon juice and natural flavours. Ray’s Original Lemonade has a shelf life of 12 months. It is shelf-stable under room temperature. Refrigeration is not required, even cold lemonade tastes better. Flavour is the king. The formulation is developed to incorporate cannabis tastes and flavours. Instead of masking cannabis flavours, we embrace the bitterness and tartness, and balance them in lemonade.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-28"
+    },
+    {
+      "id": "blaze-2927863",
+      "slug": "divvy-thc-30-oil-30ml-oils-2927863",
+      "name": "Divvy - THC 30 Oil 30ml Oils",
+      "brand": "Divvy",
+      "category": "oil",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "30 grams",
+      "priceCents": 3179,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/divvy-thc-30-oil-30ml-oils-2927863.jpg"
+      ],
+      "description": "THC concentrated into a 30mL bottle! Discover Divvy THC 30 Oil formulated with 30mg/mL THC extracted from Ontario-grown flower and blended with a flavourless pharmaceutical-grade MCT carrier oil. For ingestion only.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-25"
+    },
+    {
+      "id": "blaze-2992525",
+      "slug": "2020-oil-30ml-oils-2992525",
+      "name": "20:20 Oil 30ml Oils",
+      "brand": "Divvy",
+      "category": "oil",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "30 grams",
+      "priceCents": 3423,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/2020-oil-30ml-oils-2992525.jpg"
+      ],
+      "description": "A little bit from column A and a little bit from column B. Divvy 20:20 oil doesn’t discriminate between cannabinoids and every 30mL bottle contains 20 mg/mL of THC and 20 mg/mL of CBD suspended in flavourless, pharmaceutical-grade MCT carrier oil. For ingestion only.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-03"
+    },
+    {
+      "id": "blaze-2992596",
+      "slug": "day-cbd-oil-terps-30ml-oils-2992596",
+      "name": "Day CBD Oil + Terps 30ml Oils",
+      "brand": "Oovie",
+      "category": "oil",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "30 grams",
+      "priceCents": 4982,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/day-cbd-oil-terps-30ml-oils-2992596.jpg"
+      ],
+      "description": "Oovie Day 3300 CBD + Terps Oil contains an outstanding 3,300mg (116 mg/g) of CBD, and low-to-no amount of THC in a 28.5g (30ml) bottle. Boasting an incredibly high CBD content per dosage, this oil combines top-quality CBD distillate and a non-GMO coconut-derived MCT oil. Oovie Day 3000 CBD + Terps features a blend of meticulously selected, botanical terpenes formulated into a precise concentration with alpha-pinene, beta-pinene, and limonene.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-4501113",
+      "slug": "the-drop-thc-extract-20ml-oils-4501113",
+      "name": "The Drop THC Extract 20ml Oils",
+      "brand": "Viola",
+      "category": "oil",
+      "strainType": null,
+      "thc": null,
+      "cbd": null,
+      "size": "20 grams",
+      "priceCents": 3428,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/the-drop-thc-extract-20ml-oils-4501113.jpg"
+      ],
+      "description": "The legendary Viola Brand is available in a water soluble THC infuser for beverages. The unscented and unflavoured solution and great for use in a variety of beverages such as water, teas and more. This advanced nano-emulsion colloidal solution has 100% dissolution, fast dispersion and fast onset. Viola is the first multi-national and black-owned brand Viola was founded by ex-NBA player Al Harrington in 2011 with a focus on social equity, minority representation and black ownership. Viola is now commercial in Canada across adult use channels with its vaporizers and concentrates.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-05-09"
+    },
+    {
+      "id": "blaze-2928747",
+      "slug": "eve-co-the-dreamer-bath-bomb-140g-bath-and-shower-2928747",
+      "name": "Eve & Co - The Dreamer Bath Bomb 140g Bath and Shower",
+      "brand": "Eve & Co.",
+      "category": "topicals",
+      "strainType": null,
+      "thc": {
+        "min": 0.71,
+        "max": 0.71,
+        "unit": "mg/g"
+      },
+      "cbd": {
+        "min": 0.71,
+        "max": 0.71,
+        "unit": "mg/g"
+      },
+      "size": "140 grams",
+      "priceCents": 1972,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/eve-co-the-dreamer-bath-bomb-140g-bath-and-shower-2928747.jpg"
+      ],
+      "description": "The Dreamer Bath Bomb by Eve & Co is handmade with full spectrum cannabis distillate, high quality, nourishing ingredients, and infused with natural lavender and chamomile essential oils.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2992522",
+      "slug": "sea-to-sky-balm-40g-creams-and-lotions-2992522",
+      "name": "Sea to Sky Balm 40g Creams and Lotions",
+      "brand": "EarthWolf Farms",
+      "category": "topicals",
+      "strainType": null,
+      "thc": {
+        "min": 15,
+        "max": 25,
+        "unit": "mg/g"
+      },
+      "cbd": null,
+      "size": "40 grams",
+      "priceCents": 4982,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/sea-to-sky-balm-40g-creams-and-lotions-2992522.jpg"
+      ],
+      "description": "Sea to Sky Balm is created by infusing unrefined coconut oil, wild harvested ponderosa pine resin, cocoa, castor and shea butter with live bubble hash through a process designed to preserve terpenes. This non-psychoactive cannabis topical is applied to, and absorbed directly through the skin.  No additives, colour, fragrances, alcohols, preservatives or parabens, made from all natural ingredients and for topical use only.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2992535",
+      "slug": "holiday-bath-fizz-collection-3x85g-bath-and-shower-2992535",
+      "name": "Holiday Bath Fizz Collection 3x85g Bath and Shower",
+      "brand": "Noon & Night",
+      "category": "topicals",
+      "strainType": null,
+      "thc": null,
+      "cbd": {
+        "min": 1.18,
+        "max": 1.18,
+        "unit": "mg/g"
+      },
+      "size": "255 grams",
+      "priceCents": 3633,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/holiday-bath-fizz-collection-3x85g-bath-and-shower-2992535.jpg"
+      ],
+      "description": "Soak in the festive season with our limited-edition Noon & Night Holiday Bath Fizz Collection. Each set features a trio of CBD-infused bath bombs including our calming Lavender Bath Fizz, invigorating Freshly Minted Fizz, and forest-scented Shinrin Yoku Bath Fizz. Hypoallergenic, free of colourants, and made with natural ingredients and essential oils.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2992534",
+      "slug": "french-vanilla-lip-balm-5g-creams-and-lotions-2992534",
+      "name": "French Vanilla Lip Balm 5g Creams and Lotions",
+      "brand": "Tidal",
+      "category": "topicals",
+      "strainType": null,
+      "thc": {
+        "min": 0.02,
+        "max": 0.02,
+        "unit": "mg/g"
+      },
+      "cbd": {
+        "min": 9,
+        "max": 11,
+        "unit": "mg/g"
+      },
+      "size": "5 grams",
+      "priceCents": 815,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/french-vanilla-lip-balm-5g-creams-and-lotions-2992534.jpg"
+      ],
+      "description": "Contains CBD and replenishing ingredients like calendula oil and cocoa butter. Smooth balm on lips and use daily for best results.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-03-11"
+    },
+    {
+      "id": "blaze-2992571",
+      "slug": "purple-kerosene-seeds-5-pack-seeds-2992571",
+      "name": "Purple Kerosene Seeds 5 Pack Seeds",
+      "brand": "Dutch Passion",
+      "category": "seeds",
+      "strainType": "sativa-dominant",
+      "thc": {
+        "min": 18,
+        "max": 23,
+        "unit": "%"
+      },
+      "cbd": {
+        "min": 0.01,
+        "max": 0.1,
+        "unit": "%"
+      },
+      "size": "5 grams",
+      "priceCents": 5429,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/purple-kerosene-seeds-5-pack-seeds-2992571.jpg"
+      ],
+      "description": "Purple Kerosene brings the gas and the classic flavour! With rich purple buds that grow to a very impressive size and a high stretch rate you will not be disappointed with the yield you receive from this plant. Flowering time is 8.5-9 weeks and does well growing indoors and outdoors. This sativa-dominant strain is a great option for beginner growers and experienced ones alike. Feminized seeds.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-05-22"
+    },
+    {
+      "id": "blaze-8037242",
+      "slug": "41-ghosts-auto-fem-seeds-4-pack-seeds-8037242",
+      "name": "41 Ghosts (auto Fem Seeds) 4 Pack Seeds",
+      "brand": "Green Rose Seeds",
+      "category": "seeds",
+      "strainType": null,
+      "thc": {
+        "min": 18,
+        "max": 24,
+        "unit": "%"
+      },
+      "cbd": null,
+      "size": "4 grams",
+      "priceCents": 3973,
+      "salePriceCents": null,
+      "inStock": true,
+      "images": [
+        "/products/41-ghosts-auto-fem-seeds-4-pack-seeds-8037242.jpg"
+      ],
+      "description": "41 Ghosts is a cross between the classic Ghost Toof and Iced 'n' Baked, a more modern auto based on Gelato 41. Harvest in August or early September when the sunlight is still strong and the seasonal rains are still weeks away. You can expect 41 Ghosts to typically test at a respectable 18-24% THC. These are Canadian-grown seeds produced in 2024 at Green Rose Farms' indoor cultivation facility. Expect to see unique photoperiod to autoflower releases from Green Rose in the near future.\n\nTHC and CBD ranges shown on product pages are provided to OCS by federally licensed cannabis producers. Germination not guaranteed. Yield and flowering period may vary based on growing conditions.",
+      "terpenes": [],
+      "effects": [],
+      "badges": [],
+      "addedAt": "2026-07-10"
     }
   ]
 }
