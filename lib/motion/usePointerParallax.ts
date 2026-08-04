@@ -53,6 +53,10 @@ export function usePointerParallax(ref: RefObject<HTMLElement>, options: Options
       element.removeEventListener('pointermove', onMove);
       element.removeEventListener('pointerleave', onLeave);
       if (frame) cancelAnimationFrame(frame);
+      // Leave no stale offset behind: a disabled or unmounted parallax must let
+      // its layers settle back to neutral, not freeze at the last pointer position.
+      element.style.removeProperty('--px');
+      element.style.removeProperty('--py');
     };
   }, [ref, disabled]);
 }
