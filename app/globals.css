@@ -28,6 +28,7 @@
   --gold-dim: rgba(200, 183, 138, 0.35);
   --danger: #F87171;
   --spot-yellow: #FFE000;
+  --header-bg: rgba(8, 9, 12, 0.82);
 
   --dur-fast: 150ms;
   --dur: 280ms;
