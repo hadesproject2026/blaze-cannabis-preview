@@ -13,8 +13,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <CartProvider>
+          <noscript>
+            <style>{`#site-content { display: none !important; }`}</style>
+            <div style={{ padding: '80px 20px', textAlign: 'center' }}>
+              <h1>You must be 19 or older to view this site.</h1>
+              <p>Please enable JavaScript to continue.</p>
+            </div>
+          </noscript>
           <AgeGate />
-          {children}
+          <div id="site-content">{children}</div>
         </CartProvider>
       </body>
     </html>
