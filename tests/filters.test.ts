@@ -110,8 +110,9 @@ describe('applyFilters', () => {
 
   // Potency is sold as a range because of batch variance, so a 22–30% product can
   // legitimately arrive at 22%. Overlap is deliberate: strict containment would hide
-  // most of the shelf. These two tests exist because every other fixture uses a
-  // degenerate min === max range, which cannot tell the two semantics apart.
+  // most of the shelf. Only the first test below distinguishes the two semantics —
+  // a fully-disjoint range is excluded under either, so the second is a regression
+  // check that disjoint ranges stay out, not a semantics probe.
   it('matches a product whose THC range overlaps the requested window', () => {
     const wide = make({ slug: 'wide', thc: { min: 22, max: 30, unit: '%' } });
     expect(applyFilters([wide], filters({ thcMaxMgPerG: 250 }))).toHaveLength(1);
