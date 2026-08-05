@@ -47,10 +47,12 @@ export function LivingCatalogueHero({ products }: { products: Product[] }) {
 
         {products.slice(0, 3).map((product, index) => (
           <div key={product.id} className={`${styles.layer} ${LAYER_CLASSES[index]}`}>
-            {product.images[0] && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={product.images[0]} alt="" loading="eager" />
-            )}
+            <div className={styles.layerInner}>
+              {product.images[0] && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={product.images[0]} alt="" loading="eager" />
+              )}
+            </div>
           </div>
         ))}
       </div>

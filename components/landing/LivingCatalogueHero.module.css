@@ -15,6 +15,7 @@
   bottom: -30%;
   left: 18%;
   width: 34%;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(200, 183, 138, 0.13), transparent 76%);
   transform: skewX(-16deg);
   filter: blur(8px);
@@ -29,7 +30,7 @@
 .smoke {
   position: absolute;
   inset: -25%;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   background-repeat: no-repeat;
   filter: blur(22px);
@@ -90,30 +91,36 @@
   100% { transform: translateY(-88vh); opacity: 0; }
 }
 
-.stage { position: absolute; inset: 0; pointer-events: none; }
+.stage { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 
 .layer {
   position: absolute;
+  transform: translate3d(calc(var(--px) * var(--depth) * 1px), calc(var(--py) * var(--depth) * 1px), 0);
+  transition: transform 400ms var(--ease-out);
+}
+
+.layerInner {
+  width: 100%;
+  height: 100%;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(200, 183, 138, 0.16);
   background: linear-gradient(160deg, #232937, #12151D);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
-  transform: translate3d(calc(var(--px) * var(--depth) * 1px), calc(var(--py) * var(--depth) * 1px), 0);
-  transition: transform 400ms var(--ease-out);
-  animation: float ease-in-out infinite alternate;
+  animation: float var(--float-dur) ease-in-out infinite alternate;
+  animation-delay: var(--float-delay, 0s);
 }
 
 @keyframes float {
-  from { margin-top: -10px; }
-  to { margin-top: 12px; }
+  from { transform: translateY(-10px); }
+  to { transform: translateY(12px); }
 }
 
-.layer img { width: 100%; height: 100%; object-fit: contain; padding: 12%; }
+.layerInner img { width: 100%; height: 100%; object-fit: contain; padding: 12%; }
 
-.l1 { width: 190px; height: 240px; left: 54%; top: 20%; --depth: 26; animation-duration: 7s; }
-.l2 { width: 132px; height: 168px; left: 74%; top: 48%; --depth: 16; animation-duration: 9s; animation-delay: -2s; }
-.l3 { width: 104px; height: 132px; left: 63%; top: 70%; --depth: 38; animation-duration: 6s; animation-delay: -4s; }
+.l1 { width: 190px; height: 240px; left: 54%; top: 20%; --depth: 26; --float-dur: 7s; --float-delay: 0s; }
+.l2 { width: 132px; height: 168px; left: 74%; top: 48%; --depth: 16; --float-dur: 9s; --float-delay: -2s; }
+.l3 { width: 104px; height: 132px; left: 63%; top: 70%; --depth: 38; --float-dur: 6s; --float-delay: -4s; }
 
 .copy { position: relative; z-index: 5; padding: 80px 0; max-width: 620px; }
 .rule { width: 120px; margin-bottom: 18px; }
@@ -135,7 +142,7 @@
 .hero[data-paused='true'] .shaft,
 .hero[data-paused='true'] .mote,
 .hero[data-paused='true'] .smoke,
-.hero[data-paused='true'] .layer { animation-play-state: paused; }
+.hero[data-paused='true'] .layerInner { animation-play-state: paused; }
 
 @media (max-width: 900px) {
   .hero { min-height: 78vh; }
@@ -152,7 +159,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shaft, .mote, .layer, .smoke { animation: none; }
+  .shaft, .mote, .smoke, .layerInner { animation: none; }
   .mote { opacity: 0.35; }
   .layer { transition: none; }
 }
