@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { formatPrice } from '@/lib/format';
 import { useCart } from './CartProvider';
 import styles from './CartDrawer.module.css';
@@ -8,6 +8,10 @@ import styles from './CartDrawer.module.css';
 export function CartDrawer() {
   const { lines, subtotalCents, isOpen, close, setQty, remove, clear } = useCart();
   const [reserved, setReserved] = useState(false);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const openerRef = useRef<HTMLElement | null>(null);
+  const confirmRef = useRef<HTMLHeadingElement>(null);
+  const [focusResetToken, setFocusResetToken] = useState(0);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -22,6 +26,54 @@ export function CartDrawer() {
 
   useEffect(() => { if (!isOpen) setReserved(false); }, [isOpen]);
 
+  // Same inert-based approach as AgeGate: CartDrawer is mounted as a sibling of
+  // #site-content (see app/layout.tsx), so there's no need to walk siblings the
+  // way FilterPanel does — inerting #site-content directly reaches the whole page
+  // behind the drawer without touching the drawer itself.
+  useEffect(() => {
+    if (!isOpen) return;
+    const content = document.getElementById('site-content');
+    if (!content) return;
+
+    openerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    content.setAttribute('inert', '');
+    closeRef.current?.focus();
+
+    return () => {
+      content.removeAttribute('inert');
+      openerRef.current?.focus();
+      openerRef.current = null;
+    };
+  }, [isOpen]);
+
+  // Removing a line or decrementing a quantity-1 line down to zero deletes the
+  // DOM node the click came from; the browser would otherwise drop focus to
+  // <body>. Send it somewhere deliberate instead — the close button always
+  // exists and keeps the user inside the dialog. Keyed on a token bumped from
+  // the handlers below, so this runs after React commits the removal rather
+  // than targeting an element that's about to unmount.
+  useEffect(() => {
+    if (focusResetToken === 0) return;
+    closeRef.current?.focus();
+  }, [focusResetToken]);
+
+  // Reserving swaps the whole lines/footer subtree for the confirmation block;
+  // move focus to its heading so a screen reader user hears the confirmation
+  // instead of silence.
+  useEffect(() => {
+    if (reserved) confirmRef.current?.focus();
+  }, [reserved]);
+
+  const removeLine = (productId: string) => {
+    remove(productId);
+    setFocusResetToken((t) => t + 1);
+  };
+
+  const decrementQty = (productId: string, qty: number) => {
+    setQty(productId, qty - 1);
+    if (qty - 1 <= 0) setFocusResetToken((t) => t + 1);
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -30,13 +82,13 @@ export function CartDrawer() {
       <aside className={styles.panel} role="dialog" aria-modal="true" aria-label="Cart">
         <div className={styles.head}>
           <h2 className={styles.title}>{reserved ? 'Reserved' : 'Your cart'}</h2>
-          <button type="button" className={styles.close} onClick={close} aria-label="Close cart">×</button>
+          <button ref={closeRef} type="button" className={styles.close} onClick={close} aria-label="Close cart">×</button>
         </div>
 
         {reserved ? (
           <div className={styles.confirmed}>
             <p className="kicker">Ready for pickup</p>
-            <h3 style={{ fontSize: 22, margin: '10px 0 10px' }}>We&apos;ll hold it for you</h3>
+            <h3 ref={confirmRef} tabIndex={-1} style={{ fontSize: 22, margin: '10px 0 10px' }}>We&apos;ll hold it for you</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.6 }}>
               Bring valid government-issued ID to the Brampton store. Payment is completed in person.
             </p>
@@ -63,7 +115,7 @@ export function CartDrawer() {
                           type="button"
                           className={styles.qtyBtn}
                           aria-label={`Decrease quantity of ${line.name}`}
-                          onClick={() => setQty(line.productId, line.qty - 1)}
+                          onClick={() => decrementQty(line.productId, line.qty)}
                         >
                           −
                         </button>
@@ -81,7 +133,7 @@ export function CartDrawer() {
                           className={styles.qtyBtn}
                           style={{ marginLeft: 4 }}
                           aria-label={`Remove ${line.name}`}
-                          onClick={() => remove(line.productId)}
+                          onClick={() => removeLine(line.productId)}
                         >
                           ×
                         </button>
