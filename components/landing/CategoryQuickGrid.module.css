@@ -1,0 +1,21 @@
+.section { padding: 96px 0 0; }
+.head { margin-bottom: 26px; }
+.title { font-size: 30px; margin: 10px 0 0; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+
+.tile {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  min-height: 132px;
+  transition: border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+.tile:hover { border-color: var(--gold-dim); transform: translateY(-3px); }
+.tileName { font-family: var(--font-display); font-size: 20px; margin: 0 0 6px; }
+.tileBlurb { color: var(--text-muted); font-size: 13px; line-height: 1.5; margin: 0; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+@media (max-width: 480px) { .tile { padding: 20px 18px; min-height: 110px; } }
