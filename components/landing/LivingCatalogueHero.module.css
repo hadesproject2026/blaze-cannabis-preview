@@ -34,38 +34,46 @@
   pointer-events: none;
   background-repeat: no-repeat;
   filter: blur(22px);
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
+/* The opacity on these classes is the reduced-motion resting value; while
+   animating, the keyframes' own opacity wins. */
 .smokeA {
-  opacity: 0.5;
+  opacity: 0.55;
   background-image:
-    radial-gradient(closest-side, rgba(206, 214, 230, 0.20), transparent 72%),
-    radial-gradient(closest-side, rgba(178, 188, 208, 0.15), transparent 72%);
+    radial-gradient(closest-side, rgba(206, 214, 230, 0.26), transparent 72%),
+    radial-gradient(closest-side, rgba(178, 188, 208, 0.20), transparent 72%);
   background-size: 58% 62%, 44% 48%;
   background-position: 28% 62%, 64% 38%;
-  animation: smokeA 26s ease-in-out infinite alternate;
+  animation: smokeA 15s ease-in-out infinite alternate;
 }
 
 .smokeB {
-  opacity: 0.34;
+  opacity: 0.4;
   background-image:
-    radial-gradient(closest-side, rgba(214, 220, 236, 0.16), transparent 70%),
-    radial-gradient(closest-side, rgba(190, 198, 218, 0.12), transparent 70%);
+    radial-gradient(closest-side, rgba(214, 220, 236, 0.22), transparent 70%),
+    radial-gradient(closest-side, rgba(190, 198, 218, 0.17), transparent 70%);
   background-size: 48% 52%, 38% 42%;
   background-position: 74% 66%, 44% 24%;
-  animation: smokeB 34s ease-in-out infinite alternate;
+  animation: smokeB 19s ease-in-out infinite alternate;
 }
 
-/* Different durations and travel so the two layers never visibly resync. */
+/* Travel has to be big enough to actually read as movement. The first pass used
+   ~7% over 26s, which is roughly 6px/sec on a desktop viewport — below the
+   threshold at which the eye registers motion on a blurred, low-opacity shape.
+   These drift ~22% over 15-19s and bloom in opacity as they go, so the plumes
+   churn rather than slide. The two run in opposite directions and at durations
+   that do not divide evenly, so the loop never visibly resyncs.
+   Both properties are compositor-only, so the larger travel costs nothing. */
 @keyframes smokeA {
-  from { transform: translate3d(-3%, 2%, 0) scale(1); }
-  to { transform: translate3d(4%, -3%, 0) scale(1.12); }
+  from { transform: translate3d(-10%, 7%, 0) scale(1); opacity: 0.42; }
+  to { transform: translate3d(12%, -9%, 0) scale(1.22); opacity: 0.72; }
 }
 
 @keyframes smokeB {
-  from { transform: translate3d(3%, -2%, 0) scale(1.08); }
-  to { transform: translate3d(-4%, 3%, 0) scale(1); }
+  from { transform: translate3d(11%, -6%, 0) scale(1.18); opacity: 0.5; }
+  to { transform: translate3d(-12%, 8%, 0) scale(1); opacity: 0.26; }
 }
 
 @keyframes shaft {
