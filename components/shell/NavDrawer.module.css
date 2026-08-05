@@ -1,0 +1,149 @@
+/* Plain grouping node for the scrim + panel below, and the target passed to
+   setInertAroundTarget. Both children are position:fixed (viewport-relative),
+   so this collapses to a 0x0 box and never affects header layout. Deliberately
+   not `display: contents` — that would strip it from the a11y tree in some
+   browsers, which is exactly what its `inert` toggling here relies on. */
+.wrapper {}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 87;
+  background: rgba(4, 5, 8, 0.66);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.wrapper[data-open='true'] .scrim { opacity: 1; }
+
+.panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 97;
+  width: min(320px, 86vw);
+  background: var(--bg);
+  border-right: 1px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.wrapper[data-open='true'] .panel { transform: translateX(0); }
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  font-size: 18px;
+  color: #E7E2D4;
+}
+
+.close {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.navLink {
+  display: block;
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.navLink:hover, .navLink:focus-visible { background: var(--surface-2); }
+
+.divider { margin: 14px 10px; }
+
+.sectionLabel { margin: 0; padding: 0 10px 6px; }
+
+.quickLink {
+  display: block;
+  padding: 10px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+/* Hovering also brightens the text (not just the background): --text-muted
+   on --surface-2 only measures ~4.43:1, just under the 4.5:1 AA floor, so the
+   hover/focus state moves to full --text (~15:1 on --surface-2) instead of
+   leaving the muted color sitting on the highlighted background. */
+.quickLink:hover, .quickLink:focus-visible { background: var(--surface-2); color: var(--text); }
+
+.footer {
+  margin-top: auto;
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.authButtons { display: flex; gap: 10px; }
+
+.login {
+  flex: 1;
+  background: var(--accent);
+  color: #04150E;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.login:hover { background: var(--accent-press); }
+
+.signup {
+  flex: 1;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.signup:hover { border-color: var(--text-muted); }
+
+.notice {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}

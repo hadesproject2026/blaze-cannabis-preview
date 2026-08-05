@@ -3,6 +3,18 @@
 .count { font-size: 13px; color: var(--text-muted); margin-left: auto; }
 .filterToggle { display: none; }
 
+.headingRow { display: flex; align-items: baseline; gap: 14px; }
+
+.clearView {
+  font-size: 13px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 1px;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.clearView:hover { color: var(--text); border-color: var(--text-muted); }
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: minmax(0, 1fr); }
   .filterToggle {

@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import { useState } from 'react';
 import { CartButton } from '@/components/cart/CartButton';
+import { NavDrawer } from './NavDrawer';
 import styles from './SiteHeader.module.css';
 
 interface Props {
@@ -10,10 +11,21 @@ interface Props {
 }
 
 export function SiteHeader({ search, onSearchChange }: Props) {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo}>BLAZE</Link>
+        <button
+          type="button"
+          className={styles.logo}
+          onClick={() => setNavOpen(true)}
+          aria-haspopup="dialog"
+          aria-expanded={navOpen}
+          aria-label="Open navigation menu"
+        >
+          BLAZE
+        </button>
         <span className={styles.location}>Brampton · Pickup</span>
         <span className={styles.spacer} />
         {onSearchChange && (
@@ -28,6 +40,7 @@ export function SiteHeader({ search, onSearchChange }: Props) {
         )}
         <CartButton className={styles.cart} />
       </div>
+      <NavDrawer isOpen={navOpen} onClose={() => setNavOpen(false)} />
     </header>
   );
 }

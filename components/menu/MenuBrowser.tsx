@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import { SiteHeader } from '@/components/shell/SiteHeader';
 import type { Category, Product } from '@/lib/catalog/types';
 import { applyFilters, EMPTY_FILTERS, sortProducts, type FilterState, type SortKey } from '@/lib/filters';
@@ -14,9 +15,10 @@ import styles from './MenuBrowser.module.css';
 interface Props {
   products: Product[];
   categories: Category[];
+  viewLabel?: string | null;
 }
 
-export function MenuBrowser({ products, categories }: Props) {
+export function MenuBrowser({ products, categories, viewLabel }: Props) {
   const [filters, setFilters] = useState<FilterState>(EMPTY_FILTERS);
   const [sort, setSort] = useState<SortKey>('featured');
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -48,7 +50,12 @@ export function MenuBrowser({ products, categories }: Props) {
 
       <main className="container" style={{ paddingTop: 28 }}>
         <p className="kicker">Pickup at Blaze Cannabis — Brampton</p>
-        <h1 style={{ fontSize: 34, margin: '10px 0 18px' }}>The menu</h1>
+        <div className={styles.headingRow}>
+          <h1 style={{ fontSize: 34, margin: '10px 0 18px' }}>{viewLabel ?? 'The menu'}</h1>
+          {viewLabel && (
+            <Link href="/menu/brampton" className={styles.clearView}>Clear</Link>
+          )}
+        </div>
 
         <CategoryChips
           categories={categories}
