@@ -1,0 +1,404 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "count": 112,
+        "id": 6379,
+        "name": "Flower (Hybrid)",
+        "position": 1,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "flower-hybrid",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6379,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 571,
+        "id": 6381,
+        "name": "Vapey",
+        "position": 2,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "vape",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6381,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 115,
+        "id": 6380,
+        "name": "Flower (Indica)",
+        "position": 4,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "flower-indica",
+        "low_inventory_threshold": null,
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-blaze-1-test-staging-10/product-categories/c583314c-3376-4ce4-898e-19f831d7b504.png?s=f68ce8f76c7e13e04d09d31a05f7996a",
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6380,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 7835,
+        "name": "Top Shelf",
+        "position": 5,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "top-shelf",
+        "low_inventory_threshold": null,
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-blaze-1-test-staging-10/product-categories/ea19af58-5a72-417e-8b79-cbc53972fcf1.png?s=6eb5df9d38f5fd4bbc4cd8229c5cb746",
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 7835,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 103,
+        "id": 6378,
+        "name": "Flower (Sativa)",
+        "position": 6,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "flower-sativa",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6378,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 82,
+        "id": 6383,
+        "name": "Gummies",
+        "position": 6,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "gummies",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6383,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 90,
+        "name": "EDIBLES",
+        "position": 7,
+        "description": "Lorem ipsum dolor sit amet",
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "edibles",
+        "low_inventory_threshold": "10.0",
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-blaze-1-test-staging-10/product-categories/de952371-6694-46a4-965e-4b58d088c332.png?s=ba784d69482b7d30ed5246b9f6506cc4",
+        "pos_position": 5,
+        "parent_category_id": null
+      },
+      "id": 90,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 5,
+        "id": 2835,
+        "name": "Accessories (edited)",
+        "position": 8,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "accessories-edited",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": 1,
+        "parent_category_id": null
+      },
+      "id": 2835,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 7,
+        "id": 89,
+        "name": "Deli Flowers",
+        "position": 8,
+        "description": "Lorem ipsum dolor sit amet",
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "deli-flowers",
+        "low_inventory_threshold": "5.0",
+        "icon_url": null,
+        "pos_position": 6,
+        "parent_category_id": null
+      },
+      "id": 89,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 414,
+        "id": 2828,
+        "name": "Preroll",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "preroll",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": 9,
+        "parent_category_id": null
+      },
+      "id": 2828,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 92,
+        "name": "Topicals",
+        "position": 11,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "topicals",
+        "low_inventory_threshold": null,
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-categories/a5eb0343-2790-402a-8348-99811fc0d731.jpg?s=5ef2f21ac237d20ceb265cb8b9dbc90e",
+        "pos_position": 11,
+        "parent_category_id": null
+      },
+      "id": 92,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 5,
+        "id": 88,
+        "name": "Tincture",
+        "position": 12,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "tincture",
+        "low_inventory_threshold": "5.0",
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-categories/67e6ef84-d253-45f4-b876-eebff52d814a.png?s=230028b295c40c465a798fd2dcd95af1",
+        "pos_position": 10,
+        "parent_category_id": null
+      },
+      "id": 88,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 5,
+        "id": 91,
+        "name": "Vape Pens",
+        "position": null,
+        "description": "Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.\n\n",
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "vape-pens",
+        "low_inventory_threshold": "0.0",
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-categories/53547d1f-ad31-43f6-b2a6-46aee7df836e.png?s=28fab0191324a4ad03314a6cd7518a2f",
+        "pos_position": 12,
+        "parent_category_id": null
+      },
+      "id": 91,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 2831,
+        "name": "ELECTRONICS",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "electronics",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": 13,
+        "parent_category_id": null
+      },
+      "id": 2831,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 2829,
+        "name": "Wax",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "wax",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": 13,
+        "parent_category_id": null
+      },
+      "id": 2829,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 4850,
+        "name": "Gift Cards",
+        "position": 14,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "gift-cards",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 4850,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 31,
+        "id": 6385,
+        "name": "Chocolates",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "chocolates",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6385,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 13,
+        "id": 6981,
+        "name": "Edibles",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "edibles",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6981,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 243,
+        "id": 6975,
+        "name": "Extract",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "extract",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6975,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 1,
+        "id": 6384,
+        "name": "Flower (CBD)",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "flower-cbd",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6384,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": 26,
+        "id": 6386,
+        "name": "Topical",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "topical",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6386,
+      "type": "product_categories",
+      "relationships": {}
+    }
+  ],
+  "included": []
+}

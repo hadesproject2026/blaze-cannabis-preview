@@ -1,0 +1,300 @@
+{
+  "data": {
+    "attributes": {
+      "cannabis_weight": null,
+      "is_promoted": false,
+      "on_sale": true,
+      "thc": null,
+      "strain": null,
+      "composition": null,
+      "external_id": "5f27034a6218d123dcc112f3",
+      "main_image": "https://tymber-blaze-d2-products.imgix.net/d39eb4b9-63a7-4b70-8657-39fc93a6f933-f6c5800c-477b-4986-9088-bd122d32d007.jpg",
+      "in_stock": true,
+      "store_url": "https://staging.tymber.io/menu/site-1/products/kikoko-1031/edibles/honeyshot-buzz-490",
+      "description": "BUZZ is designed to be an on-the-go, convenient healthy and delicious snack. Manuka is honey is one of the most potent medicinal honeys in the world. We source our honey from New Zealand from a family friend’s farm in rural Northern New Zealand, ensuring an organic status free of harmful pesticides and heavy metals. In addition to offering antibacterial and anti-inflammatory properties, the BUZZ HoneyShot provides an uplifting high that works well for a night in or a night out.  Organic ingredients: Manuka honey, Sun-grown Cannabis Extract Suggested Uses:   - Great for pre-workout stimulus and post-workout recovery (biking tours and gym visits!) - Easy to travel with - Great for outdoor adventures, creativity, mood-boosting alone time - Add to your Kikoko tea for a potency boost Potency - 10mg THC per dose.",
+      "show_in_cms": false,
+      "flower_type": null,
+      "size": null,
+      "updated_at": "2026-08-04T10:18:23Z",
+      "is_deleted": false,
+      "min_thc": null,
+      "is_active": true,
+      "extras": null,
+      "product_placement_campaign_id": null,
+      "valid_for_sale": true,
+      "unit_prices": [
+        {
+          "discount_price": {
+            "amount": 800,
+            "currency": "usd"
+          },
+          "display_name": ".5g",
+          "price": {
+            "amount": 1000,
+            "currency": "usd"
+          },
+          "quantity": 1,
+          "savings_per_unit": null
+        }
+      ],
+      "min_cbd": null,
+      "potency": null,
+      "max_thc": null,
+      "pos_inventory": 4561.4126,
+      "unit_price": {
+        "currency": "usd",
+        "amount": 1000
+      },
+      "hide_from_menu": false,
+      "deleted_at": null,
+      "id": 490,
+      "name": "HoneyShot Buzz",
+      "terpenoids": [],
+      "blaze_enrichment": {
+        "flavour": [],
+        "effects": {
+          "primary": [],
+          "secondary": [],
+          "notes": null,
+          "caution": null,
+          "recommended_for": []
+        },
+        "experience": {
+          "potency": null,
+          "chemistry": null,
+          "meaning": null,
+          "scale_level": null
+        }
+      },
+      "discount_price": {
+        "currency": "usd",
+        "amount": 800
+      },
+      "discount": {
+        "amount": 20,
+        "type": "%"
+      },
+      "weight_prices": null,
+      "slug": "honeyshot-buzz-490",
+      "type": "regular",
+      "cbd": null,
+      "max_cbd": null,
+      "sku": "S2F3PRO1"
+    },
+    "id": 490,
+    "type": "products",
+    "relationships": {
+      "category": {
+        "data": {
+          "id": 6981,
+          "type": "product_categories"
+        }
+      },
+      "tags": {
+        "data": [
+          {
+            "id": 49,
+            "type": "tags"
+          },
+          {
+            "id": 50,
+            "type": "tags"
+          },
+          {
+            "id": 17514,
+            "type": "tags"
+          },
+          {
+            "id": 17517,
+            "type": "tags"
+          },
+          {
+            "id": 17518,
+            "type": "tags"
+          },
+          {
+            "id": 17529,
+            "type": "tags"
+          }
+        ]
+      },
+      "images": {
+        "data": [
+          {
+            "id": 66110,
+            "type": "product_images"
+          }
+        ]
+      },
+      "brand": {
+        "data": {
+          "id": 1031,
+          "type": "product_brands"
+        }
+      }
+    }
+  },
+  "included": [
+    {
+      "attributes": {
+        "id": 27647,
+        "name": "Kikoko",
+        "description": "Kikoko is a women-owned, women-run company inspired by a friend who battled cancer. Our founders noticed a lack of properly dosed edibles with high-quality ingredients, and they set out with a mission to create alternatives to pharmaceuticals and alcohol. Our organic, clinically dosed, cannabis-infused products are for people who value wellness and high-quality ingredients. Kikoko makes herbal teas, tinctures, mints, and HoneyShots. Based on clinical research, each product line is designed to solve a problem, pairing thoughtful cannabinoid ratios, synergistic herbs, vitamins, and adaptogenic ingredients for sleep, anxiety, mood, sex, and pain. We are committed to sustainability and making an impact, and we donate a portion of our annual revenue to initiatives that promote cannabis research and reform, such as the Last Prisoner Project.",
+        "external_id": "ec73b93d-6b15-41a6-95e1-307b40688906",
+        "is_deleted": false,
+        "is_active": true,
+        "deleted_at": null,
+        "slug": "kikoko-27647",
+        "avatar_image_url": "https://images.weedmaps.com/brands/000/004/586/avatar/1530046189-logo_KIKOKO-RGB.jpg"
+      },
+      "id": 27647,
+      "type": "global_brands",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 1031,
+        "name": "Kikoko",
+        "description": "<p><strong>What makes Kikoko?</strong></p><p>Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.Lorem ipsum dolor sit amet.</p>",
+        "external_id": "5f2700f16218d123dcc112a0",
+        "show_in_cms": true,
+        "logo_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-brand-1031/3e135aae-7b6e-4db0-a432-cdd9ba972338.png?s=c6cf5d64bdac67034e3aee1a9a92f654",
+        "slug": "kikoko-1031",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 1031,
+      "type": "product_brands",
+      "relationships": {
+        "global_brand": {
+          "data": {
+            "id": 27647,
+            "type": "global_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 6981,
+        "name": "Edibles",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "edibles",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6981,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "treatyoself",
+        "position": 7,
+        "description": "As armas e os barões assinalados, Que da ocidental praia Lusitana, Por mares nunca de antes navegados, Passaram ainda além da Taprobana, Em perigos e guerras esforçados, Mais do que prometia a força humana, E entre gente remota edificaram Novo Reino, que tanto sublimaram;",
+        "title": "Canto I - 1a Estrofe",
+        "is_active": true,
+        "is_featured": true,
+        "is_hidden": false
+      },
+      "id": 49,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "sale",
+        "position": 0,
+        "description": "Such sale. much discount",
+        "title": "Sale Sale Sale",
+        "is_active": true,
+        "is_featured": true,
+        "is_hidden": false
+      },
+      "id": 50,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "nothidden",
+        "position": null,
+        "description": null,
+        "title": null,
+        "is_active": true,
+        "is_featured": false,
+        "is_hidden": false
+      },
+      "id": 17514,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "hidden",
+        "position": null,
+        "description": null,
+        "title": null,
+        "is_active": true,
+        "is_featured": false,
+        "is_hidden": true
+      },
+      "id": 17517,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "manuallynothidden",
+        "position": null,
+        "description": null,
+        "title": null,
+        "is_active": true,
+        "is_featured": false,
+        "is_hidden": false
+      },
+      "id": 17518,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "name": "hidden2",
+        "position": null,
+        "description": null,
+        "title": null,
+        "is_active": true,
+        "is_featured": false,
+        "is_hidden": true
+      },
+      "id": 17529,
+      "type": "tags",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66110,
+        "url": "https://tymber-blaze-d2-products.imgix.net/d39eb4b9-63a7-4b70-8657-39fc93a6f933-f6c5800c-477b-4986-9088-bd122d32d007.jpg",
+        "external_id": "68bbd2a397c9940426030d56"
+      },
+      "id": 66110,
+      "type": "product_images",
+      "relationships": {}
+    }
+  ]
+}

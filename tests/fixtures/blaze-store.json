@@ -1,0 +1,45 @@
+{
+  "data": {
+    "attributes": {
+      "env": "qa",
+      "id": 10,
+      "name": "Staging - Blaze 1 & Test Staging",
+      "address": {
+        "state": "NY",
+        "address": "Golden Gate Park: 501 Stanyan St",
+        "city": "Aurora",
+        "country": "US",
+        "zip_code": "60506",
+        "lat": null,
+        "lng": null,
+        "address_line2": null,
+        "building_number": null
+      },
+      "uuid": "e87437f2-3e35-4738-af5e-6307e368255c",
+      "timezone": "America/Los_Angeles",
+      "is_deleted": false,
+      "is_active": true,
+      "allow_pickup": true,
+      "allow_deliveries": true,
+      "license_number": "afd-1432w52465",
+      "is_demo": true,
+      "merchant_id": "blu-5ea195316218d12a18c0697d-5f0dc42b6218d17ce3268a06",
+      "pos_id_code": "blu",
+      "deleted_at": null,
+      "force_next_sync": false,
+      "inventory_usage": "single",
+      "is_sync_enabled": true,
+      "last_sync": "2026-08-05T12:06:06Z",
+      "allow_kiosks": true,
+      "pos_tenancy": {
+        "company_id": "5ea195316218d12a18c0697d",
+        "retailer_id": "5f0dc42b6218d17ce3268a06"
+      },
+      "thumbnail": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/store-configuration/40cd8772-ec0e-45fd-bb0b-71e666385e25.png?s=a4453c608818bc23ec9e340274383168"
+    },
+    "id": "e87437f2-3e35-4738-af5e-6307e368255c",
+    "type": "stores",
+    "relationships": {}
+  },
+  "included": []
+}

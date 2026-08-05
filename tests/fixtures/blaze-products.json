@@ -1,0 +1,1344 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": true,
+        "thc": null,
+        "strain": null,
+        "composition": null,
+        "external_id": "5f27034a6218d123dcc112f3",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/d39eb4b9-63a7-4b70-8657-39fc93a6f933-f6c5800c-477b-4986-9088-bd122d32d007.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/kikoko-1031/edibles/honeyshot-buzz-490",
+        "description": "BUZZ is designed to be an on-the-go, convenient healthy and delicious snack. Manuka is honey is one of the most potent medicinal honeys in the world. We source our honey from New Zealand from a family friend’s farm in rural Northern New Zealand, ensuring an organic status free of harmful pesticides and heavy metals. In addition to offering antibacterial and anti-inflammatory properties, the BUZZ HoneyShot provides an uplifting high that works well for a night in or a night out.  Organic ingredients: Manuka honey, Sun-grown Cannabis Extract Suggested Uses:   - Great for pre-workout stimulus and post-workout recovery (biking tours and gym visits!) - Easy to travel with - Great for outdoor adventures, creativity, mood-boosting alone time - Add to your Kikoko tea for a potency boost Potency - 10mg THC per dose.",
+        "show_in_cms": false,
+        "flower_type": null,
+        "size": null,
+        "updated_at": "2026-08-04T10:18:23Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": {
+              "amount": 800,
+              "currency": "usd"
+            },
+            "display_name": ".5g",
+            "price": {
+              "amount": 1000,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 4561.4126,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 1000
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 490,
+        "name": "HoneyShot Buzz",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": {
+          "currency": "usd",
+          "amount": 800
+        },
+        "discount": {
+          "amount": 20,
+          "type": "%"
+        },
+        "weight_prices": null,
+        "slug": "honeyshot-buzz-490",
+        "type": "regular",
+        "cbd": null,
+        "max_cbd": null,
+        "sku": "S2F3PRO1"
+      },
+      "id": 490,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 6981,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": 49,
+              "type": "tags"
+            },
+            {
+              "id": 50,
+              "type": "tags"
+            },
+            {
+              "id": 17514,
+              "type": "tags"
+            },
+            {
+              "id": 17517,
+              "type": "tags"
+            },
+            {
+              "id": 17518,
+              "type": "tags"
+            },
+            {
+              "id": 17529,
+              "type": "tags"
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66110,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1031,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": true,
+        "thc": null,
+        "strain": null,
+        "composition": null,
+        "external_id": "5f2718796218d123dcc12faf",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/c8140257-a051-4c43-89a6-a0f41466f5a9-e64b9aa5-5c7e-4ce6-b0ab-879846b8898a.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/northern-emeralds-1033/deli-flowers/grandaddy-purple-489",
+        "description": "Titan OG, the mother of all OG strains. A real heavy hitter.",
+        "show_in_cms": false,
+        "flower_type": "Indica",
+        "size": null,
+        "updated_at": "2026-07-31T21:13:09Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": null,
+            "display_name": "1g",
+            "price": {
+              "amount": 6000,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 15.5,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 6000
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 489,
+        "name": "Grandaddy Purple",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": null,
+        "discount": null,
+        "weight_prices": null,
+        "slug": "grandaddy-purple-489",
+        "type": "regular",
+        "cbd": null,
+        "max_cbd": null,
+        "sku": "SFAFPRO1"
+      },
+      "id": 489,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 89,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": 50,
+              "type": "tags"
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66276,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1033,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": false,
+        "thc": null,
+        "strain": null,
+        "composition": null,
+        "external_id": "5f2719246218d123dcc1300b",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/9a4b18d2-7607-4cf5-ac42-cfddd442989e-2acb1bac-57b5-42b8-b117-6ea6dd3d35d5.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/kikoko-1031/tincture/day-tincture-486",
+        "description": "Kikoko Day tinctures have active botanicals mixed with the finest sun grown cannabis to get you through the day. The tinctures are sunflower oil-based, sugar-free, gluten-free, chemical-free and non-GMO. Enjoy a calming effect with no perceptible “high” and one of the highest available ratios of CBD. DAY is the most delicious & fast acting way to get essential vitamins while knocking stress on the head.",
+        "show_in_cms": true,
+        "flower_type": null,
+        "size": null,
+        "updated_at": "2026-08-05T01:02:40Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": {
+              "amount": 5280,
+              "currency": "usd"
+            },
+            "display_name": "1 each",
+            "price": {
+              "amount": 6600,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          },
+          {
+            "discount_price": {
+              "amount": 24000,
+              "currency": "usd"
+            },
+            "display_name": "2 each",
+            "price": {
+              "amount": 30000,
+              "currency": "usd"
+            },
+            "quantity": 2,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 907,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 6600
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 486,
+        "name": "Day Tincture",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": {
+          "currency": "usd",
+          "amount": 5280
+        },
+        "discount": null,
+        "weight_prices": null,
+        "slug": "day-tincture-486",
+        "type": "regular",
+        "cbd": null,
+        "max_cbd": null,
+        "sku": "S00BPRO1"
+      },
+      "id": 486,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 88,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": 49,
+              "type": "tags"
+            },
+            {
+              "id": 52,
+              "type": "tags"
+            },
+            {
+              "id": 50,
+              "type": "tags"
+            }
+          ]
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66084,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1031,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": true,
+        "thc": {
+          "units": "%",
+          "amount": "89.0"
+        },
+        "strain": null,
+        "composition": {
+          "cbd": 3,
+          "cbda": 0,
+          "cbn": 0,
+          "max_cbd": 0,
+          "max_thc": 0,
+          "min_cbd": 0,
+          "min_thc": 0,
+          "thc": 89,
+          "thca": 0
+        },
+        "external_id": "5f270eb86218d123dcc11da6",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/1eb750ce-9f98-4ed7-affe-32f925b1617e-c9b074c5-e4e6-43bc-8683-7bd525c894cc.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/heavy-hitters-1032/vape-pens/white-rhino-509",
+        "description": "Malibu OG - nestle up under a palm tree by the water and enjoy the relaxing benefits of Malibu OG.",
+        "show_in_cms": true,
+        "flower_type": null,
+        "size": null,
+        "updated_at": "2026-07-31T21:15:03Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": {
+              "amount": 2560,
+              "currency": "usd"
+            },
+            "display_name": ".5g",
+            "price": {
+              "amount": 3200,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 63,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 3200
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 509,
+        "name": "White Rhino",
+        "terpenoids": null,
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": {
+          "currency": "usd",
+          "amount": 2560
+        },
+        "discount": {
+          "amount": 20,
+          "type": "%"
+        },
+        "weight_prices": null,
+        "slug": "white-rhino-509",
+        "type": "regular",
+        "cbd": {
+          "units": "%",
+          "amount": "3.0"
+        },
+        "max_cbd": null,
+        "sku": "SDA6PRO1"
+      },
+      "id": 509,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 91,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": []
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66309,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1032,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": true,
+        "thc": {
+          "units": "mg",
+          "amount": "46.0"
+        },
+        "strain": null,
+        "composition": null,
+        "external_id": "5f2701f86218d123dcc112ad",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/357cdcdf-91cb-430c-b5c1-3f38bc5bdfaa-bee297aa-1f6a-473f-b7a8-6cd8163d9372.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/dr-raw-1030/tincture/focus-formula-tincture-487",
+        "description": "Dr. Raw's Focus Formula Tincture is one of the most versatile cannabis products available. It can be applied sublingually under the tongue, topically to the skin or you can cook with it. There are only two ingredients: cannabis oil and organic MCT coconut oil. Dr. Raw tinctures are made with ultra distilled cannabis oils, providing a tasteless, odorless product. Easy to dose in 2-10mg increments. Expect to feel the effects in 10-20 minutes.",
+        "show_in_cms": false,
+        "flower_type": null,
+        "size": null,
+        "updated_at": "2026-07-31T21:13:04Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": null,
+            "display_name": "1 each",
+            "price": {
+              "amount": 7000,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": {
+          "cbd": 954,
+          "cbda": 0,
+          "cbn": 0,
+          "max_cbd": 0,
+          "max_thc": 0,
+          "min_cbd": 0,
+          "min_thc": 0,
+          "thc": 46,
+          "thca": 0,
+          "units": "mg"
+        },
+        "max_thc": null,
+        "pos_inventory": 10802,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 7000
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 487,
+        "name": "Focus Formula Tincture",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": null,
+        "discount": null,
+        "weight_prices": null,
+        "slug": "focus-formula-tincture-487",
+        "type": "regular",
+        "cbd": {
+          "units": "mg",
+          "amount": "954.0"
+        },
+        "max_cbd": null,
+        "sku": "S2ADPRO1"
+      },
+      "id": 487,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 88,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": []
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66087,
+              "type": "product_images"
+            },
+            {
+              "id": 66088,
+              "type": "product_images"
+            },
+            {
+              "id": 66089,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1030,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": false,
+        "thc": null,
+        "strain": null,
+        "composition": null,
+        "external_id": "6706fe6d7d8ed830c820ebf7",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/topicals_product-00001-85312__instore_experience-true-6a3c2df3-54d7-495e-86b6-44b87033ba76.png",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/gift-cards/birchmount-gift-card-128935",
+        "description": "Give the gift of choice with our Cannabis Gift Card. Perfect for any occasion, this card allows your loved ones to explore our premium selection of cannabis products, from top-shelf flowers to edibles and accessories. The ultimate present for those who know what they like—or want to discover something new.",
+        "show_in_cms": false,
+        "flower_type": null,
+        "size": null,
+        "updated_at": "2026-07-31T21:12:56Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": null,
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 977,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 1000
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 128935,
+        "name": "Birchmount gift card",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": null,
+        "discount": null,
+        "weight_prices": [
+          {
+            "discount_price": null,
+            "display_name": "$10",
+            "price": {
+              "amount": 1000,
+              "currency": "usd"
+            },
+            "savings": null,
+            "weight_key": "10"
+          },
+          {
+            "discount_price": null,
+            "display_name": "$25",
+            "price": {
+              "amount": 2500,
+              "currency": "usd"
+            },
+            "savings": null,
+            "weight_key": "25"
+          },
+          {
+            "discount_price": null,
+            "display_name": "$50",
+            "price": {
+              "amount": 5000,
+              "currency": "usd"
+            },
+            "savings": null,
+            "weight_key": "50"
+          },
+          {
+            "discount_price": null,
+            "display_name": "$100",
+            "price": {
+              "amount": 10000,
+              "currency": "usd"
+            },
+            "savings": null,
+            "weight_key": "100"
+          }
+        ],
+        "slug": "birchmount-gift-card-128935",
+        "type": "gift_card",
+        "cbd": null,
+        "max_cbd": null,
+        "sku": "SBF7PRO1"
+      },
+      "id": 128935,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 4850,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": []
+        },
+        "images": {
+          "data": [
+            {
+              "id": 6338,
+              "type": "product_images"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": false,
+        "thc": null,
+        "strain": null,
+        "composition": null,
+        "external_id": "5f270d916218d123dcc11ad9",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/646a2423-819f-488e-a657-720858074fa8-c14a4a54-b86a-4ff9-9e5b-48809d088c16.jpg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/northern-emeralds-1033/deli-flowers/sour-diesel-505",
+        "description": "Titan OG, the mother of all OG strains. A real heavy hitter.",
+        "show_in_cms": false,
+        "flower_type": "Sativa",
+        "size": null,
+        "updated_at": "2026-07-31T21:14:34Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": null,
+            "display_name": ".5g",
+            "price": {
+              "amount": 6000,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 1813.4272,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 6000
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 505,
+        "name": "Sour Diesel",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [],
+          "effects": {
+            "primary": [],
+            "secondary": [],
+            "notes": null,
+            "caution": null,
+            "recommended_for": []
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": null,
+            "scale_level": null
+          }
+        },
+        "discount_price": null,
+        "discount": null,
+        "weight_prices": null,
+        "slug": "sour-diesel-505",
+        "type": "regular",
+        "cbd": null,
+        "max_cbd": null,
+        "sku": "SAD9PRO1"
+      },
+      "id": 505,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 89,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": []
+        },
+        "images": {
+          "data": [
+            {
+              "id": 66267,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 1033,
+            "type": "product_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "cannabis_weight": null,
+        "is_promoted": false,
+        "on_sale": true,
+        "thc": {
+          "units": "%",
+          "amount": "26.03"
+        },
+        "strain": null,
+        "composition": {
+          "cbd": 26,
+          "cbda": 0,
+          "cbn": 0,
+          "max_cbd": 0,
+          "max_thc": 0,
+          "min_cbd": 0,
+          "min_thc": 0,
+          "thc": 26.03000069,
+          "thca": 0
+        },
+        "external_id": "67aa355fe18596443a9f2378",
+        "main_image": "https://tymber-blaze-d2-products.imgix.net/64dfb03800aad80b5cceea30-75268ded-4b36-4007-959a-73463ea101db-1-1694169541045-5ea195316218d12a18c0697d-64dfb03800aad80b5cceea30-75268ded-4b36-4007-959a-73463ea101db-1-1694169541045-1-1739207774089-b263551d-177d-4695-ada2-cc0863ca6262.jpeg",
+        "in_stock": true,
+        "store_url": "https://staging.tymber.io/menu/site-1/products/brite-labs-108398/vape/brite-labs-11-cherry-remedy-cartridge-6g-148773",
+        "description": null,
+        "show_in_cms": false,
+        "flower_type": "CBD",
+        "size": null,
+        "updated_at": "2026-07-31T21:12:56Z",
+        "is_deleted": false,
+        "min_thc": null,
+        "is_active": true,
+        "extras": null,
+        "product_placement_campaign_id": null,
+        "unit_prices": [
+          {
+            "discount_price": {
+              "amount": 6318,
+              "currency": "usd"
+            },
+            "display_name": ".5g",
+            "price": {
+              "amount": 7898,
+              "currency": "usd"
+            },
+            "quantity": 1,
+            "savings_per_unit": null
+          }
+        ],
+        "min_cbd": null,
+        "potency": null,
+        "max_thc": null,
+        "pos_inventory": 956,
+        "unit_price": {
+          "currency": "usd",
+          "amount": 7898
+        },
+        "hide_from_menu": false,
+        "deleted_at": null,
+        "id": 148773,
+        "name": "Brite Labs - 1:1 Cherry Remedy Cartridge .6g",
+        "terpenoids": [],
+        "blaze_enrichment": {
+          "flavour": [
+            "Cherry",
+            "Herbal",
+            "Earthy",
+            "Pine",
+            "Sweet"
+          ],
+          "effects": {
+            "primary": [
+              "Calm",
+              "Relaxed",
+              "Clear-headed",
+              "Body comfort"
+            ],
+            "secondary": [
+              "Stress relief",
+              "Anxiety reduction",
+              "Mild euphoria",
+              "Focus"
+            ],
+            "notes": "Balanced 1:1 THC:CBD delivers gentle psychoactivity with noticeable body relief; minimal intoxication for most users",
+            "caution": null,
+            "recommended_for": [
+              "Daytime or evening use",
+              "Stress and anxiety relief",
+              "Mild pain management",
+              "New or sensitive users"
+            ]
+          },
+          "experience": {
+            "potency": null,
+            "chemistry": null,
+            "meaning": "Approachable for beginners due to CBD balance but still psychoactive; best for users comfortable with mild THC effects",
+            "scale_level": "intermediate"
+          }
+        },
+        "discount_price": {
+          "currency": "usd",
+          "amount": 6318
+        },
+        "discount": {
+          "amount": 20,
+          "type": "%"
+        },
+        "weight_prices": null,
+        "slug": "brite-labs-11-cherry-remedy-cartridge-6g-148773",
+        "type": "regular",
+        "cbd": {
+          "units": "%",
+          "amount": "26.0"
+        },
+        "max_cbd": null,
+        "sku": "850009478191"
+      },
+      "id": 148773,
+      "type": "products",
+      "relationships": {
+        "category": {
+          "data": {
+            "id": 6381,
+            "type": "product_categories"
+          }
+        },
+        "tags": {
+          "data": []
+        },
+        "images": {
+          "data": [
+            {
+              "id": 64366,
+              "type": "product_images"
+            }
+          ]
+        },
+        "brand": {
+          "data": {
+            "id": 108398,
+            "type": "product_brands"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "attributes": {
+        "count": null,
+        "id": 1031,
+        "name": "Kikoko",
+        "description": "<p><strong>What makes Kikoko?</strong></p><p>Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.Lorem ipsum dolor sit amet.</p>",
+        "external_id": "5f2700f16218d123dcc112a0",
+        "show_in_cms": true,
+        "logo_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-brand-1031/3e135aae-7b6e-4db0-a432-cdd9ba972338.png?s=c6cf5d64bdac67034e3aee1a9a92f654",
+        "slug": "kikoko-1031",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 1031,
+      "type": "product_brands",
+      "relationships": {
+        "global_brand": {
+          "data": {
+            "id": 27647,
+            "type": "global_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 6981,
+        "name": "Edibles",
+        "position": null,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "edibles",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6981,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66110,
+        "url": "https://tymber-blaze-d2-products.imgix.net/d39eb4b9-63a7-4b70-8657-39fc93a6f933-f6c5800c-477b-4986-9088-bd122d32d007.jpg",
+        "external_id": "68bbd2a397c9940426030d56"
+      },
+      "id": 66110,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 1033,
+        "name": "Northern Emeralds",
+        "description": "Northern Emeralds is the premier cannabis brand to emerge from the Emerald Triangle, Americas original home of boutique flower. We combine distinct heirloom genetics with a proprietary, innovative cultivation process perfected over decades. We offer our partners a product of unparalleled quality, consistent from batch to batch, supplied with impeccable reliability. We take pride in our rapid sell-through rate and growing recognition among connoisseurs. We passionately believe responsible cannabis consumption is a benefit to the health and wellness of our community, and we are committed to setting the standard for excellence as our industry evolves. We are in relentless pursuit of the cannabis plants true potential and are proud to be a lead producer of Californias newest craft crop.",
+        "external_id": "5f270ce56218d123dcc11aad",
+        "show_in_cms": false,
+        "logo_url": "https://images.weedmaps.com/brands/000/000/572/avatar/northern-emearld_logo.jpg",
+        "slug": "northern-emeralds-1033",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 1033,
+      "type": "product_brands",
+      "relationships": {
+        "global_brand": {
+          "data": {
+            "id": 16470,
+            "type": "global_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 89,
+        "name": "Deli Flowers",
+        "position": 8,
+        "description": "Lorem ipsum dolor sit amet",
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "deli-flowers",
+        "low_inventory_threshold": "5.0",
+        "icon_url": null,
+        "pos_position": 6,
+        "parent_category_id": null
+      },
+      "id": 89,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66276,
+        "url": "https://tymber-blaze-d2-products.imgix.net/c8140257-a051-4c43-89a6-a0f41466f5a9-e64b9aa5-5c7e-4ce6-b0ab-879846b8898a.jpg",
+        "external_id": "68bdfb0c97c9940426039a82"
+      },
+      "id": 66276,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 1030,
+        "name": "Dr. Raw",
+        "description": null,
+        "external_id": "5f2700e96218d123dcc1129e",
+        "show_in_cms": true,
+        "logo_url": null,
+        "slug": "dr-raw-1030",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 1030,
+      "type": "product_brands",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 88,
+        "name": "Tincture",
+        "position": 12,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "tincture",
+        "low_inventory_threshold": "5.0",
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-categories/67e6ef84-d253-45f4-b876-eebff52d814a.png?s=230028b295c40c465a798fd2dcd95af1",
+        "pos_position": 10,
+        "parent_category_id": null
+      },
+      "id": 88,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66087,
+        "url": "https://tymber-blaze-d2-products.imgix.net/357cdcdf-91cb-430c-b5c1-3f38bc5bdfaa-bee297aa-1f6a-473f-b7a8-6cd8163d9372.jpg",
+        "external_id": "68bbd29c97c9940426030ccb"
+      },
+      "id": 66087,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": false,
+        "id": 66088,
+        "url": "https://tymber-blaze-d2-products.imgix.net/drrawtinc-945e7533-a8f9-45d0-9804-dc9e392b9121-07ac8c18-c7ab-4557-91ae-0fff373599ac.jpg",
+        "external_id": "68bbd29c97c9940426030ccc"
+      },
+      "id": 66088,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": false,
+        "id": 66089,
+        "url": "https://tymber-blaze-d2-products.imgix.net/cannabis_what_is_it-ec06f1ad-635f-4a7e-921c-531707aa4e52-1ec9e189-c5da-4b1c-a05c-b880e88b55d2.jpg",
+        "external_id": "68bbd29d97c9940426030ccd"
+      },
+      "id": 66089,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66084,
+        "url": "https://tymber-blaze-d2-products.imgix.net/9a4b18d2-7607-4cf5-ac42-cfddd442989e-2acb1bac-57b5-42b8-b117-6ea6dd3d35d5.jpg",
+        "external_id": "68bbd29697c9940426030c09"
+      },
+      "id": 66084,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66267,
+        "url": "https://tymber-blaze-d2-products.imgix.net/646a2423-819f-488e-a657-720858074fa8-c14a4a54-b86a-4ff9-9e5b-48809d088c16.jpg",
+        "external_id": "68bbd2c497c9940426031390"
+      },
+      "id": 66267,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 1032,
+        "name": "Heavy Hitters",
+        "description": "<p><span style=\"color: rgb(62, 63, 66);\">BUZZ is designed to be an on-the-go, convenient healthy and delicious snack. Manuka is honey is one of the most potent medicinal honeys in the world. We </span></p>",
+        "external_id": "5f2700f66218d123dcc112a2",
+        "show_in_cms": true,
+        "logo_url": "https://tymber-s3-qa.imgix.net/staging---tymber-shop-1-10/product-brand-1032/6879fc27-e0fc-48bd-ab56-d0d24e2c0d6b.jpeg?s=7f7eecb8c011feb539bf38a275e2a1a6",
+        "slug": "heavy-hitters-1032",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 1032,
+      "type": "product_brands",
+      "relationships": {
+        "global_brand": {
+          "data": {
+            "id": 27589,
+            "type": "global_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 91,
+        "name": "Vape Pens",
+        "position": null,
+        "description": "Tell me, O Muse, of that ingenious hero who travelled far and wide after he had sacked the famous town of Troy. Many cities did he visit, and many were the nations with whose manners and customs he was acquainted; moreover he suffered much by sea while trying to save his own life and bring his men safely home; but do what he might he could not save his men, for they perished through their own sheer folly in eating the cattle of the Sun-god Hyperion; so the god prevented them from ever reaching home. Tell me, too, about all these things, oh daughter of Jove, from whatsoever source you may know them.\n\n",
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "vape-pens",
+        "low_inventory_threshold": "0.0",
+        "icon_url": "https://tymber-s3-qa.imgix.net/staging-tymber-shop-1-10/product-categories/53547d1f-ad31-43f6-b2a6-46aee7df836e.png?s=28fab0191324a4ad03314a6cd7518a2f",
+        "pos_position": 12,
+        "parent_category_id": null
+      },
+      "id": 91,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 66309,
+        "url": "https://tymber-blaze-d2-products.imgix.net/1eb750ce-9f98-4ed7-affe-32f925b1617e-c9b074c5-e4e6-43bc-8683-7bd525c894cc.jpg",
+        "external_id": "68bbd2c297c9940426031325"
+      },
+      "id": 66309,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 4850,
+        "name": "Gift Cards",
+        "position": 14,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "gift-cards",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 4850,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 6338,
+        "url": "https://tymber-blaze-d2-products.imgix.net/topicals_product-00001-85312__instore_experience-true-6a3c2df3-54d7-495e-86b6-44b87033ba76.png",
+        "external_id": "670fa05c5e4ff87877a1924b"
+      },
+      "id": 6338,
+      "type": "product_images",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 108398,
+        "name": "Brite Labs",
+        "description": "Brite Labs is a California medical cannabis collective making pure supercritical CO2 extracts on behalf of our member-patients. Our extracts stand out for their scientifically designed mix of purity, potency, and flavor.",
+        "external_id": "67aa344ce18596443a9ed90f",
+        "show_in_cms": false,
+        "logo_url": "https://images.weedmaps.com/brands/000/002/106/avatar/1737480023-brite_ig_icon.png",
+        "slug": "brite-labs-108398",
+        "product_placement_campaign_id": null,
+        "store_url": null,
+        "is_promoted": false
+      },
+      "id": 108398,
+      "type": "product_brands",
+      "relationships": {
+        "global_brand": {
+          "data": {
+            "id": 19592,
+            "type": "global_brands"
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "count": null,
+        "id": 6381,
+        "name": "Vapey",
+        "position": 2,
+        "description": null,
+        "is_active": true,
+        "show_in_app": true,
+        "slug": "vape",
+        "low_inventory_threshold": null,
+        "icon_url": null,
+        "pos_position": null,
+        "parent_category_id": null
+      },
+      "id": 6381,
+      "type": "product_categories",
+      "relationships": {}
+    },
+    {
+      "attributes": {
+        "default": true,
+        "id": 64366,
+        "url": "https://tymber-blaze-d2-products.imgix.net/64dfb03800aad80b5cceea30-75268ded-4b36-4007-959a-73463ea101db-1-1694169541045-5ea195316218d12a18c0697d-64dfb03800aad80b5cceea30-75268ded-4b36-4007-959a-73463ea101db-1-1694169541045-1-1739207774089-b263551d-177d-4695-ada2-cc0863ca6262.jpeg",
+        "external_id": "68bb355297c9940426016c34"
+      },
+      "id": 64366,
+      "type": "product_images",
+      "relationships": {}
+    }
+  ],
+  "meta": {
+    "offset": 0,
+    "limit": 100,
+    "total_count": 1739
+  }
+}
