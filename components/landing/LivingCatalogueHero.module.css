@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0B0E14 0%, var(--bg) 62%);
+  --px: 0;
+  --py: 0;
+}
+
+.shaft {
+  position: absolute;
+  top: -30%;
+  bottom: -30%;
+  left: 18%;
+  width: 34%;
+  background: linear-gradient(180deg, rgba(200, 183, 138, 0.13), transparent 76%);
+  transform: skewX(-16deg);
+  filter: blur(8px);
+  animation: shaft 11s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Smoke sits behind the product layers so they read as emerging from it.
+   Soft radial plumes rather than a video: no asset to ship, and only
+   transform animates. blur() is the one expensive property here, so it is
+   reduced on mobile and dropped entirely under reduced-motion. */
+.smoke {
+  position: absolute;
+  inset: -25%;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  filter: blur(22px);
+  will-change: transform;
+}
+
+.smokeA {
+  opacity: 0.5;
+  background-image:
+    radial-gradient(closest-side, rgba(206, 214, 230, 0.20), transparent 72%),
+    radial-gradient(closest-side, rgba(178, 188, 208, 0.15), transparent 72%);
+  background-size: 58% 62%, 44% 48%;
+  background-position: 28% 62%, 64% 38%;
+  animation: smokeA 26s ease-in-out infinite alternate;
+}
+
+.smokeB {
+  opacity: 0.34;
+  background-image:
+    radial-gradient(closest-side, rgba(214, 220, 236, 0.16), transparent 70%),
+    radial-gradient(closest-side, rgba(190, 198, 218, 0.12), transparent 70%);
+  background-size: 48% 52%, 38% 42%;
+  background-position: 74% 66%, 44% 24%;
+  animation: smokeB 34s ease-in-out infinite alternate;
+}
+
+/* Different durations and travel so the two layers never visibly resync. */
+@keyframes smokeA {
+  from { transform: translate3d(-3%, 2%, 0) scale(1); }
+  to { transform: translate3d(4%, -3%, 0) scale(1.12); }
+}
+
+@keyframes smokeB {
+  from { transform: translate3d(3%, -2%, 0) scale(1.08); }
+  to { transform: translate3d(-4%, 3%, 0) scale(1); }
+}
+
+@keyframes shaft {
+  from { opacity: 0.45; transform: skewX(-16deg) translateX(-7%); }
+  to { opacity: 1; transform: skewX(-16deg) translateX(9%); }
+}
+
+.mote {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  pointer-events: none;
+  animation: mote linear infinite;
+}
+
+@keyframes mote {
+  0% { transform: translateY(0); opacity: 0; }
+  12% { opacity: 0.8; }
+  86% { opacity: 0.4; }
+  100% { transform: translateY(-88vh); opacity: 0; }
+}
+
+.stage { position: absolute; inset: 0; pointer-events: none; }
+
+.layer {
+  position: absolute;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 183, 138, 0.16);
+  background: linear-gradient(160deg, #232937, #12151D);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+  transform: translate3d(calc(var(--px) * var(--depth) * 1px), calc(var(--py) * var(--depth) * 1px), 0);
+  transition: transform 400ms var(--ease-out);
+  animation: float ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { margin-top: -10px; }
+  to { margin-top: 12px; }
+}
+
+.layer img { width: 100%; height: 100%; object-fit: contain; padding: 12%; }
+
+.l1 { width: 190px; height: 240px; left: 54%; top: 20%; --depth: 26; animation-duration: 7s; }
+.l2 { width: 132px; height: 168px; left: 74%; top: 48%; --depth: 16; animation-duration: 9s; animation-delay: -2s; }
+.l3 { width: 104px; height: 132px; left: 63%; top: 70%; --depth: 38; animation-duration: 6s; animation-delay: -4s; }
+
+.copy { position: relative; z-index: 5; padding: 80px 0; max-width: 620px; }
+.rule { width: 120px; margin-bottom: 18px; }
+.h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.02; margin: 14px 0 18px; }
+.lede { color: var(--text-muted); font-size: 17px; line-height: 1.65; margin: 0 0 30px; max-width: 46ch; }
+
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #04150E;
+  border-radius: 999px;
+  padding: 15px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.cta:hover { background: var(--accent-press); transform: translateY(-1px); }
+.hero[data-paused='true'] .shaft,
+.hero[data-paused='true'] .mote,
+.hero[data-paused='true'] .smoke,
+.hero[data-paused='true'] .layer { animation-play-state: paused; }
+
+@media (max-width: 900px) {
+  .hero { min-height: 78vh; }
+  .l1 { width: 132px; height: 168px; left: 58%; top: 12%; }
+  .l2 { width: 96px; height: 122px; left: 76%; top: 40%; }
+  .l3 { display: none; }
+  .shaft { left: 40%; width: 46%; }
+  .copy { padding: 120px 0 60px; }
+  .lede { font-size: 15px; }
+  /* Blur is the most expensive thing on this page. Halve it on mobile and
+     drop the second plume — one layer still reads as smoke. */
+  .smoke { filter: blur(12px); }
+  .smokeB { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shaft, .mote, .layer, .smoke { animation: none; }
+  .mote { opacity: 0.35; }
+  .layer { transition: none; }
+}

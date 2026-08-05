@@ -1,9 +1,15 @@
-export default function LandingPage() {
+import { LivingCatalogueHero } from '@/components/landing/LivingCatalogueHero';
+import { SiteHeader } from '@/components/shell/SiteHeader';
+import { getCatalogSource } from '@/lib/catalog';
+
+export default async function LandingPage() {
+  const products = await getCatalogSource().listProducts();
+  const featured = products.filter((p) => p.images.length > 0).slice(0, 3);
+
   return (
-    <main className="container" style={{ paddingTop: 80 }}>
-      <p className="kicker">Now open · Brampton</p>
-      <h1 style={{ fontSize: 48, margin: '12px 0 20px' }}>Curated, not stocked.</h1>
-      <div className="hairline" />
-    </main>
+    <>
+      <SiteHeader />
+      <LivingCatalogueHero products={featured} />
+    </>
   );
 }
