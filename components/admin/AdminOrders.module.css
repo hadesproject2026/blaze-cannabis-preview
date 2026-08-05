@@ -2,19 +2,6 @@
 
 .title { font-size: 30px; margin: 8px 0 18px; }
 
-.sampleNotice {
-  background: var(--surface);
-  border: 1px solid var(--gold-dim);
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  color: var(--text);
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 26px;
-}
-
-.sampleNotice strong { color: var(--gold); }
-
 .list {
   list-style: none;
   margin: 0;

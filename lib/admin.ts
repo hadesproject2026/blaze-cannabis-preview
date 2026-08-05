@@ -1,4 +1,4 @@
-import type { Product, ProductBadge } from './catalog/types';
+import type { Product, ProductBadge, Store, StoreHours } from './catalog/types';
 
 /**
  * In-memory admin overlay for the demo admin area. Nothing here persists —
@@ -30,14 +30,43 @@ export interface Reservation {
   createdAt: string;
 }
 
+export type ReviewStatus = 'Published' | 'Hidden';
+
+export interface Review {
+  id: string;
+  author: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+  productId: string;
+  productName: string;
+  comment: string;
+  date: string;
+  status: ReviewStatus;
+}
+
+/** A row on the Customers surface — always derived, never edited directly. */
+export interface CustomerSummary {
+  name: string;
+  orderCount: number;
+  totalCents: number;
+  lastOrderDate: string;
+}
+
 export interface AdminState {
   overrides: Record<string, ProductOverride>;
   reservations: Reservation[];
+  reviews: Review[];
+  /** Product ids feeding the landing page's hero, in display order (max 3). */
+  heroProductIds: string[];
+  /** In-memory editable copy of the store record shown on Shop settings. */
+  storeSettings: Store | null;
 }
 
 export const EMPTY_ADMIN_STATE: AdminState = {
   overrides: {},
   reservations: [],
+  reviews: [],
+  heroProductIds: [],
+  storeSettings: null,
 };
 
 export type AdminAction =
@@ -45,7 +74,16 @@ export type AdminAction =
   | { type: 'setPrice'; productId: string; priceCents: number }
   | { type: 'setStaffPick'; productId: string; staffPick: boolean }
   | { type: 'setReservationStatus'; reservationId: string; status: ReservationStatus }
-  | { type: 'seedReservations'; reservations: Reservation[] };
+  | { type: 'seedReservations'; reservations: Reservation[] }
+  | { type: 'setReviewStatus'; reviewId: string; status: ReviewStatus }
+  | { type: 'seedReviews'; reviews: Review[] }
+  | { type: 'setHeroProducts'; productIds: string[] }
+  | { type: 'seedStoreSettings'; store: Store }
+  | {
+      type: 'updateStoreSettings';
+      patch: Partial<Pick<Store, 'name' | 'address' | 'city' | 'province' | 'postalCode' | 'phone'>>;
+    }
+  | { type: 'updateStoreHours'; index: number; patch: Partial<StoreHours> };
 
 function withOverride(
   state: AdminState,
@@ -85,6 +123,41 @@ export function adminReducer(state: AdminState, action: AdminAction): AdminState
 
     case 'seedReservations':
       return { ...state, reservations: action.reservations };
+
+    case 'setReviewStatus':
+      return {
+        ...state,
+        reviews: state.reviews.map((r) =>
+          r.id === action.reviewId ? { ...r, status: action.status } : r,
+        ),
+      };
+
+    case 'seedReviews':
+      return { ...state, reviews: action.reviews };
+
+    case 'setHeroProducts':
+      // The landing hero renders at most three layered images — cap the
+      // selection here so an over-eager click list can't request a fourth.
+      return { ...state, heroProductIds: action.productIds.slice(0, 3) };
+
+    case 'seedStoreSettings':
+      return { ...state, storeSettings: action.store };
+
+    case 'updateStoreSettings':
+      if (!state.storeSettings) return state;
+      return { ...state, storeSettings: { ...state.storeSettings, ...action.patch } };
+
+    case 'updateStoreHours':
+      if (!state.storeSettings) return state;
+      return {
+        ...state,
+        storeSettings: {
+          ...state.storeSettings,
+          hours: state.storeSettings.hours.map((h, i) =>
+            i === action.index ? { ...h, ...action.patch } : h,
+          ),
+        },
+      };
 
     default:
       return state;
@@ -149,4 +222,57 @@ export function getDashboardStats(products: Product[]): DashboardStats {
   }
 
   return { total: products.length, byCategory, outOfStock, onSale, budtenderSelects };
+}
+
+/**
+ * Groups fabricated orders (see lib/sample-reservations.ts) into a per-customer
+ * summary so the Customers surface always reconciles with Orders — same
+ * names, same totals, no separate customer data invented.
+ */
+export function deriveCustomers(reservations: Reservation[]): CustomerSummary[] {
+  const byName = new Map<string, CustomerSummary>();
+
+  for (const r of reservations) {
+    const existing = byName.get(r.customerName);
+    if (existing) {
+      existing.orderCount += 1;
+      existing.totalCents += r.totalCents;
+      if (r.createdAt > existing.lastOrderDate) existing.lastOrderDate = r.createdAt;
+    } else {
+      byName.set(r.customerName, {
+        name: r.customerName,
+        orderCount: 1,
+        totalCents: r.totalCents,
+        lastOrderDate: r.createdAt,
+      });
+    }
+  }
+
+  return Array.from(byName.values()).sort((a, b) => b.totalCents - a.totalCents);
+}
+
+/** The first three real catalog products with an image — the landing hero's default. */
+export function getDefaultHeroProductIds(products: Product[]): string[] {
+  return products
+    .filter((p) => p.images.length > 0)
+    .slice(0, 3)
+    .map((p) => p.id);
+}
+
+/**
+ * Resolves the operator's hero picks (Gallery surface) against the live
+ * catalog. Falls back to the default first-three-with-images selection when
+ * no picks are set, or when every pick has gone out of stock/lost its image
+ * — the hero should never render empty.
+ */
+export function getHeroProducts(products: Product[], heroProductIds: string[]): Product[] {
+  const withImages = products.filter((p) => p.images.length > 0);
+  if (heroProductIds.length === 0) return withImages.slice(0, 3);
+
+  const byId = new Map(withImages.map((p) => [p.id, p] as const));
+  const picked = heroProductIds
+    .map((id) => byId.get(id))
+    .filter((p): p is Product => p !== undefined);
+
+  return picked.length > 0 ? picked.slice(0, 3) : withImages.slice(0, 3);
 }

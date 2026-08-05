@@ -6,8 +6,12 @@ import styles from './AdminShell.module.css';
 
 const NAV_LINKS = [
   { href: '/admin', label: 'Dashboard' },
+  { href: '/admin/orders', label: 'Orders' },
+  { href: '/admin/customers', label: 'Customers' },
   { href: '/admin/products', label: 'Products' },
-  { href: '/admin/reservations', label: 'Reservations' },
+  { href: '/admin/gallery', label: 'Gallery' },
+  { href: '/admin/reviews', label: 'Reviews' },
+  { href: '/admin/settings', label: 'Shop settings' },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
@@ -23,7 +27,9 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       </header>
 
       <div className={styles.body}>
-        <nav className={styles.sidebar} aria-label="Admin sections">
+        <div className={styles.sidebarCol}>
+          <p className={styles.sidebarLabel} aria-hidden="true">Owner admin</p>
+          <nav className={styles.sidebar} aria-label="Owner admin">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
@@ -40,7 +46,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           })}
           <span className={styles.navSpacer} />
           <Link href="/" className={styles.backLink}>← Back to storefront</Link>
-        </nav>
+          </nav>
+        </div>
 
         <main id="admin-main" className={styles.main}>
           {children}

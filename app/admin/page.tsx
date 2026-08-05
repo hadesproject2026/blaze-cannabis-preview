@@ -1,5 +1,6 @@
 import { AdminDashboard } from '@/components/admin/AdminDashboard';
 import { getCatalogSource } from '@/lib/catalog';
+import { generateSampleEarnings } from '@/lib/sample-earnings';
 
 export default async function AdminDashboardPage() {
   const source = getCatalogSource();
@@ -8,6 +9,7 @@ export default async function AdminDashboardPage() {
     source.listCategories(),
     source.getStore('brampton'),
   ]);
+  const earnings = generateSampleEarnings(products);
 
-  return <AdminDashboard products={products} categories={categories} store={store} />;
+  return <AdminDashboard products={products} categories={categories} store={store} earnings={earnings} />;
 }

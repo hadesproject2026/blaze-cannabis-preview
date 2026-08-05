@@ -1,5 +1,9 @@
-import { AdminReservations } from '@/components/admin/AdminReservations';
+import { redirect } from 'next/navigation';
 
-export default function AdminReservationsPage() {
-  return <AdminReservations />;
+// Reservations was renamed to Orders (see app/admin/orders/page.tsx) to match
+// the client's requested information architecture. This route stays only as
+// a redirect so any bookmarked or shared link to the old path still works —
+// /admin/orders is the one canonical route.
+export default function AdminReservationsRedirect() {
+  redirect('/admin/orders');
 }

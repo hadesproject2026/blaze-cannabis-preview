@@ -4,7 +4,9 @@ import { CartDrawer } from '@/components/cart/CartDrawer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
 import { getCatalogSource } from '@/lib/catalog';
+import { getDefaultHeroProductIds } from '@/lib/admin';
 import { generateSampleReservations } from '@/lib/sample-reservations';
+import { generateSampleReviews } from '@/lib/sample-reviews';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -14,17 +16,26 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // AdminProvider is mounted here, above every route, so the admin overlay
-  // (product overrides, reservation statuses) survives client-side
-  // navigation between /admin and the storefront within a session — the
-  // whole point of the admin demo. The sample reservations are generated
-  // once from the real catalog and handed down as the starting state.
-  const products = await getCatalogSource().listProducts();
+  // (product overrides, order statuses, review visibility, hero picks, shop
+  // settings) survives client-side navigation between /admin and the
+  // storefront within a session — the whole point of the admin demo. Every
+  // fabricated seed below is generated once from the real catalog/store and
+  // handed down as starting state; nothing is persisted.
+  const source = getCatalogSource();
+  const [products, store] = await Promise.all([source.listProducts(), source.getStore('brampton')]);
   const initialReservations = generateSampleReservations(products);
+  const initialReviews = generateSampleReviews(products);
+  const initialHeroProductIds = getDefaultHeroProductIds(products);
 
   return (
     <html lang="en">
       <body>
-        <AdminProvider initialReservations={initialReservations}>
+        <AdminProvider
+          initialReservations={initialReservations}
+          initialReviews={initialReviews}
+          initialHeroProductIds={initialHeroProductIds}
+          initialStoreSettings={store}
+        >
           <CartProvider>
             <noscript>
               <style>{`#site-content { display: none !important; }`}</style>

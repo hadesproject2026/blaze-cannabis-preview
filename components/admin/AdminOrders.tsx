@@ -1,25 +1,25 @@
 'use client';
 
 import { useAdmin } from '@/components/admin/AdminProvider';
+import { SampleDataNotice } from '@/components/admin/SampleDataNotice';
 import type { ReservationStatus } from '@/lib/admin';
 import { formatPrice } from '@/lib/format';
-import styles from './AdminReservations.module.css';
+import styles from './AdminOrders.module.css';
 
 const STATUSES: ReservationStatus[] = ['New', 'Ready', 'Collected'];
 
-export function AdminReservations() {
+export function AdminOrders() {
   const { reservations, setReservationStatus } = useAdmin();
 
   return (
     <div className={styles.page}>
-      <p className="kicker">Pickup</p>
-      <h1 className={styles.title}>Reservations</h1>
+      <p className="kicker">Fulfillment</p>
+      <h1 className={styles.title}>Orders</h1>
 
-      <div className={styles.sampleNotice} role="note">
-        <strong>Sample data.</strong> These {reservations.length} reservations are fabricated for this
-        demo — built from real catalog products so names and prices line up, but no real orders exist
-        in this build.
-      </div>
+      <SampleDataNotice>
+        These {reservations.length} pickup orders are fabricated for this demo — built from real
+        catalog products so names and prices line up, but no real orders exist in this build.
+      </SampleDataNotice>
 
       <ul className={styles.list}>
         {reservations.map((r) => (
@@ -27,10 +27,10 @@ export function AdminReservations() {
             <div className={styles.cardHead}>
               <div>
                 <p className={styles.customer}>{r.customerName}</p>
-                <p className={styles.meta}>Reservation {r.id.replace('res-', '#')} · {r.createdAt}</p>
+                <p className={styles.meta}>Order {r.id.replace('res-', '#')} · {r.createdAt}</p>
               </div>
               <label className={styles.statusField} data-status={r.status}>
-                <span className="sr-only">Status for {r.customerName}&apos;s reservation</span>
+                <span className="sr-only">Status for {r.customerName}&apos;s order</span>
                 <select
                   className={styles.statusSelect}
                   value={r.status}

@@ -32,9 +32,18 @@ const PICKUP_DATES = [
   '2026-08-02',
   '2026-08-02',
   '2026-08-01',
+  '2026-07-30',
+  '2026-07-29',
+  '2026-07-27',
+  '2026-07-25',
+  '2026-07-23',
+  '2026-07-20',
 ];
 
-const RESERVATION_COUNT = 8;
+// 14 orders across 8 repeating customers so the Customers surface (derived
+// from this same list — see deriveCustomers in lib/admin.ts) shows real
+// repeat business: some customers with one order, some with two or three.
+const RESERVATION_COUNT = 14;
 
 /** Deterministic — same catalog in, same reservations out, so tests stay stable. */
 export function generateSampleReservations(products: Product[]): Reservation[] {

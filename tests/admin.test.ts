@@ -3,13 +3,17 @@ import {
   adminReducer,
   applyOverride,
   applyOverrides,
+  deriveCustomers,
   EMPTY_ADMIN_STATE,
   getDashboardStats,
+  getDefaultHeroProductIds,
+  getHeroProducts,
   type AdminState,
   type ProductOverride,
   type Reservation,
+  type Review,
 } from '@/lib/admin';
-import type { Product } from '@/lib/catalog/types';
+import type { Product, Store } from '@/lib/catalog/types';
 
 function makeProduct(overrides: Partial<Product> = {}): Product {
   return {
@@ -44,6 +48,30 @@ const reservation = (over: Partial<Reservation> = {}): Reservation => ({
   totalCents: 2400,
   status: 'New',
   createdAt: '2026-08-01',
+  ...over,
+});
+
+const review = (over: Partial<Review> = {}): Review => ({
+  id: 'rev-1',
+  author: 'Jordan K.',
+  rating: 5,
+  productId: 'p-1',
+  productName: 'Orange Tingz',
+  comment: 'Fresh product.',
+  date: '2026-08-01',
+  status: 'Published',
+  ...over,
+});
+
+const store = (over: Partial<Store> = {}): Store => ({
+  id: 'brampton',
+  name: 'Blaze Cannabis - Brampton',
+  address: '227 Vodden St E, Unit 15',
+  city: 'Brampton',
+  province: 'ON',
+  postalCode: 'L6V 1N3',
+  phone: '(905) 453-9901',
+  hours: [{ day: 'Mon-Sun', open: '9:00 AM', close: '10:50 PM' }],
   ...over,
 });
 
@@ -183,6 +211,162 @@ describe('adminReducer', () => {
   it('returns the same state for an unknown action', () => {
     // @ts-expect-error — deliberately testing the default branch
     expect(adminReducer(EMPTY_ADMIN_STATE, { type: 'noop' })).toBe(EMPTY_ADMIN_STATE);
+  });
+
+  it('seeds reviews', () => {
+    const reviews = [review()];
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'seedReviews', reviews });
+    expect(state.reviews).toEqual(reviews);
+  });
+
+  it('updates the status of a matching review', () => {
+    const state: AdminState = { ...EMPTY_ADMIN_STATE, reviews: [review()] };
+    const next = adminReducer(state, { type: 'setReviewStatus', reviewId: 'rev-1', status: 'Hidden' });
+    expect(next.reviews[0].status).toBe('Hidden');
+  });
+
+  it('leaves other reviews untouched when updating one status', () => {
+    const state: AdminState = {
+      ...EMPTY_ADMIN_STATE,
+      reviews: [review(), review({ id: 'rev-2', status: 'Published' })],
+    };
+    const next = adminReducer(state, { type: 'setReviewStatus', reviewId: 'rev-1', status: 'Hidden' });
+    expect(next.reviews[1].status).toBe('Published');
+  });
+
+  it('ignores a status update for an unknown review id', () => {
+    const state: AdminState = { ...EMPTY_ADMIN_STATE, reviews: [review()] };
+    const next = adminReducer(state, { type: 'setReviewStatus', reviewId: 'nope', status: 'Hidden' });
+    expect(next.reviews).toEqual(state.reviews);
+  });
+
+  it('sets the hero product picks', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'setHeroProducts',
+      productIds: ['p-1', 'p-2'],
+    });
+    expect(state.heroProductIds).toEqual(['p-1', 'p-2']);
+  });
+
+  it('caps hero product picks at three', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'setHeroProducts',
+      productIds: ['p-1', 'p-2', 'p-3', 'p-4'],
+    });
+    expect(state.heroProductIds).toEqual(['p-1', 'p-2', 'p-3']);
+  });
+
+  it('seeds store settings', () => {
+    const s = store();
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'seedStoreSettings', store: s });
+    expect(state.storeSettings).toEqual(s);
+  });
+
+  it('patches store settings fields', () => {
+    const state: AdminState = { ...EMPTY_ADMIN_STATE, storeSettings: store() };
+    const next = adminReducer(state, {
+      type: 'updateStoreSettings',
+      patch: { name: 'Blaze Cannabis - Downtown', phone: '(905) 000-0000' },
+    });
+    expect(next.storeSettings?.name).toBe('Blaze Cannabis - Downtown');
+    expect(next.storeSettings?.phone).toBe('(905) 000-0000');
+    expect(next.storeSettings?.address).toBe(store().address);
+  });
+
+  it('ignores updateStoreSettings when there is no seeded store', () => {
+    const next = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'updateStoreSettings',
+      patch: { name: 'Nope' },
+    });
+    expect(next.storeSettings).toBeNull();
+  });
+
+  it('patches a single hours row by index', () => {
+    const state: AdminState = { ...EMPTY_ADMIN_STATE, storeSettings: store() };
+    const next = adminReducer(state, {
+      type: 'updateStoreHours',
+      index: 0,
+      patch: { close: '11:00 PM' },
+    });
+    expect(next.storeSettings?.hours[0]).toEqual({ day: 'Mon-Sun', open: '9:00 AM', close: '11:00 PM' });
+  });
+
+  it('ignores updateStoreHours when there is no seeded store', () => {
+    const next = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'updateStoreHours',
+      index: 0,
+      patch: { close: '11:00 PM' },
+    });
+    expect(next.storeSettings).toBeNull();
+  });
+});
+
+describe('deriveCustomers', () => {
+  it('groups orders by customer name', () => {
+    const reservations = [
+      reservation({ id: 'res-1', customerName: 'Priya Nathan', totalCents: 1000, createdAt: '2026-08-01' }),
+      reservation({ id: 'res-2', customerName: 'Priya Nathan', totalCents: 2000, createdAt: '2026-08-03' }),
+      reservation({ id: 'res-3', customerName: 'Marcus Webb', totalCents: 500, createdAt: '2026-08-02' }),
+    ];
+    const customers = deriveCustomers(reservations);
+    const priya = customers.find((c) => c.name === 'Priya Nathan');
+    expect(priya).toEqual({
+      name: 'Priya Nathan',
+      orderCount: 2,
+      totalCents: 3000,
+      lastOrderDate: '2026-08-03',
+    });
+  });
+
+  it('sorts customers by total spent, descending', () => {
+    const reservations = [
+      reservation({ id: 'res-1', customerName: 'A', totalCents: 500 }),
+      reservation({ id: 'res-2', customerName: 'B', totalCents: 5000 }),
+    ];
+    const customers = deriveCustomers(reservations);
+    expect(customers.map((c) => c.name)).toEqual(['B', 'A']);
+  });
+
+  it('returns an empty list for no orders', () => {
+    expect(deriveCustomers([])).toEqual([]);
+  });
+});
+
+describe('getDefaultHeroProductIds', () => {
+  it('takes the first three products that have an image', () => {
+    const products: Product[] = [
+      { ...product, id: 'p-1', images: [] },
+      { ...product, id: 'p-2', images: ['/a.jpg'] },
+      { ...product, id: 'p-3', images: ['/b.jpg'] },
+      { ...product, id: 'p-4', images: ['/c.jpg'] },
+      { ...product, id: 'p-5', images: ['/d.jpg'] },
+    ];
+    expect(getDefaultHeroProductIds(products)).toEqual(['p-2', 'p-3', 'p-4']);
+  });
+});
+
+describe('getHeroProducts', () => {
+  const products: Product[] = [
+    { ...product, id: 'p-1', images: ['/a.jpg'] },
+    { ...product, id: 'p-2', images: ['/b.jpg'] },
+    { ...product, id: 'p-3', images: [] },
+    { ...product, id: 'p-4', images: ['/c.jpg'] },
+  ];
+
+  it('falls back to the default when no picks are set', () => {
+    expect(getHeroProducts(products, []).map((p) => p.id)).toEqual(['p-1', 'p-2', 'p-4']);
+  });
+
+  it('resolves picks in the given order', () => {
+    expect(getHeroProducts(products, ['p-4', 'p-1']).map((p) => p.id)).toEqual(['p-4', 'p-1']);
+  });
+
+  it('drops a picked id that has no image', () => {
+    expect(getHeroProducts(products, ['p-3', 'p-1']).map((p) => p.id)).toEqual(['p-1']);
+  });
+
+  it('falls back to the default when every pick is invalid', () => {
+    expect(getHeroProducts(products, ['p-3', 'missing']).map((p) => p.id)).toEqual(['p-1', 'p-2', 'p-4']);
   });
 });
 

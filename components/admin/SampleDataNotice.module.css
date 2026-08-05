@@ -1,0 +1,14 @@
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.notice strong {
+  color: var(--gold);
+}
