@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CartDrawer } from '@/components/cart/CartDrawer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
 import './globals.css';
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </noscript>
           <AgeGate />
           <div id="site-content">{children}</div>
+          <CartDrawer />
         </CartProvider>
       </body>
     </html>

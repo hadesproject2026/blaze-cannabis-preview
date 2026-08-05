@@ -23,20 +23,20 @@ export function QuantityStepper({ value, onChange, min = 1, max = 99 }: Props) {
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
       <button
         type="button"
-        style={buttonStyle}
+        style={{ ...buttonStyle, opacity: value <= min ? 0.4 : 1, cursor: value <= min ? 'not-allowed' : 'pointer' }}
         aria-label="Decrease quantity"
-        disabled={value <= min}
-        onClick={() => onChange(Math.max(min, value - 1))}
+        aria-disabled={value <= min}
+        onClick={() => { if (value > min) onChange(value - 1); }}
       >
         −
       </button>
       <span aria-live="polite" style={{ minWidth: 24, textAlign: 'center', fontSize: 15 }}>{value}</span>
       <button
         type="button"
-        style={buttonStyle}
+        style={{ ...buttonStyle, opacity: value >= max ? 0.4 : 1, cursor: value >= max ? 'not-allowed' : 'pointer' }}
         aria-label="Increase quantity"
-        disabled={value >= max}
-        onClick={() => onChange(Math.min(max, value + 1))}
+        aria-disabled={value >= max}
+        onClick={() => { if (value < max) onChange(value + 1); }}
       >
         +
       </button>
