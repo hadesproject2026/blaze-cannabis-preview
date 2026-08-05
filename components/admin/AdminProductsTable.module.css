@@ -1,0 +1,186 @@
+.page { max-width: 1100px; }
+
+.title { font-size: 30px; margin: 8px 0 6px; }
+
+.lede {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+  max-width: 60ch;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.search {
+  flex: 1 1 260px;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  padding: 9px 16px;
+  font-size: 13px;
+}
+
+.search::placeholder { color: var(--text-muted); }
+.search:focus { border-color: var(--gold-dim); }
+
+.count {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* The table can be wider than the viewport — it scrolls inside this box
+   rather than pushing the page's own width. */
+.tableWrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  /* Without an explicit positioning context here, the position:absolute
+     .sr-only labels inside each row (from globals.css) have no positioned
+     ancestor closer than the root, so their containing block skips this
+     scroll container entirely and inflates the page's own scrollWidth
+     instead of scrolling inside this box. */
+  position: relative;
+}
+
+.table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  background: var(--surface-2);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.row td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.row:last-child td { border-bottom: 0; }
+.row:hover td { background: var(--surface-2); }
+/* --text-muted on --surface-2 falls just under the 4.5:1 AA floor, so bump
+   muted cells to full-contrast text while a row is hovered. */
+.row:hover .mutedCell { color: var(--text); }
+.row[data-out-of-stock='true'] { opacity: 0.7; }
+
+.thumbCell { width: 60px; }
+
+.thumb {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbImg { object-fit: cover; }
+
+.thumbFallback {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.nameCell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  font-weight: 600;
+}
+
+.outBadge {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--danger);
+}
+
+.mutedCell { color: var(--text-muted); white-space: nowrap; }
+
+.priceField {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  width: 92px;
+}
+
+/* var(--text-muted) dips under 4.5:1 on this field's --surface-2 background,
+   so the $ prefix uses full-contrast text instead. */
+.currencyPrefix { color: var(--text); font-size: 13px; }
+
+.priceInput {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-size: 13px;
+  padding: 4px 0;
+  -moz-appearance: textfield;
+}
+
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Plain native checkbox rather than a custom positioned switch: matches the
+   FilterPanel convention (accent-color on a native input) and, inside a
+   scrollable <table>, avoids position:relative/absolute descendants, which
+   caused the table's off-screen columns to leak into the page's own
+   scrollable area on narrow viewports. */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.empty {
+  padding: 24px 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+}

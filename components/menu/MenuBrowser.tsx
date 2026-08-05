@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useAdmin } from '@/components/admin/AdminProvider';
 import { SiteHeader } from '@/components/shell/SiteHeader';
+import { applyOverrides } from '@/lib/admin';
 import type { Category, Product } from '@/lib/catalog/types';
 import { applyFilters, EMPTY_FILTERS, sortProducts, type FilterState, type SortKey } from '@/lib/filters';
 import { CategoryChips } from './CategoryChips';
@@ -23,14 +25,21 @@ export function MenuBrowser({ products, categories, viewLabel }: Props) {
   const [sort, setSort] = useState<SortKey>('featured');
   const [filtersOpen, setFiltersOpen] = useState(false);
 
+  // Overlays in-memory admin edits (stock, price, Budtender Select) on top of
+  // the server-fetched catalog, so a change made in /admin/products shows up
+  // here immediately without a reload — see lib/admin.ts and the admin build
+  // report for how this stays in sync across client-side navigation.
+  const { overrides } = useAdmin();
+  const overlaidProducts = useMemo(() => applyOverrides(products, overrides), [products, overrides]);
+
   const brands = useMemo(
-    () => Array.from(new Set(products.map((p) => p.brand))).sort(),
-    [products],
+    () => Array.from(new Set(overlaidProducts.map((p) => p.brand))).sort(),
+    [overlaidProducts],
   );
 
   const visible = useMemo(
-    () => sortProducts(applyFilters(products, filters), sort),
-    [products, filters, sort],
+    () => sortProducts(applyFilters(overlaidProducts, filters), sort),
+    [overlaidProducts, filters, sort],
   );
 
   const toggleCategory = (slug: string) =>

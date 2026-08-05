@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import { AdminProvider } from '@/components/admin/AdminProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
+import { getCatalogSource } from '@/lib/catalog';
+import { generateSampleReservations } from '@/lib/sample-reservations';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -9,22 +12,32 @@ export const metadata: Metadata = {
   description: 'Browse the Blaze Cannabis Brampton menu and reserve for pickup.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // AdminProvider is mounted here, above every route, so the admin overlay
+  // (product overrides, reservation statuses) survives client-side
+  // navigation between /admin and the storefront within a session — the
+  // whole point of the admin demo. The sample reservations are generated
+  // once from the real catalog and handed down as the starting state.
+  const products = await getCatalogSource().listProducts();
+  const initialReservations = generateSampleReservations(products);
+
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <noscript>
-            <style>{`#site-content { display: none !important; }`}</style>
-            <div style={{ padding: '80px 20px', textAlign: 'center' }}>
-              <h1>You must be 19 or older to view this site.</h1>
-              <p>Please enable JavaScript to continue.</p>
-            </div>
-          </noscript>
-          <AgeGate />
-          <div id="site-content">{children}</div>
-          <CartDrawer />
-        </CartProvider>
+        <AdminProvider initialReservations={initialReservations}>
+          <CartProvider>
+            <noscript>
+              <style>{`#site-content { display: none !important; }`}</style>
+              <div style={{ padding: '80px 20px', textAlign: 'center' }}>
+                <h1>You must be 19 or older to view this site.</h1>
+                <p>Please enable JavaScript to continue.</p>
+              </div>
+            </noscript>
+            <AgeGate />
+            <div id="site-content">{children}</div>
+            <CartDrawer />
+          </CartProvider>
+        </AdminProvider>
       </body>
     </html>
   );
