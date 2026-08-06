@@ -125,7 +125,11 @@
   border-radius: var(--radius-sm);
   padding: 12px 14px;
   font-size: 13px;
-  color: var(--text-muted);
+  /* var(--text-muted) dips to ~4.43:1 on this box's --surface-2 background,
+     under the 4.5:1 AA floor, so the always-visible contact details use
+     full-contrast text instead (matches the pattern in AdminProductsTable
+     and NavDrawer). */
+  color: var(--text);
   margin-bottom: 16px;
   position: relative;
 }
