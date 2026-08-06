@@ -118,3 +118,38 @@ pitch.
 `netlify.toml` is set up for Netlify with `@netlify/plugin-nextjs`. Push to a connected
 repo, or `netlify deploy`. The demo needs no environment variables to run — leave
 `CATALOG_SOURCE` unset.
+
+## Deploying
+
+Deployed to Netlify from this repository's `main` branch. `netlify.toml` supplies
+the build command, Node version and the Next.js plugin, so **Base directory,
+Build command and Publish directory must all be left blank** in the Netlify UI —
+values typed there override this file and break the build.
+
+### Environment variables
+
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_PREVIEW_BANNER` | `true` shows the "Design preview" notice. Set on the preview deploy. |
+| `CATALOG_SOURCE` | Leave unset. Unset or `mock` runs on the committed catalog, so the site cannot be broken by a third-party API. `blaze` switches to the live BLAZE ECOM adapter. |
+| `ALLOW_INDEXING` | Leave unset. Set to `true` only if this becomes the client's real, AGCO-submitted storefront — it removes the noindex signal. |
+
+### Why this preview is hidden from search
+
+It carries a licensed retailer's real branding, address and prices, so an indexed
+result pointing here could be mistaken for their actual storefront. Three layers:
+
+1. `robots.txt` disallows crawling.
+2. A `robots` meta tag in `app/layout.tsx` prevents *indexing* — a distinct thing
+   from crawling, and the one search engines actually honour. Header-based
+   approaches were tried first and verified not to work here: most pages are
+   statically prerendered and served from the CDN, so `headers()` in
+   `next.config.mjs` never runs, and Netlify's Next handler takes precedence over
+   `netlify.toml` header rules.
+3. The on-screen "Design preview" notice tells any human visitor directly.
+
+### Git contributors
+
+Netlify's free plan permits one Git contributor on a private repo. Commits must be
+authored by the account that owns the Netlify team, or builds are blocked with
+"unrecognized Git contributor".
