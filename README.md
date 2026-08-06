@@ -20,7 +20,8 @@ Age gate: click through it once, or in a browser console:
 
     localStorage.setItem('blaze.age-verified.v1', 'true')
 
-Admin console lives at `/admin`, passcode `blaze`. To skip re-entering it:
+Admin console lives at `/admin` behind a demo sign-in: `owner@blaze.demo` or `owner`
+(case-insensitive), passcode `blaze`. To skip re-entering it:
 
     localStorage.setItem('blaze.admin.v1', 'true')
 
@@ -99,8 +100,9 @@ pitch.
 - **The admin area is a demo, not a back office.** Orders, customers, reviews, and every
   earnings figure are generated sample data, labelled as such on screen (look for the gold
   "Demo" tags). Products and store details are the real catalog and real store info. The
-  `blaze` passcode is a pitch-preview speed bump, not access control — it is not a
-  substitute for real authentication before any real deployment.
+  sign-in screen (`owner@blaze.demo` / `owner`, passcode `blaze`) looks like a login so it
+  reads as a business tool during a pitch, but it is a pitch-preview speed bump, not access
+  control — it is not a substitute for real authentication before any real deployment.
 - **Live BLAZE ECOM integration is partially proven** — see the phase-by-phase status
   above. Catalog and cart/validation work against real responses; order submission has
   never succeeded past BLAZE's own POS bridge on their demo store; payment isn't built.
