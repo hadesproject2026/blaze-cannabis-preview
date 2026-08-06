@@ -1,0 +1,54 @@
+/* Deliberately unmissable. This preview carries a licensed retailer's real
+   branding, address and inventory, so a visitor must never be in doubt that
+   it is a design preview rather than the shop they can actually buy from. */
+.banner {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 95;
+  max-width: min(380px, calc(100vw - 24px));
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--gold-dim);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.text { margin: 0; }
+.text strong { color: var(--gold); font-weight: 700; }
+.text span { color: var(--text-muted); display: block; margin-top: 2px; }
+
+.dismiss {
+  flex: none;
+  margin-left: 4px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dismiss:hover { color: var(--text); }
+
+@media (max-width: 720px) {
+  .banner { left: 8px; right: 8px; bottom: 8px; max-width: none; }
+}

@@ -8,3 +8,13 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# This deploy is a design preview carrying the client's real branding,
+# address and inventory. Keeping it out of search engines matters: an
+# indexed result pointing here could be taken for the real storefront,
+# and the client is a licensed retailer whose live site is subject to
+# AGCO review. Remove these headers only when this becomes the real site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"

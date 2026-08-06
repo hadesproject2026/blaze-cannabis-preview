@@ -3,6 +3,7 @@ import { AdminProvider } from '@/components/admin/AdminProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
+import { PreviewBanner } from '@/components/shell/PreviewBanner';
 import { getCatalogMode, getCatalogSource } from '@/lib/catalog';
 import { getDefaultHeroProductIds } from '@/lib/admin';
 import { generateSampleReservations } from '@/lib/sample-reservations';
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <AgeGate />
             <div id="site-content">{children}</div>
             <CartDrawer />
+            <PreviewBanner />
           </CartProvider>
         </AdminProvider>
       </body>
