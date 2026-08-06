@@ -3,11 +3,16 @@
 import { useEffect, useRef, useState } from 'react';
 import { formatPrice } from '@/lib/format';
 import { useCart } from './CartProvider';
+import { CheckoutFlow } from './CheckoutFlow';
 import styles from './CartDrawer.module.css';
 
 export function CartDrawer() {
-  const { lines, subtotalCents, isOpen, close, setQty, remove, clear } = useCart();
+  const { lines, subtotalCents, isOpen, close, setQty, remove, clear, catalogMode } = useCart();
   const [reserved, setReserved] = useState(false);
+  // Only reachable when catalogMode === 'blaze' (see the footer button below) — the
+  // mock demo keeps its original one-click "Reserve for pickup" behavior untouched,
+  // exactly as the phase design requires, with zero network calls either way.
+  const [checkingOut, setCheckingOut] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
   const confirmRef = useRef<HTMLHeadingElement>(null);
@@ -24,7 +29,12 @@ export function CartDrawer() {
     };
   }, [isOpen, close]);
 
-  useEffect(() => { if (!isOpen) setReserved(false); }, [isOpen]);
+  useEffect(() => {
+    if (!isOpen) {
+      setReserved(false);
+      setCheckingOut(false);
+    }
+  }, [isOpen]);
 
   // Same inert-based approach as AgeGate: CartDrawer is mounted as a sibling of
   // #site-content (see app/layout.tsx), so there's no need to walk siblings the
@@ -81,18 +91,26 @@ export function CartDrawer() {
       <div className={styles.backdrop} onClick={close} aria-hidden="true" />
       <aside className={styles.panel} role="dialog" aria-modal="true" aria-label="Cart">
         <div className={styles.head}>
-          <h2 className={styles.title}>{reserved ? 'Reserved' : 'Your cart'}</h2>
+          <h2 className={styles.title}>{reserved ? 'Reserved' : checkingOut ? 'Checkout' : 'Your cart'}</h2>
           <button ref={closeRef} type="button" className={styles.close} onClick={close} aria-label="Close cart">×</button>
         </div>
 
         {reserved ? (
           <div className={styles.confirmed}>
-            <p className="kicker">Ready for pickup</p>
+            <p className="kicker">
+              Ready for pickup <span className={styles.demoTag}>Demo</span>
+            </p>
             <h3 ref={confirmRef} tabIndex={-1} style={{ fontSize: 22, margin: '10px 0 10px' }}>We&apos;ll hold it for you</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: 14, lineHeight: 1.6 }}>
               Bring valid government-issued ID to the Brampton store. Payment is completed in person.
             </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: 12, lineHeight: 1.6, marginTop: 12 }}>
+              This is a demo confirmation — no live order was created. Live ordering runs through
+              the store&apos;s real system when connected.
+            </p>
           </div>
+        ) : checkingOut ? (
+          <CheckoutFlow onExit={() => setCheckingOut(false)} />
         ) : (
           <>
             <div className={styles.lines}>
@@ -155,9 +173,20 @@ export function CartDrawer() {
                 type="button"
                 className={styles.reserve}
                 disabled={lines.length === 0}
-                onClick={() => { setReserved(true); clear(); }}
+                onClick={() => {
+                  if (catalogMode === 'blaze') {
+                    // Opens the real multi-step checkout (CheckoutFlow), which
+                    // replays these lines into a live BLAZE cart on submit. The
+                    // local cart is left untouched here — CheckoutFlow only clears
+                    // it once an order is actually confirmed.
+                    setCheckingOut(true);
+                  } else {
+                    setReserved(true);
+                    clear();
+                  }
+                }}
               >
-                Reserve for pickup
+                {catalogMode === 'blaze' ? 'Checkout' : 'Reserve for pickup'}
               </button>
             </div>
           </>

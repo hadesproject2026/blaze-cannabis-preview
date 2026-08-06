@@ -1,0 +1,13 @@
+{
+  "data": {
+    "attributes": {
+      "total": { "currency": "usd", "amount": 17020 },
+      "sub_total": { "currency": "usd", "amount": 12800 },
+      "tax_total": { "currency": "usd", "amount": 4218 },
+      "discount_total": { "currency": "usd", "amount": 0 },
+      "fee_total": { "currency": "usd", "amount": 0 }
+    },
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "cart_prices"
+  }
+}

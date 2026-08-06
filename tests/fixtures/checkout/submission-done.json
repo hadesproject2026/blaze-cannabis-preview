@@ -1,0 +1,12 @@
+{
+  "__synthetic__": "Hand-built. In live testing (three separate attempts, see .superpowers/sdd/live-phase2-report.md) submission_status never reached 'done' — it consistently reached 'failed' after 35-100s. This exercises the success branch of the polling/order-lookup code using the one other terminal value BLAZE's error-message vocabulary implies exists ('done' as the counterpart to 'failed'), not a captured real response.",
+  "data": {
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "carts",
+    "attributes": {
+      "submission_status": "done",
+      "submission_done_at": "2026-08-06T05:00:00Z",
+      "submission_errors": []
+    }
+  }
+}

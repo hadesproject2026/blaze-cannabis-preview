@@ -21,11 +21,22 @@ interface CartContextValue {
   remove: (productId: string) => void;
   setQty: (productId: string, qty: number) => void;
   clear: () => void;
+  /** 'mock' | 'blaze', decided server-side (CATALOG_SOURCE) and handed down as a
+   * plain prop — never fetched. This is what lets checkout skip the network
+   * entirely in mock mode: the client already knows there's no live store to order
+   * against, with no request required to find that out. */
+  catalogMode: 'mock' | 'blaze';
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
 
-export function CartProvider({ children }: { children: React.ReactNode }) {
+export function CartProvider({
+  children,
+  catalogMode = 'mock',
+}: {
+  children: React.ReactNode;
+  catalogMode?: 'mock' | 'blaze';
+}) {
   const [lines, dispatch] = useReducer(cartReducer, []);
   const [isOpen, setIsOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -63,6 +74,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     remove: (productId) => dispatch({ type: 'remove', productId }),
     setQty: (productId, qty) => dispatch({ type: 'setQty', productId, qty }),
     clear: () => dispatch({ type: 'clear' }),
+    catalogMode,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

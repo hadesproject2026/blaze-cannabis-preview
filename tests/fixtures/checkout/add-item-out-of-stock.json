@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "code": "product_out_of_stock",
+      "status": 400,
+      "fields": ["quantity"],
+      "extra_info": { "product": { "id": 489, "slug": "grandaddy-purple-489" } },
+      "detail": "Insufficient inventory for Grandaddy Purple (Error Code: BL00007)"
+    }
+  ]
+}

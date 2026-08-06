@@ -1,0 +1,19 @@
+{
+  "data": {
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "carts",
+    "attributes": {
+      "submission_status": "failed",
+      "submission_failed_at": "2026-08-06T04:57:18Z",
+      "submission_errors": [
+        {
+          "code": "bad_request",
+          "status": 400,
+          "fields": [],
+          "extra_info": {},
+          "detail": "Unexpected error communicating with the store."
+        }
+      ]
+    }
+  }
+}

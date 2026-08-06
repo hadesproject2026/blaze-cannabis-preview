@@ -47,5 +47,26 @@ export function getCatalogSource(): CatalogSource {
   throw new Error(`Unknown CATALOG_SOURCE "${mode}". Expected "mock" or "blaze".`);
 }
 
+/**
+ * The same mode switch getCatalogSource() uses, exposed standalone so server
+ * components/route handlers (e.g. app/layout.tsx, app/api/checkout) can branch on
+ * mock-vs-live without constructing a full CatalogSource. Read at call time (not
+ * cached) so it stays correct even though getCatalogSource()'s result is memoized.
+ */
+export function getCatalogMode(): 'mock' | 'blaze' {
+  const mode = (process.env.CATALOG_SOURCE ?? 'mock').trim().toLowerCase();
+  return mode === 'blaze' ? 'blaze' : 'mock';
+}
+
+/** Same base URL / store UUID resolution getCatalogSource() uses for
+ * BlazeEcomCatalogSource, exposed for the checkout route handler so it configures
+ * BlazeCheckoutClient against the identical store rather than duplicating the
+ * staging fallback constants. */
+export function getBlazeEcomConfig(): { baseUrl: string; storeUuid: string } {
+  const baseUrl = process.env.BLAZE_ECOM_BASE_URL?.trim() || STAGING_BASE_URL;
+  const storeUuid = process.env.BLAZE_ECOM_STORE_UUID?.trim() || STAGING_STORE_UUID;
+  return { baseUrl, storeUuid };
+}
+
 export type { CatalogSource } from './source';
 export * from './types';

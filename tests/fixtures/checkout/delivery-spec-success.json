@@ -1,0 +1,16 @@
+{
+  "data": {
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "carts",
+    "attributes": { "delivery_type": "pickup", "inventory_type": "recreational" },
+    "relationships": {
+      "products": {
+        "data": [
+          { "id": "ea96f7b7-cfd1-4ee2-bc08-7cb9409e0385", "type": "cart_items" },
+          { "id": "e2d17dbb-3d36-4470-9380-d04084414b14", "type": "cart_items" }
+        ]
+      },
+      "delivery_specification": { "data": { "id": 25483, "type": "delivery_specifications" } }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "data": {
+    "attributes": {
+      "delivery_type": "pickup",
+      "inventory_type": "recreational",
+      "customer_type": "recreational",
+      "payment_option": "cash",
+      "submission_status": null,
+      "cannabis_weight_limit": { "type": "FULL_GRAM", "units": "grams", "amount": 30.0, "display_text": "30 grams" }
+    },
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "carts",
+    "relationships": {
+      "products": { "data": [{ "id": "ea96f7b7-cfd1-4ee2-bc08-7cb9409e0385", "type": "cart_items" }] },
+      "delivery_specification": { "data": { "id": 25483, "type": "delivery_specifications" } }
+    }
+  }
+}

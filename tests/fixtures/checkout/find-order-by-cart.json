@@ -1,0 +1,7 @@
+{
+  "__synthetic__": "Hand-built — see submission-done.json. GET /api/v1/carts/{uuid}/order returned 404 in every live attempt because submission never completed, so this endpoint's success shape could not be captured. Modeled as a minimal JSON:API resource, consistent with every other BLAZE ECOM response shape observed live.",
+  "data": {
+    "id": "8a1c1e2b-7f3d-4a6e-9c0a-1b2c3d4e5f60",
+    "type": "orders"
+  }
+}

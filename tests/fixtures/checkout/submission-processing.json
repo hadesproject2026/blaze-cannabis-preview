@@ -1,0 +1,12 @@
+{
+  "data": {
+    "id": "3f6f9d4b-4787-45f7-80f7-7e730782e49d",
+    "type": "carts",
+    "attributes": {
+      "submission_status": "processing",
+      "submission_pending_at": "2026-08-06T04:54:59Z",
+      "submission_processing_at": "2026-08-06T04:54:59Z",
+      "submission_errors": []
+    }
+  }
+}

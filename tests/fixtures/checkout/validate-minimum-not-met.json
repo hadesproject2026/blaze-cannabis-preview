@@ -1,0 +1,11 @@
+{
+  "__synthetic__": "Hand-built, NOT a live capture. Live testing only ever produced a product_out_of_stock error (see add-item-out-of-stock.json, which IS real). No cart minimum was ever hit live, so this exercises that branch of replay.ts's error handling using a plausible errors[] entry in BLAZE's real, verified error shape ({code,status,fields,detail}).",
+  "errors": [
+    {
+      "code": "cart_minimum_not_met",
+      "status": 422,
+      "fields": ["sub_total"],
+      "detail": "This store has a $25.00 order minimum for pickup."
+    }
+  ]
+}

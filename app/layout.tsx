@@ -3,7 +3,7 @@ import { AdminProvider } from '@/components/admin/AdminProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
-import { getCatalogSource } from '@/lib/catalog';
+import { getCatalogMode, getCatalogSource } from '@/lib/catalog';
 import { getDefaultHeroProductIds } from '@/lib/admin';
 import { generateSampleReservations } from '@/lib/sample-reservations';
 import { generateSampleReviews } from '@/lib/sample-reviews';
@@ -22,6 +22,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // fabricated seed below is generated once from the real catalog/store and
   // handed down as starting state; nothing is persisted.
   const source = getCatalogSource();
+  const catalogMode = getCatalogMode();
   const [products, store] = await Promise.all([source.listProducts(), source.getStore('brampton')]);
   const initialReservations = generateSampleReservations(products);
   const initialReviews = generateSampleReviews(products);
@@ -36,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           initialHeroProductIds={initialHeroProductIds}
           initialStoreSettings={store}
         >
-          <CartProvider>
+          <CartProvider catalogMode={catalogMode}>
             <noscript>
               <style>{`#site-content { display: none !important; }`}</style>
               <div style={{ padding: '80px 20px', textAlign: 'center' }}>

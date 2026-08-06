@@ -1,0 +1,11 @@
+{
+  "__synthetic__": "Hand-built — see submission-done.json / find-order-by-cart.json. No real order was ever created against staging to read back, so this GET /api/v1/orders/{uuid} shape is inferred, not captured. It intentionally omits any 'order_number'/'number' field to exercise getOrder()'s fallback-to-uuid parsing, since we do not actually know which (if any) human-readable field BLAZE returns here.",
+  "data": {
+    "id": "8a1c1e2b-7f3d-4a6e-9c0a-1b2c3d4e5f60",
+    "type": "orders",
+    "attributes": {
+      "status": "pending",
+      "total": { "currency": "usd", "amount": 17020 }
+    }
+  }
+}
