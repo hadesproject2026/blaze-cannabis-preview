@@ -13,6 +13,16 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Blaze Cannabis — Brampton',
   description: 'Browse the Blaze Cannabis Brampton menu and reserve for pickup.',
+  // Emitted into the HTML rather than sent as a header, because header-based
+  // approaches do not reach these pages: most are statically prerendered and
+  // served straight from the CDN, so Next's headers() never runs, and Netlify's
+  // Next handler takes precedence over netlify.toml header rules. Verified
+  // against the live deploy — both mechanisms were absent on / and /menu.
+  //
+  // A meta tag survives caching and routing, and is the signal search engines
+  // actually honour for "do not index" (robots.txt only prevents crawling).
+  // Remove this when the site becomes the client's real, AGCO-submitted store.
+  robots: { index: false, follow: false, nocache: true },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
