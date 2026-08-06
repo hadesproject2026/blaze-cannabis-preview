@@ -16,14 +16,14 @@ interface AdminContextValue {
   overrides: Record<string, ProductOverride>;
   reservations: Reservation[];
   reviews: Review[];
-  heroProductIds: string[];
+  needsPhotoIds: string[];
   storeSettings: Store | null;
   setInStock: (productId: string, inStock: boolean) => void;
   setPrice: (productId: string, priceCents: number) => void;
   setStaffPick: (productId: string, staffPick: boolean) => void;
   setReservationStatus: (reservationId: string, status: ReservationStatus) => void;
   setReviewStatus: (reviewId: string, status: ReviewStatus) => void;
-  setHeroProducts: (productIds: string[]) => void;
+  setNeedsPhoto: (productId: string, needsPhoto: boolean) => void;
   updateStoreSettings: (
     patch: Partial<Pick<Store, 'name' | 'address' | 'city' | 'province' | 'postalCode' | 'phone'>>,
   ) => void;
@@ -43,8 +43,6 @@ interface Props {
   initialReservations?: Reservation[];
   /** Fabricated reviews, generated server-side (see lib/sample-reviews.ts). */
   initialReviews?: Review[];
-  /** Default landing-hero product ids (first three real products with an image). */
-  initialHeroProductIds?: string[];
   /** The real store record (see data/catalog.json), edited in memory only. */
   initialStoreSettings?: Store | null;
 }
@@ -53,14 +51,12 @@ export function AdminProvider({
   children,
   initialReservations = [],
   initialReviews = [],
-  initialHeroProductIds = [],
   initialStoreSettings = null,
 }: Props) {
   const [state, dispatch] = useReducer(adminReducer, {
     ...EMPTY_ADMIN_STATE,
     reservations: initialReservations,
     reviews: initialReviews,
-    heroProductIds: initialHeroProductIds,
     storeSettings: initialStoreSettings,
   });
 
@@ -68,7 +64,7 @@ export function AdminProvider({
     overrides: state.overrides,
     reservations: state.reservations,
     reviews: state.reviews,
-    heroProductIds: state.heroProductIds,
+    needsPhotoIds: state.needsPhotoIds,
     storeSettings: state.storeSettings,
     setInStock: (productId, inStock) => dispatch({ type: 'setInStock', productId, inStock }),
     setPrice: (productId, priceCents) => dispatch({ type: 'setPrice', productId, priceCents }),
@@ -76,7 +72,7 @@ export function AdminProvider({
     setReservationStatus: (reservationId, status) =>
       dispatch({ type: 'setReservationStatus', reservationId, status }),
     setReviewStatus: (reviewId, status) => dispatch({ type: 'setReviewStatus', reviewId, status }),
-    setHeroProducts: (productIds) => dispatch({ type: 'setHeroProducts', productIds }),
+    setNeedsPhoto: (productId, needsPhoto) => dispatch({ type: 'setNeedsPhoto', productId, needsPhoto }),
     updateStoreSettings: (patch) => dispatch({ type: 'updateStoreSettings', patch }),
     updateStoreHours: (index, patch) => dispatch({ type: 'updateStoreHours', index, patch }),
   };

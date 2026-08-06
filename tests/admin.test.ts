@@ -6,8 +6,7 @@ import {
   deriveCustomers,
   EMPTY_ADMIN_STATE,
   getDashboardStats,
-  getDefaultHeroProductIds,
-  getHeroProducts,
+  getGalleryStats,
   type AdminState,
   type ProductOverride,
   type Reservation,
@@ -240,20 +239,50 @@ describe('adminReducer', () => {
     expect(next.reviews).toEqual(state.reviews);
   });
 
-  it('sets the hero product picks', () => {
+  it('flags a product as needing a new photo', () => {
     const state = adminReducer(EMPTY_ADMIN_STATE, {
-      type: 'setHeroProducts',
-      productIds: ['p-1', 'p-2'],
+      type: 'setNeedsPhoto',
+      productId: 'p-1',
+      needsPhoto: true,
     });
-    expect(state.heroProductIds).toEqual(['p-1', 'p-2']);
+    expect(state.needsPhotoIds).toEqual(['p-1']);
   });
 
-  it('caps hero product picks at three', () => {
+  it('unflags a product that needed a new photo', () => {
+    const flagged: AdminState = { ...EMPTY_ADMIN_STATE, needsPhotoIds: ['p-1'] };
+    const state = adminReducer(flagged, { type: 'setNeedsPhoto', productId: 'p-1', needsPhoto: false });
+    expect(state.needsPhotoIds).toEqual([]);
+  });
+
+  it('does not duplicate a product already flagged', () => {
+    const flagged: AdminState = { ...EMPTY_ADMIN_STATE, needsPhotoIds: ['p-1'] };
+    const state = adminReducer(flagged, { type: 'setNeedsPhoto', productId: 'p-1', needsPhoto: true });
+    expect(state.needsPhotoIds).toEqual(['p-1']);
+  });
+
+  it('ignores unflagging a product that was never flagged', () => {
     const state = adminReducer(EMPTY_ADMIN_STATE, {
-      type: 'setHeroProducts',
-      productIds: ['p-1', 'p-2', 'p-3', 'p-4'],
+      type: 'setNeedsPhoto',
+      productId: 'p-1',
+      needsPhoto: false,
     });
-    expect(state.heroProductIds).toEqual(['p-1', 'p-2', 'p-3']);
+    expect(state.needsPhotoIds).toEqual([]);
+  });
+
+  it('leaves other flagged products untouched when unflagging one', () => {
+    const flagged: AdminState = { ...EMPTY_ADMIN_STATE, needsPhotoIds: ['p-1', 'p-2'] };
+    const state = adminReducer(flagged, { type: 'setNeedsPhoto', productId: 'p-1', needsPhoto: false });
+    expect(state.needsPhotoIds).toEqual(['p-2']);
+  });
+
+  it('does not mutate the previous state when flagging', () => {
+    const state: AdminState = { ...EMPTY_ADMIN_STATE, needsPhotoIds: [] };
+    adminReducer(state, { type: 'setNeedsPhoto', productId: 'p-1', needsPhoto: true });
+    expect(state.needsPhotoIds).toEqual([]);
+  });
+
+  it('starts with no flagged products — resets cleanly on reload', () => {
+    expect(EMPTY_ADMIN_STATE.needsPhotoIds).toEqual([]);
   });
 
   it('seeds store settings', () => {
@@ -332,20 +361,7 @@ describe('deriveCustomers', () => {
   });
 });
 
-describe('getDefaultHeroProductIds', () => {
-  it('takes the first three products that have an image', () => {
-    const products: Product[] = [
-      { ...product, id: 'p-1', images: [] },
-      { ...product, id: 'p-2', images: ['/a.jpg'] },
-      { ...product, id: 'p-3', images: ['/b.jpg'] },
-      { ...product, id: 'p-4', images: ['/c.jpg'] },
-      { ...product, id: 'p-5', images: ['/d.jpg'] },
-    ];
-    expect(getDefaultHeroProductIds(products)).toEqual(['p-2', 'p-3', 'p-4']);
-  });
-});
-
-describe('getHeroProducts', () => {
+describe('getGalleryStats', () => {
   const products: Product[] = [
     { ...product, id: 'p-1', images: ['/a.jpg'] },
     { ...product, id: 'p-2', images: ['/b.jpg'] },
@@ -353,20 +369,28 @@ describe('getHeroProducts', () => {
     { ...product, id: 'p-4', images: ['/c.jpg'] },
   ];
 
-  it('falls back to the default when no picks are set', () => {
-    expect(getHeroProducts(products, []).map((p) => p.id)).toEqual(['p-1', 'p-2', 'p-4']);
+  it('counts the total', () => {
+    expect(getGalleryStats(products, []).total).toBe(4);
   });
 
-  it('resolves picks in the given order', () => {
-    expect(getHeroProducts(products, ['p-4', 'p-1']).map((p) => p.id)).toEqual(['p-4', 'p-1']);
+  it('counts products with at least one image', () => {
+    expect(getGalleryStats(products, []).withImages).toBe(3);
   });
 
-  it('drops a picked id that has no image', () => {
-    expect(getHeroProducts(products, ['p-3', 'p-1']).map((p) => p.id)).toEqual(['p-1']);
+  it('counts products with no image', () => {
+    expect(getGalleryStats(products, []).missing).toBe(1);
   });
 
-  it('falls back to the default when every pick is invalid', () => {
-    expect(getHeroProducts(products, ['p-3', 'missing']).map((p) => p.id)).toEqual(['p-1', 'p-2', 'p-4']);
+  it('counts flagged products', () => {
+    expect(getGalleryStats(products, ['p-1', 'p-4']).flagged).toBe(2);
+  });
+
+  it('ignores a flagged id that no longer matches a product', () => {
+    expect(getGalleryStats(products, ['p-1', 'gone']).flagged).toBe(1);
+  });
+
+  it('returns zeroes for an empty catalog', () => {
+    expect(getGalleryStats([], [])).toEqual({ total: 0, withImages: 0, missing: 0, flagged: 0 });
   });
 });
 

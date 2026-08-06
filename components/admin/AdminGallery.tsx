@@ -3,100 +3,87 @@
 import { useMemo } from 'react';
 import Image from 'next/image';
 import { useAdmin } from '@/components/admin/AdminProvider';
-import { getHeroProducts } from '@/lib/admin';
+import { getGalleryStats } from '@/lib/admin';
 import type { Product } from '@/lib/catalog/types';
 import styles from './AdminGallery.module.css';
 
-const MAX_HERO_PICKS = 3;
-
 export function AdminGallery({ products }: { products: Product[] }) {
-  const { heroProductIds, setHeroProducts } = useAdmin();
+  const { needsPhotoIds, setNeedsPhoto } = useAdmin();
 
-  const withImages = useMemo(() => products.filter((p) => p.images.length > 0), [products]);
-  const currentHero = useMemo(
-    () => getHeroProducts(products, heroProductIds),
-    [products, heroProductIds],
-  );
-  const atLimit = heroProductIds.length >= MAX_HERO_PICKS;
-
-  const toggle = (productId: string) => {
-    const selected = heroProductIds.includes(productId);
-    if (selected) {
-      setHeroProducts(heroProductIds.filter((id) => id !== productId));
-    } else if (!atLimit) {
-      setHeroProducts([...heroProductIds, productId]);
-    }
-  };
+  const stats = useMemo(() => getGalleryStats(products, needsPhotoIds), [products, needsPhotoIds]);
+  const missing = useMemo(() => products.filter((p) => p.images.length === 0), [products]);
+  const flaggedSet = useMemo(() => new Set(needsPhotoIds), [needsPhotoIds]);
 
   return (
     <div className={styles.page}>
-      <p className="kicker">Landing page</p>
+      <p className="kicker">Catalog</p>
       <h1 className={styles.title}>Gallery</h1>
       <p className={styles.lede}>
-        Blaze doesn&apos;t run a portfolio, so this surface points at the landing page&apos;s hero
-        instead — the three product photos that rotate through the parallax banner. Pick up to
-        {' '}{MAX_HERO_PICKS} real catalog images below; the homepage updates immediately. Nothing
-        here is saved — reload and the hero resets to the catalog default.
+        Every product photo in the catalog, the way a shopper sees it. The supplier sheets behind
+        these listings are white-background cut-outs — usable, but not photography built for a
+        storefront. Flag anything that needs a proper reshoot; the product with no photo at all
+        is called out below.
       </p>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Currently in the hero</h2>
-        <ol className={styles.previewStrip}>
-          {currentHero.map((p, i) => (
-            <li key={p.id} className={styles.previewItem}>
-              <span className={styles.previewOrder}>{i + 1}</span>
-              <div className={styles.previewThumb}>
-                <Image src={p.images[0]} alt="" fill sizes="96px" className={styles.thumbImg} />
-              </div>
-              <span className={styles.previewName}>{p.name}</span>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <div className={styles.summary} aria-live="polite">
+        <span className={styles.summaryItem}>
+          <strong>{stats.withImages}</strong> of {stats.total} products have a photo
+        </span>
+        <span className={styles.summaryDot} aria-hidden="true">·</span>
+        <span className={styles.summaryItem}>
+          <strong>{stats.flagged}</strong> flagged for reshoot
+        </span>
+        <span className={styles.summaryDot} aria-hidden="true">·</span>
+        <span className={styles.summaryItem}>
+          <strong>{stats.missing}</strong> missing entirely
+        </span>
+      </div>
 
-      <section className={styles.section}>
-        <div className={styles.pickHead}>
-          <h2 className={styles.sectionTitle}>Catalog images</h2>
-          <span className={styles.pickCount} aria-live="polite">
-            {heroProductIds.length} of {MAX_HERO_PICKS} selected
-          </span>
+      {missing.length > 0 && (
+        <div className={styles.gapNotice} role="note">
+          <strong>
+            {missing.length === 1 ? 'One product has' : `${missing.length} products have`} no photo
+            on file.
+          </strong>{' '}
+          {missing.map((p) => `${p.name} (${p.brand})`).join(', ')} — this is a genuine gap, not a
+          styling issue.
         </div>
-        {atLimit && (
-          <p className={styles.limitNote}>
-            The hero shows {MAX_HERO_PICKS} images at a time — remove one below before adding another.
-          </p>
-        )}
+      )}
 
-        <ul className={styles.grid}>
-          {withImages.map((p) => {
-            const selected = heroProductIds.includes(p.id);
-            const disabled = !selected && atLimit;
-            return (
-              <li key={p.id} className={styles.card}>
+      <ul className={styles.grid}>
+        {products.map((p) => {
+          const hasImage = p.images.length > 0;
+          const flagged = flaggedSet.has(p.id);
+          return (
+            <li key={p.id} className={styles.card}>
+              <div className={styles.thumb} data-missing={!hasImage}>
+                {hasImage ? (
+                  <Image src={p.images[0]} alt="" fill sizes="180px" className={styles.thumbImg} />
+                ) : (
+                  <span className={styles.noPhoto}>No photo</span>
+                )}
+              </div>
+              <span className={styles.cardName}>{p.name}</span>
+              <span className={styles.cardBrand}>{p.brand}</span>
+
+              {hasImage ? (
                 <button
                   type="button"
-                  className={styles.cardButton}
-                  data-selected={selected}
-                  disabled={disabled}
-                  aria-pressed={selected}
-                  onClick={() => toggle(p.id)}
+                  className={styles.toggle}
+                  data-flagged={flagged}
+                  aria-pressed={flagged}
+                  onClick={() => setNeedsPhoto(p.id, !flagged)}
                 >
-                  <div className={styles.thumb}>
-                    <Image src={p.images[0]} alt="" fill sizes="140px" className={styles.thumbImg} />
-                    {selected && (
-                      <span className={styles.badge}>{heroProductIds.indexOf(p.id) + 1}</span>
-                    )}
-                  </div>
-                  <span className={styles.cardName}>{p.name}</span>
-                  <span className={styles.cardAction}>
-                    {selected ? 'Remove from hero' : 'Feature in hero'}
-                  </span>
+                  <span className={styles.toggleDot} aria-hidden="true" />
+                  {flagged ? 'Flagged — needs new photo' : 'Flag for reshoot'}
                 </button>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+              ) : (
+                <span className={styles.missingBadge}>Missing photo</span>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { CartProvider } from '@/components/cart/CartProvider';
 import { AgeGate } from '@/components/shell/AgeGate';
 import { PreviewBanner } from '@/components/shell/PreviewBanner';
 import { getCatalogMode, getCatalogSource } from '@/lib/catalog';
-import { getDefaultHeroProductIds } from '@/lib/admin';
 import { generateSampleReservations } from '@/lib/sample-reservations';
 import { generateSampleReviews } from '@/lib/sample-reviews';
 import './globals.css';
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // AdminProvider is mounted here, above every route, so the admin overlay
-  // (product overrides, order statuses, review visibility, hero picks, shop
+  // (product overrides, order statuses, review visibility, reshoot flags, shop
   // settings) survives client-side navigation between /admin and the
   // storefront within a session — the whole point of the admin demo. Every
   // fabricated seed below is generated once from the real catalog/store and
@@ -37,7 +36,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const [products, store] = await Promise.all([source.listProducts(), source.getStore('brampton')]);
   const initialReservations = generateSampleReservations(products);
   const initialReviews = generateSampleReviews(products);
-  const initialHeroProductIds = getDefaultHeroProductIds(products);
 
   return (
     <html lang="en">
@@ -45,7 +43,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <AdminProvider
           initialReservations={initialReservations}
           initialReviews={initialReviews}
-          initialHeroProductIds={initialHeroProductIds}
           initialStoreSettings={store}
         >
           <CartProvider catalogMode={catalogMode}>

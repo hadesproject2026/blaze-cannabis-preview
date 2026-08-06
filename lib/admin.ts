@@ -55,8 +55,8 @@ export interface AdminState {
   overrides: Record<string, ProductOverride>;
   reservations: Reservation[];
   reviews: Review[];
-  /** Product ids feeding the landing page's hero, in display order (max 3). */
-  heroProductIds: string[];
+  /** Product ids the operator has flagged on the Gallery surface as needing a reshoot. */
+  needsPhotoIds: string[];
   /** In-memory editable copy of the store record shown on Shop settings. */
   storeSettings: Store | null;
 }
@@ -65,7 +65,7 @@ export const EMPTY_ADMIN_STATE: AdminState = {
   overrides: {},
   reservations: [],
   reviews: [],
-  heroProductIds: [],
+  needsPhotoIds: [],
   storeSettings: null,
 };
 
@@ -77,7 +77,7 @@ export type AdminAction =
   | { type: 'seedReservations'; reservations: Reservation[] }
   | { type: 'setReviewStatus'; reviewId: string; status: ReviewStatus }
   | { type: 'seedReviews'; reviews: Review[] }
-  | { type: 'setHeroProducts'; productIds: string[] }
+  | { type: 'setNeedsPhoto'; productId: string; needsPhoto: boolean }
   | { type: 'seedStoreSettings'; store: Store }
   | {
       type: 'updateStoreSettings';
@@ -135,10 +135,16 @@ export function adminReducer(state: AdminState, action: AdminAction): AdminState
     case 'seedReviews':
       return { ...state, reviews: action.reviews };
 
-    case 'setHeroProducts':
-      // The landing hero renders at most three layered images — cap the
-      // selection here so an over-eager click list can't request a fourth.
-      return { ...state, heroProductIds: action.productIds.slice(0, 3) };
+    case 'setNeedsPhoto':
+      if (action.needsPhoto) {
+        if (state.needsPhotoIds.includes(action.productId)) return state;
+        return { ...state, needsPhotoIds: [...state.needsPhotoIds, action.productId] };
+      }
+      if (!state.needsPhotoIds.includes(action.productId)) return state;
+      return {
+        ...state,
+        needsPhotoIds: state.needsPhotoIds.filter((id) => id !== action.productId),
+      };
 
     case 'seedStoreSettings':
       return { ...state, storeSettings: action.store };
@@ -251,28 +257,28 @@ export function deriveCustomers(reservations: Reservation[]): CustomerSummary[] 
   return Array.from(byName.values()).sort((a, b) => b.totalCents - a.totalCents);
 }
 
-/** The first three real catalog products with an image — the landing hero's default. */
-export function getDefaultHeroProductIds(products: Product[]): string[] {
-  return products
-    .filter((p) => p.images.length > 0)
-    .slice(0, 3)
-    .map((p) => p.id);
+export interface GalleryStats {
+  total: number;
+  withImages: number;
+  missing: number;
+  flagged: number;
 }
 
 /**
- * Resolves the operator's hero picks (Gallery surface) against the live
- * catalog. Falls back to the default first-three-with-images selection when
- * no picks are set, or when every pick has gone out of stock/lost its image
- * — the hero should never render empty.
+ * Summary figures for the Gallery photography review surface — every number
+ * derived from the live catalog and the operator's in-session reshoot flags.
+ * `flagged` is intersected against the current product list so a flag can
+ * never outlive the product it was set on.
  */
-export function getHeroProducts(products: Product[], heroProductIds: string[]): Product[] {
-  const withImages = products.filter((p) => p.images.length > 0);
-  if (heroProductIds.length === 0) return withImages.slice(0, 3);
+export function getGalleryStats(products: Product[], needsPhotoIds: string[]): GalleryStats {
+  const withImages = products.filter((p) => p.images.length > 0).length;
+  const productIds = new Set(products.map((p) => p.id));
+  const flagged = needsPhotoIds.filter((id) => productIds.has(id)).length;
 
-  const byId = new Map(withImages.map((p) => [p.id, p] as const));
-  const picked = heroProductIds
-    .map((id) => byId.get(id))
-    .filter((p): p is Product => p !== undefined);
-
-  return picked.length > 0 ? picked.slice(0, 3) : withImages.slice(0, 3);
+  return {
+    total: products.length,
+    withImages,
+    missing: products.length - withImages,
+    flagged,
+  };
 }

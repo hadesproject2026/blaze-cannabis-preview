@@ -1,4 +1,4 @@
-.page { max-width: 1000px; }
+.page { max-width: 1100px; }
 
 .title { font-size: 30px; margin: 8px 0 6px; }
 
@@ -6,126 +6,70 @@
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   max-width: 68ch;
 }
 
-.section { margin-bottom: 30px; }
+/* --- Summary line --- */
 
-.sectionTitle {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin: 0 0 14px;
-}
-
-/* --- Current hero preview --- */
-
-.previewStrip {
+.summary {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.previewItem {
-  display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 10px 14px 10px 10px;
-}
-
-.previewOrder {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #04150E;
-  font-size: 11px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.previewThumb {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--surface-2);
-  flex-shrink: 0;
-}
-
-.previewName {
-  font-size: 13px;
+  padding: 14px 18px;
+  margin: 0 0 18px;
+  font-size: 14px;
   color: var(--text);
-  max-width: 22ch;
 }
 
-/* --- Picker grid --- */
-
-.pickHead {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+.summaryItem strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--accent);
 }
 
-.pickHead .sectionTitle { margin-bottom: 0; }
+.summaryDot { color: var(--text-muted); }
 
-.pickCount {
-  font-size: 12px;
-  color: var(--text-muted);
-}
+/* --- Missing-photo callout --- */
 
-.limitNote {
+.gapNotice {
   background: var(--surface);
-  border: 1px solid var(--gold-dim);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
   color: var(--text);
   font-size: 13px;
-  padding: 10px 14px;
-  margin: 12px 0 0;
+  line-height: 1.6;
+  padding: 14px 18px;
+  margin: 0 0 26px;
 }
+
+.gapNotice strong { color: var(--danger); }
+
+/* --- Photo grid --- */
 
 .grid {
   list-style: none;
-  margin: 14px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 14px;
 }
 
-.card { min-width: 0; }
-
-.cardButton {
-  width: 100%;
+.card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 10px;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color var(--dur-fast) var(--ease-out);
+  min-width: 0;
 }
-
-.cardButton:hover:not(:disabled) { border-color: var(--gold-dim); }
-.cardButton[data-selected='true'] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.cardButton:disabled { cursor: not-allowed; opacity: 0.5; }
 
 .thumb {
   position: relative;
@@ -134,24 +78,24 @@
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--surface-2);
-}
-
-.thumbImg { object-fit: cover; }
-
-.badge {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #04150E;
+  margin-bottom: 4px;
+}
+
+.thumb[data-missing='true'] {
+  border: 1px dashed var(--danger);
+}
+
+.thumbImg { object-fit: contain; padding: 8%; }
+
+.noPhoto {
   font-size: 12px;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--danger);
 }
 
 .cardName {
@@ -161,12 +105,49 @@
   line-height: 1.35;
 }
 
-.cardAction {
+.cardBrand {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* --- Reshoot toggle (mirrors AdminReviews' publish toggle) --- */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px 6px 8px;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.toggle:hover { border-color: var(--gold-dim); }
+
+.toggleDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.toggle[data-flagged='true'] .toggleDot { background: var(--danger); }
+.toggle[data-flagged='true'] { border-color: var(--danger); }
+
+.missingBadge {
+  align-self: flex-start;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--accent);
+  color: var(--danger);
+  margin-top: 4px;
 }
-
-.cardButton[data-selected='true'] .cardAction { color: var(--danger); }
