@@ -5,8 +5,9 @@ dark theme and an animated landing hero. Includes a demo admin console and a
 partially-proven live commerce integration behind an environment flag.
 
 Specs:
-- `docs/superpowers/specs/2026-08-04-blaze-cannabis-redesign-design.md` — the storefront
-- `docs/superpowers/specs/2026-08-05-blaze-ecom-live-integration-design.md` — live BLAZE ECOM integration
+- `docs/2026-08-04-storefront-design.md` — the storefront
+- `docs/2026-08-05-blaze-ecom-live-integration.md` — live BLAZE ECOM integration
+- `docs/2026-08-04-implementation-plan.md` — the task-by-task build plan
 
 ## Running
 

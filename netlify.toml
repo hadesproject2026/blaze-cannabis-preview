@@ -1,12 +1,13 @@
 # Netlify build config for the Blaze Cannabis storefront (Next.js).
-# In the Netlify UI set "Base directory" to: blaze  (this file is read from there).
-# Do NOT add `base` here — this file already lives in the base directory, so a
-# base of "blaze" would resolve to blaze/blaze and the build would fail.
-# Do NOT set `publish` either; @netlify/plugin-nextjs sets it correctly itself.
 #
-# To show the preview notice, set NEXT_PUBLIC_PREVIEW_BANNER=true.
-# CATALOG_SOURCE is intentionally left unset so the deploy runs on the local
-# catalog and cannot be broken by a third-party API.
+# This app sits at the repository root, so in the Netlify UI leave
+# "Base directory", "Build command" and "Publish directory" all BLANK —
+# everything is supplied here. Typing values into those fields overrides
+# this file and breaks the build.
+#
+# Set NEXT_PUBLIC_PREVIEW_BANNER=true to show the "Design preview" notice.
+# Leave CATALOG_SOURCE unset: the site then runs on the committed local
+# catalog and cannot be broken by a third-party API being down.
 
 [build]
   command = "npm run build"
