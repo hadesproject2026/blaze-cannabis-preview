@@ -50,7 +50,6 @@ export function NavDrawer({ isOpen, onClose }: Props) {
   const panelRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
-  const [showAccountsNotice, setShowAccountsNotice] = useState(false);
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -67,7 +66,6 @@ export function NavDrawer({ isOpen, onClose }: Props) {
 
     if (!isOpen) {
       wrapper?.setAttribute('inert', '');
-      setShowAccountsNotice(false);
       return;
     }
 
@@ -140,18 +138,14 @@ export function NavDrawer({ isOpen, onClose }: Props) {
 
         <div className={styles.footer}>
           <div className={styles.authButtons}>
-            <button type="button" className={styles.login} onClick={() => setShowAccountsNotice(true)}>
-              Log In
-            </button>
-            <button type="button" className={styles.signup} onClick={() => setShowAccountsNotice(true)}>
-              Sign Up
-            </button>
+            {/* Sign-in is real now (see /signin), so this links there rather
+                than showing the old "coming soon" notice. Registration still
+                isn't a thing — there is no account store — so only the one
+                button, rather than offering a Sign Up that cannot work. */}
+            <Link href="/signin" className={styles.login} onClick={onClose}>
+              Sign in
+            </Link>
           </div>
-          {showAccountsNotice && (
-            <p className={styles.notice} role="status">
-              Accounts are coming soon.
-            </p>
-          )}
         </div>
       </aside>
     </div>
