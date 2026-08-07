@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { type AuthSession, clearAuthSession, readAuthSession } from '@/lib/auth';
 import styles from './NavDrawer.module.css';
 
 interface Props {
@@ -50,6 +51,15 @@ export function NavDrawer({ isOpen, onClose }: Props) {
   const panelRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
+
+  // Re-read on every open, not just on mount: the drawer stays mounted for the
+  // whole session, so a sign-in that happened after mount would otherwise leave
+  // it stuck showing "Sign in" while the header already shows the username.
+  const [session, setSession] = useState<AuthSession | null>(null);
+
+  useEffect(() => {
+    if (isOpen) setSession(readAuthSession());
+  }, [isOpen]);
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -136,16 +146,39 @@ export function NavDrawer({ isOpen, onClose }: Props) {
           </Link>
         </nav>
 
+        {/* Mirrors AuthStatus in the header. There is no Sign Up, because there
+            is no account store — offering registration that cannot work would
+            be worse than not offering it. */}
         <div className={styles.footer}>
-          <div className={styles.authButtons}>
-            {/* Sign-in is real now (see /signin), so this links there rather
-                than showing the old "coming soon" notice. Registration still
-                isn't a thing — there is no account store — so only the one
-                button, rather than offering a Sign Up that cannot work. */}
-            <Link href="/signin" className={styles.login} onClick={onClose}>
-              Sign in
-            </Link>
-          </div>
+          {session ? (
+            <div className={styles.authButtons}>
+              <p className={styles.signedInAs}>
+                Signed in as <strong>{session.username}</strong>
+              </p>
+              {session.role === 'owner' && (
+                <Link href="/admin" className={styles.login} onClick={onClose}>
+                  Admin console
+                </Link>
+              )}
+              <button
+                type="button"
+                className={styles.signup}
+                onClick={() => {
+                  clearAuthSession();
+                  setSession(null);
+                  onClose();
+                }}
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <div className={styles.authButtons}>
+              <Link href="/signin" className={styles.login} onClick={onClose}>
+                Sign in
+              </Link>
+            </div>
+          )}
         </div>
       </aside>
     </div>

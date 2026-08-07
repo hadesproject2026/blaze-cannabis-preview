@@ -147,3 +147,11 @@
   font-size: 13px;
   line-height: 1.5;
 }
+
+.signedInAs {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.signedInAs strong { color: var(--text); font-weight: 700; }
