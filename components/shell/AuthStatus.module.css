@@ -1,0 +1,53 @@
+.signInLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.signInLink:hover { color: var(--gold); }
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.username {
+  color: var(--text);
+  font-weight: 600;
+  max-width: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adminLink {
+  color: var(--gold);
+  font-weight: 600;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.adminLink:hover { color: var(--text); }
+
+.signOut {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.signOut:hover { border-color: var(--text-muted); color: var(--text); }
+
+@media (max-width: 720px) {
+  .username { max-width: 60px; font-size: 11px; }
+  .status { gap: 6px; }
+  .signOut { padding: 5px 9px; font-size: 11px; }
+  .signInLink { font-size: 12px; }
+}

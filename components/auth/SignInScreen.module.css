@@ -1,16 +1,14 @@
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
+.page {
+  min-height: 100dvh;
   display: grid;
   place-items: center;
-  padding: 20px;
+  padding: 40px 20px;
   background: radial-gradient(80% 80% at 50% 40%, #0C1016 0%, #050608 100%);
 }
 
 .panel {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
@@ -43,29 +41,14 @@
   padding: 4px 10px;
 }
 
-.title { font-size: 22px; margin: 14px 0 8px; }
+.title { font-size: 24px; margin: 14px 0 8px; }
 
 .copy {
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
-  margin: 0 0 14px;
-}
-
-.copy strong { color: var(--text); }
-
-/* Demo credentials hint. text-muted on the panel's --surface background is
-   4.72:1 — passes WCAG AA (4.5:1) for normal text, so the muted colour stays
-   within budget; the credential values themselves use --text (15.98:1) so
-   they stay legible even at a glance from across a room. */
-.hint {
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.6;
   margin: 0 0 22px;
 }
-
-.hint strong { color: var(--text); }
 
 .field {
   text-align: left;
@@ -89,6 +72,7 @@
   font-size: 15px;
   padding: 12px 14px;
   text-align: left;
+  transition: border-color var(--dur-fast) var(--ease-out);
 }
 
 .input:focus { border-color: var(--gold-dim); }
@@ -115,3 +99,65 @@
 }
 
 .submit:hover { background: var(--accent-press); }
+
+.hintBlock {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: left;
+}
+
+/* text-muted on --surface is 4.72:1 — passes WCAG AA (4.5:1) for normal text.
+   Same pairing already verified and shipped in AdminGate's demo-credential
+   hint; reused here rather than re-deriving a new combination. */
+.hintLabel {
+  margin: 0 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.credTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.credTable th,
+.credTable td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.credTable thead th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.credTable tbody th {
+  color: var(--text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.credTable tbody td {
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+.credTable tr:last-child th,
+.credTable tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .panel { padding: 26px 18px; }
+  .credTable { font-size: 12px; }
+  .credTable th, .credTable td { padding: 7px 6px; }
+}

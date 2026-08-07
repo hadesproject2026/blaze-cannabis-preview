@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { CartButton } from '@/components/cart/CartButton';
+import { AuthStatus } from './AuthStatus';
 import { NavDrawer } from './NavDrawer';
 import styles from './SiteHeader.module.css';
 
@@ -38,6 +39,7 @@ export function SiteHeader({ search, onSearchChange }: Props) {
             onChange={(event) => onSearchChange(event.target.value)}
           />
         )}
+        <AuthStatus />
         <CartButton className={styles.cart} />
       </div>
       <NavDrawer isOpen={navOpen} onClose={() => setNavOpen(false)} />
