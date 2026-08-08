@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
 import {
   cartCount,
   cartReducer,
@@ -60,22 +60,44 @@ export function CartProvider({
     }
   }, [lines, hydrated]);
 
-  const value: CartContextValue = {
-    lines,
-    count: cartCount(lines),
-    subtotalCents: cartSubtotalCents(lines),
-    isOpen,
-    open: () => setIsOpen(true),
-    close: () => setIsOpen(false),
-    add: (product, qty) => {
-      dispatch({ type: 'add', product, qty });
-      setIsOpen(true);
-    },
-    remove: (productId) => dispatch({ type: 'remove', productId }),
-    setQty: (productId, qty) => dispatch({ type: 'setQty', productId, qty }),
-    clear: () => dispatch({ type: 'clear' }),
-    catalogMode,
-  };
+  // Every handle handed out through context is memoized, and the value object itself
+  // is memoized on top of that. This isn't just tidiness: CheckoutFlow's
+  // "clear the cart once the order succeeds" effect lists `clear` in its dependency
+  // array. Without stable identities here, `clear` (and the `value` object wrapping
+  // it) would be a brand-new reference on every CartProvider render — and because
+  // cartReducer's 'clear' case returns a fresh `[]` array every time (never bailing
+  // out via Object.is), calling the unstable `clear()` from that effect would re-run
+  // CartProvider, mint a new `clear`, re-trigger the effect, and loop forever the
+  // first time an order actually completes.
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
+  const add = useCallback((product: Product, qty?: number) => {
+    dispatch({ type: 'add', product, qty });
+    setIsOpen(true);
+  }, []);
+  const remove = useCallback((productId: string) => dispatch({ type: 'remove', productId }), []);
+  const setQty = useCallback(
+    (productId: string, qty: number) => dispatch({ type: 'setQty', productId, qty }),
+    [],
+  );
+  const clear = useCallback(() => dispatch({ type: 'clear' }), []);
+
+  const value = useMemo<CartContextValue>(
+    () => ({
+      lines,
+      count: cartCount(lines),
+      subtotalCents: cartSubtotalCents(lines),
+      isOpen,
+      open,
+      close,
+      add,
+      remove,
+      setQty,
+      clear,
+      catalogMode,
+    }),
+    [lines, isOpen, open, close, add, remove, setQty, clear, catalogMode],
+  );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

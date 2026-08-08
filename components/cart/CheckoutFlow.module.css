@@ -1,13 +1,94 @@
-.panel {
+.page {
+  padding: 32px 20px 80px;
+  max-width: 640px;
+}
+
+.backLink {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.backLink:hover { color: var(--text); }
+
+.demoBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.demoTag {
+  flex: none;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+
+/* Stepper */
+
+.stepper {
+  display: flex;
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  gap: 4px;
+}
+
+.stepperItem {
   flex: 1;
-  overflow-y: auto;
-  padding: 20px;
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 3px solid var(--border-strong);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.stepperItem[data-state='current'] {
+  border-top-color: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.stepperItem[data-state='done'] {
+  border-top-color: var(--gold);
+  color: var(--gold);
+}
+
+.stepperIndex { display: none; }
+
+.stepperLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Shared step panel */
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
 }
 
 .heading {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0 0 6px;
 }
 
@@ -54,12 +135,14 @@
 .actions {
   display: flex;
   gap: 10px;
-  margin-top: auto;
-  padding-top: 16px;
+  margin-top: 20px;
 }
 
 .primary {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--accent);
   color: #04150E;
   border: 0;
@@ -68,13 +151,18 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+  text-align: center;
   transition: background var(--dur-fast) var(--ease-out);
 }
 
 .primary:hover { background: var(--accent-press); }
+.primary:disabled { background: var(--border-strong); color: var(--text-muted); cursor: not-allowed; }
 
 .secondary {
   flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border-strong);
@@ -83,27 +171,107 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
 }
 
 .secondary:hover { color: var(--text); border-color: var(--text-muted); }
 
-.reviewLines {
+/* Review step */
+
+.emptyState {
+  text-align: center;
+  padding: 40px 10px;
+}
+
+.reviewList {
   list-style: none;
-  margin: 0 0 14px;
+  margin: 0 0 4px;
   padding: 0;
   border-top: 1px solid var(--border);
 }
 
-.reviewLine {
+.reviewItem {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 14px;
-  padding: 12px 0;
+  gap: 14px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--border);
 }
 
-.reviewQty { color: var(--text-muted); font-size: 12px; }
+.reviewThumb {
+  width: 64px;
+  height: 78px;
+  flex: none;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  object-fit: contain;
+}
+
+.reviewItemBody { flex: 1; min-width: 0; }
+
+.reviewBrand {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 2px;
+}
+
+.reviewName {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.reviewUnitPrice {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.reviewQtyRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.qtyBtn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.qtyValue {
+  font-size: 13px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.removeBtn {
+  margin-left: 4px;
+  background: transparent;
+  border: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.removeBtn:hover { color: var(--danger); }
+
+.reviewLineTotal {
+  flex: none;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 14px;
+  margin: 0;
+  align-self: flex-start;
+}
 
 .reviewTotal {
   display: flex;
@@ -111,40 +279,70 @@
   align-items: baseline;
   font-size: 15px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 14px 0 16px;
 }
 
 .reviewTotal span:last-child { color: var(--gold); font-size: 20px; }
 
-.reviewContact {
+/* Payment step */
+
+.paymentOptions {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.paymentOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-size: 13px;
-  /* var(--text-muted) dips to ~4.43:1 on this box's --surface-2 background,
-     under the 4.5:1 AA floor, so the always-visible contact details use
-     full-contrast text instead (matches the pattern in AdminProductsTable
-     and NavDrawer). */
-  color: var(--text);
-  margin-bottom: 16px;
-  position: relative;
+  padding: 14px;
+  cursor: pointer;
 }
 
-.linkButton {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: transparent;
-  border: 0;
-  color: var(--gold);
-  font-size: 12px;
-  cursor: pointer;
-  padding: 4px;
+.paymentOption[data-selected='true'] {
+  border-color: var(--accent);
 }
+
+.paymentOption input[type='radio'] {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.paymentOptionBody { display: flex; flex-direction: column; gap: 4px; }
+
+.paymentOptionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.availableTag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.paymentOptionDesc {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Submitting / result */
 
 .submitting {
   display: flex;
@@ -152,7 +350,6 @@
   align-items: center;
   text-align: center;
   padding: 50px 10px;
-  margin: auto 0;
 }
 
 .spinner {
@@ -168,15 +365,16 @@
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .orderNumber {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--gold);
   margin: 0 0 16px;
+  word-break: break-word;
 }
 
 .checklist {
   list-style: none;
-  margin: 0 0 8px;
+  margin: 0 0 16px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -185,7 +383,7 @@
 
 .checklist li {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--text);
   padding-left: 20px;
   position: relative;
   line-height: 1.5;
@@ -202,6 +400,35 @@
   background: var(--accent);
 }
 
+.storeBox {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.storeName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.storeAddress {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.demoDisclaimer {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
 .errorKicker {
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -216,4 +443,9 @@
   color: var(--text-muted);
   word-break: break-all;
   margin: 0 0 16px;
+}
+
+@media (max-width: 480px) {
+  .stepperLabel { font-size: 10px; }
+  .reviewThumb { width: 52px; height: 64px; }
 }
