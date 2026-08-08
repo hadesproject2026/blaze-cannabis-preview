@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { useAdmin } from '@/components/admin/AdminProvider';
+import { EditProductDialog } from '@/components/admin/EditProductDialog';
 import { applyOverrides } from '@/lib/admin';
 import type { Category, Product } from '@/lib/catalog/types';
 import styles from './AdminProductsTable.module.css';
@@ -13,8 +14,10 @@ interface Props {
 }
 
 export function AdminProductsTable({ products, categories }: Props) {
-  const { overrides, setInStock, setPrice, setStaffPick } = useAdmin();
+  const { overrides, setInStock, setPrice, setStaffPick, setName, setBrand, setCategory, setImage, resetOverrides } =
+    useAdmin();
   const [search, setSearch] = useState('');
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   const overlaid = useMemo(() => applyOverrides(products, overrides), [products, overrides]);
 
@@ -27,6 +30,8 @@ export function AdminProductsTable({ products, categories }: Props) {
   }, [overlaid, search]);
 
   const categoryName = (slug: string) => categories.find((c) => c.slug === slug)?.name ?? slug;
+  const editingProduct = editingId ? overlaid.find((p) => p.id === editingId) ?? null : null;
+  const hasEdits = Object.keys(overrides).length > 0;
 
   return (
     <div className={styles.page}>
@@ -49,12 +54,20 @@ export function AdminProductsTable({ products, categories }: Props) {
         <span className={styles.count}>
           {visible.length} of {products.length} products
         </span>
+        <button
+          type="button"
+          className={styles.resetAll}
+          onClick={resetOverrides}
+          disabled={!hasEdits}
+        >
+          Reset all edits
+        </button>
       </div>
 
       <div className={styles.tableWrap}>
         <table className={styles.table}>
           <caption className="sr-only">
-            Products in the catalog, with stock, price, and Budtender Select controls
+            Products in the catalog, with stock, price, Budtender Select, and full-detail editing
           </caption>
           <thead>
             <tr>
@@ -65,6 +78,7 @@ export function AdminProductsTable({ products, categories }: Props) {
               <th scope="col">Price</th>
               <th scope="col">In stock</th>
               <th scope="col">Budtender Select</th>
+              <th scope="col"><span className="sr-only">Edit</span></th>
             </tr>
           </thead>
           <tbody>
@@ -76,12 +90,30 @@ export function AdminProductsTable({ products, categories }: Props) {
                 onSetInStock={(inStock) => setInStock(product.id, inStock)}
                 onSetPrice={(cents) => setPrice(product.id, cents)}
                 onSetStaffPick={(pick) => setStaffPick(product.id, pick)}
+                onEdit={() => setEditingId(product.id)}
               />
             ))}
           </tbody>
         </table>
         {visible.length === 0 && <p className={styles.empty}>No products match &quot;{search}&quot;.</p>}
       </div>
+
+      {editingProduct && (
+        <EditProductDialog
+          product={editingProduct}
+          categories={categories}
+          isOpen={editingId !== null}
+          onClose={() => setEditingId(null)}
+          onSave={(patch) => {
+            const id = editingProduct.id;
+            setName(id, patch.name);
+            setBrand(id, patch.brand);
+            setCategory(id, patch.category);
+            if (patch.image !== undefined) setImage(id, patch.image);
+            setEditingId(null);
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -92,9 +124,10 @@ interface RowProps {
   onSetInStock: (inStock: boolean) => void;
   onSetPrice: (priceCents: number) => void;
   onSetStaffPick: (staffPick: boolean) => void;
+  onEdit: () => void;
 }
 
-function ProductRow({ product, categoryLabel, onSetInStock, onSetPrice, onSetStaffPick }: RowProps) {
+function ProductRow({ product, categoryLabel, onSetInStock, onSetPrice, onSetStaffPick, onEdit }: RowProps) {
   const displayed = (product.priceCents / 100).toFixed(2);
   const [priceDraft, setPriceDraft] = useState(displayed);
 
@@ -169,6 +202,11 @@ function ProductRow({ product, categoryLabel, onSetInStock, onSetPrice, onSetSta
             Budtender Select {isStaffPick ? 'enabled' : 'disabled'} — {product.name}
           </span>
         </label>
+      </td>
+      <td>
+        <button type="button" className={styles.editBtn} onClick={onEdit}>
+          Edit<span className="sr-only"> {product.name}</span>
+        </button>
       </td>
     </tr>
   );

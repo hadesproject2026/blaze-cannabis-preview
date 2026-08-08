@@ -21,6 +21,11 @@ interface AdminContextValue {
   setInStock: (productId: string, inStock: boolean) => void;
   setPrice: (productId: string, priceCents: number) => void;
   setStaffPick: (productId: string, staffPick: boolean) => void;
+  setName: (productId: string, name: string | undefined) => void;
+  setBrand: (productId: string, brand: string | undefined) => void;
+  setCategory: (productId: string, category: string | undefined) => void;
+  setImage: (productId: string, imageDataUrl: string | undefined) => void;
+  resetOverrides: () => void;
   setReservationStatus: (reservationId: string, status: ReservationStatus) => void;
   setReviewStatus: (reviewId: string, status: ReviewStatus) => void;
   setNeedsPhoto: (productId: string, needsPhoto: boolean) => void;
@@ -69,6 +74,11 @@ export function AdminProvider({
     setInStock: (productId, inStock) => dispatch({ type: 'setInStock', productId, inStock }),
     setPrice: (productId, priceCents) => dispatch({ type: 'setPrice', productId, priceCents }),
     setStaffPick: (productId, staffPick) => dispatch({ type: 'setStaffPick', productId, staffPick }),
+    setName: (productId, name) => dispatch({ type: 'setName', productId, name }),
+    setBrand: (productId, brand) => dispatch({ type: 'setBrand', productId, brand }),
+    setCategory: (productId, category) => dispatch({ type: 'setCategory', productId, category }),
+    setImage: (productId, imageDataUrl) => dispatch({ type: 'setImage', productId, imageDataUrl }),
+    resetOverrides: () => dispatch({ type: 'resetOverrides' }),
     setReservationStatus: (reservationId, status) =>
       dispatch({ type: 'setReservationStatus', reservationId, status }),
     setReviewStatus: (reviewId, status) => dispatch({ type: 'setReviewStatus', reviewId, status }),

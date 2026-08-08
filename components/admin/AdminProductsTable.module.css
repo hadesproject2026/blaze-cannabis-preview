@@ -37,6 +37,22 @@
   white-space: nowrap;
 }
 
+.resetAll {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.resetAll:hover:not(:disabled) { border-color: var(--gold-dim); color: var(--gold); }
+.resetAll:disabled { color: var(--text-muted); cursor: not-allowed; }
+
 /* The table can be wider than the viewport — it scrolls inside this box
    rather than pushing the page's own width. */
 .tableWrap {
@@ -177,6 +193,20 @@
   accent-color: var(--accent);
   cursor: pointer;
 }
+
+.editBtn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.editBtn:hover { border-color: var(--gold-dim); color: var(--gold); }
 
 .empty {
   padding: 24px 16px;

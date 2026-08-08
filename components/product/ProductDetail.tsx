@@ -1,16 +1,30 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { useAdmin } from '@/components/admin/AdminProvider';
 import { useCart } from '@/components/cart/CartProvider';
+import { applyOverride } from '@/lib/admin';
 import type { Product } from '@/lib/catalog/types';
 import { formatPotencyRange, formatPrice, formatStrainType } from '@/lib/format';
 import { QuantityStepper } from './QuantityStepper';
 import styles from './ProductDetail.module.css';
 
-export function ProductDetail({ product }: { product: Product }) {
+export function ProductDetail({ product: serverProduct }: { product: Product }) {
   const { add } = useCart();
   const [qty, setQty] = useState(1);
+
+  // Overlays in-memory admin edits (name, brand, category, price, stock,
+  // image, Budtender Select) on top of the server-fetched product, the same
+  // way MenuBrowser does for the grid — see lib/admin.ts. This is the only
+  // change made to this component for the admin overlay to reach the detail
+  // page; everything else below is unchanged.
+  const { overrides } = useAdmin();
+  const product = useMemo(
+    () => applyOverride(serverProduct, overrides[serverProduct.id]),
+    [serverProduct, overrides],
+  );
+
   const image = product.images[0] ?? null;
   const thc = formatPotencyRange(product.thc);
   const cbd = formatPotencyRange(product.cbd);

@@ -114,6 +114,56 @@ describe('applyOverride', () => {
     expect(product.inStock).toBe(true);
     expect(product.priceCents).toBe(2400);
   });
+
+  it('overrides name', () => {
+    expect(applyOverride(product, { name: 'Purple Tingz' }).name).toBe('Purple Tingz');
+  });
+
+  it('overrides brand', () => {
+    expect(applyOverride(product, { brand: 'Redecan' }).brand).toBe('Redecan');
+  });
+
+  it('overrides category', () => {
+    expect(applyOverride(product, { category: 'vape' }).category).toBe('vape');
+  });
+
+  it('falls back to the catalog name/brand/category when not overridden', () => {
+    const result = applyOverride(product, { inStock: false });
+    expect(result.name).toBe(product.name);
+    expect(result.brand).toBe(product.brand);
+    expect(result.category).toBe(product.category);
+  });
+
+  it('never changes the slug, even when every other field is overridden', () => {
+    const result = applyOverride(product, {
+      name: 'Renamed',
+      brand: 'Rebranded',
+      category: 'vape',
+      priceCents: 1,
+      inStock: false,
+      staffPick: true,
+      imageDataUrl: 'data:image/webp;base64,AAAA',
+    });
+    expect(result.slug).toBe(product.slug);
+  });
+
+  it('replaces the primary image with an uploaded data URL, keeping any others', () => {
+    const withImages = { ...product, images: ['/original.jpg', '/second.jpg'] };
+    const result = applyOverride(withImages, { imageDataUrl: 'data:image/webp;base64,AAAA' });
+    expect(result.images).toEqual(['data:image/webp;base64,AAAA', '/second.jpg']);
+  });
+
+  it('falls back to the catalog images when there is no image override', () => {
+    const withImages = { ...product, images: ['/original.jpg'] };
+    const result = applyOverride(withImages, { name: 'Renamed' });
+    expect(result.images).toEqual(['/original.jpg']);
+  });
+
+  it('clears every image when imageDataUrl is the empty-string "removed" sentinel', () => {
+    const withImages = { ...product, images: ['/original.jpg', '/second.jpg'] };
+    const result = applyOverride(withImages, { imageDataUrl: '' });
+    expect(result.images).toEqual([]);
+  });
 });
 
 describe('applyOverrides', () => {
@@ -159,6 +209,66 @@ describe('adminReducer', () => {
   it('sets staffPick for a product', () => {
     const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setStaffPick', productId: 'p-1', staffPick: true });
     expect(state.overrides['p-1']).toEqual({ staffPick: true });
+  });
+
+  it('sets name for a product', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setName', productId: 'p-1', name: 'Purple Tingz' });
+    expect(state.overrides['p-1']).toEqual({ name: 'Purple Tingz' });
+  });
+
+  it('ignores a whitespace-only name', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setName', productId: 'p-1', name: '   ' });
+    expect(state.overrides['p-1']).toBeUndefined();
+  });
+
+  it('allows clearing a name override back to undefined', () => {
+    let state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setName', productId: 'p-1', name: 'Purple Tingz' });
+    state = adminReducer(state, { type: 'setName', productId: 'p-1', name: undefined });
+    expect(state.overrides['p-1']).toEqual({ name: undefined });
+  });
+
+  it('sets brand for a product', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setBrand', productId: 'p-1', brand: 'Redecan' });
+    expect(state.overrides['p-1']).toEqual({ brand: 'Redecan' });
+  });
+
+  it('ignores a whitespace-only brand', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setBrand', productId: 'p-1', brand: '  ' });
+    expect(state.overrides['p-1']).toBeUndefined();
+  });
+
+  it('sets category for a product', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setCategory', productId: 'p-1', category: 'vape' });
+    expect(state.overrides['p-1']).toEqual({ category: 'vape' });
+  });
+
+  it('ignores a whitespace-only category', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setCategory', productId: 'p-1', category: '  ' });
+    expect(state.overrides['p-1']).toBeUndefined();
+  });
+
+  it('sets an image override to a data URL', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'setImage',
+      productId: 'p-1',
+      imageDataUrl: 'data:image/webp;base64,AAAA',
+    });
+    expect(state.overrides['p-1']).toEqual({ imageDataUrl: 'data:image/webp;base64,AAAA' });
+  });
+
+  it('sets an image override to the empty-string "removed" sentinel', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setImage', productId: 'p-1', imageDataUrl: '' });
+    expect(state.overrides['p-1']).toEqual({ imageDataUrl: '' });
+  });
+
+  it('clears an image override back to undefined', () => {
+    let state = adminReducer(EMPTY_ADMIN_STATE, {
+      type: 'setImage',
+      productId: 'p-1',
+      imageDataUrl: 'data:image/webp;base64,AAAA',
+    });
+    state = adminReducer(state, { type: 'setImage', productId: 'p-1', imageDataUrl: undefined });
+    expect(state.overrides['p-1']).toEqual({ imageDataUrl: undefined });
   });
 
   it('merges multiple overrides on the same product', () => {
@@ -210,6 +320,35 @@ describe('adminReducer', () => {
   it('returns the same state for an unknown action', () => {
     // @ts-expect-error — deliberately testing the default branch
     expect(adminReducer(EMPTY_ADMIN_STATE, { type: 'noop' })).toBe(EMPTY_ADMIN_STATE);
+  });
+
+  it('resetOverrides clears every product override', () => {
+    let state = adminReducer(EMPTY_ADMIN_STATE, { type: 'setInStock', productId: 'p-1', inStock: false });
+    state = adminReducer(state, { type: 'setName', productId: 'p-2', name: 'Renamed' });
+    state = adminReducer(state, { type: 'resetOverrides' });
+    expect(state.overrides).toEqual({});
+  });
+
+  it('resetOverrides is a no-op on an already-empty override set', () => {
+    const state = adminReducer(EMPTY_ADMIN_STATE, { type: 'resetOverrides' });
+    expect(state).toBe(EMPTY_ADMIN_STATE);
+  });
+
+  it('resetOverrides leaves reservations, reviews, and store settings untouched', () => {
+    const state: AdminState = {
+      ...EMPTY_ADMIN_STATE,
+      overrides: { 'p-1': { inStock: false } },
+      reservations: [reservation()],
+      reviews: [review()],
+      needsPhotoIds: ['p-1'],
+      storeSettings: store(),
+    };
+    const next = adminReducer(state, { type: 'resetOverrides' });
+    expect(next.overrides).toEqual({});
+    expect(next.reservations).toEqual(state.reservations);
+    expect(next.reviews).toEqual(state.reviews);
+    expect(next.needsPhotoIds).toEqual(state.needsPhotoIds);
+    expect(next.storeSettings).toEqual(state.storeSettings);
   });
 
   it('seeds reviews', () => {
